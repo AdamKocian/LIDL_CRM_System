@@ -3,7 +3,7 @@
 <?php session_start() ?>
 <?php 
 	if(!isset($_SESSION['login_id']))
-	    header('location:login.php');
+	    header('location:login.php'); //som tu
     include 'db_connect.php';
     ob_start();
   if(!isset($_SESSION['system'])){
