@@ -19,10 +19,11 @@ header("location:index.php?page=home");
 
 ?>
 <?php include 'header.php' ?>
-<body class="hold-transition login-page bg-black">
+<body class="hold-transition login-page bg-blue">
 <div class="login-box">
   <div class="login-logo">
-    <a href="#" class="text-white"><b><?php echo $_SESSION['system']['name'] ?></b></a>
+  <img style="width: 40%;" src="assets\uploads\LIDL logo.png" alt="Lidl logo">
+  <!-- <a href="#" class="text-white"><b><?php echo $_SESSION['system']['name'] ?></b></a> -->
   </div>
   <!-- /.login-logo -->
   <div class="card">
@@ -36,7 +37,7 @@ header("location:index.php?page=home");
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" name="password" required placeholder="Password">
+          <input type="password" class="form-control" name="password" required placeholder="Heslo">
           <div class="input-group-append">
             <div class="input-group-text">                
             </div>
