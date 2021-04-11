@@ -65,7 +65,7 @@ if($_SESSION['login_type'] != 1)
                 $tprog = $conn->query("SELECT * FROM task_list where project_id = {$row['id']}")->num_rows;
                 $cprog = $conn->query("SELECT * FROM task_list where project_id = {$row['id']} and status = 3")->num_rows;
                 $prog = $tprog > 0 ? ($cprog/$tprog) * 100 : 0;
-                $prog = $prog > 0 ?  number_format($prog,2) : $prog;
+                $prog = $prog > 0 ?  number_format($prog,0) : $prog;
                 $prod = $conn->query("SELECT * FROM user_productivity where project_id = {$row['id']}")->num_rows;
                 if($row['status'] == 0 && strtotime(date('Y-m-d')) >= strtotime($row['start_date'])):
                 if($prod  > 0  || $cprog > 0)
@@ -95,7 +95,7 @@ if($_SESSION['login_type'] != 1)
                               </div>
                           </div>
                           <small>
-                              <?php echo $prog ?>% Splnené
+                              Splnené na <?php echo $prog?>%
                           </small>
                       </td>
                       <td class="project-state">
