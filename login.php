@@ -22,25 +22,23 @@ header("location:index.php?page=home");
 <body class="hold-transition login-page bg-black">
 <div class="login-box">
   <div class="login-logo">
-    <a href="#" class="text-white"><b><?php echo $_SESSION['system']['name'] ?> - Admin</b></a>
+    <a href="#" class="text-white"><b><?php echo $_SESSION['system']['name'] ?></b></a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
-    <div class="card-body login-card-body">
+    <div class="card-body login-card-body" style="border-radius: 5px;">
       <form action="" id="login-form">
         <div class="input-group mb-3">
           <input type="email" class="form-control" name="email" required placeholder="Email">
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
             </div>
           </div>
         </div>
         <div class="input-group mb-3">
           <input type="password" class="form-control" name="password" required placeholder="Password">
           <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
+            <div class="input-group-text">                
             </div>
           </div>
         </div>
@@ -55,7 +53,7 @@ header("location:index.php?page=home");
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Prihlásiť sa</button>
+            <button type="submit" class="btn btn-primary btn-block" >Prihlásiť sa</button>
           </div>
           <!-- /.col -->
         </div>
