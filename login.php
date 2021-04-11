@@ -22,7 +22,7 @@ header("location:index.php?page=home");
 <body class="hold-transition login-page bg-blue">
 <div class="login-box">
   <div class="login-logo">
-  <img style="width: 40%;" src="assets\uploads\LIDL logo.png" alt="Lidl logo">
+  <img style="width: 50%; margin-bottom: 10px;" src="assets\uploads\Lidl_WHITE.png" alt="Lidl logo">
   <!-- <a href="#" class="text-white"><b><?php echo $_SESSION['system']['name'] ?></b></a> -->
   </div>
   <!-- /.login-logo -->

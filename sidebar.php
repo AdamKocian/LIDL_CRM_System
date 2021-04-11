@@ -2,7 +2,7 @@
     <div class="dropdown">
 
       <a href="./" class="brand-link">
-        <img style="display: block; margin-left: auto; margin-right: auto; width: 50%;" src="assets\uploads\LIDL logo.png" alt="Lidl logo">
+        <img style="display: block; margin-left: auto; margin-right: auto; width: 50%;" src="assets\uploads\Lidl_WHITE.png" alt="Lidl logo">
       </a>
 
     </div>
