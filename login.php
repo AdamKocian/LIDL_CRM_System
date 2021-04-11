@@ -45,7 +45,7 @@ header("location:index.php?page=home");
           </div>
         </div>
         <div class="row">
-          <div class="col-8">
+          <div class="col-6">
             <div class="icheck-primary">
               <input type="checkbox" id="remember">
               <label for="remember">
@@ -54,7 +54,7 @@ header("location:index.php?page=home");
             </div>
           </div>
           <!-- /.col -->
-          <div class="col-4">
+          <div class="col-6">
             <button type="submit" class="btn btn-primary btn-block">Prihlásiť sa</button>
           </div>
           <!-- /.col -->
