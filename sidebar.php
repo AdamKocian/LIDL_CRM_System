@@ -13,9 +13,24 @@
             <a href="./" class="nav-link nav-home">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Dashboard
+                Ovládací panel
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./" class="nav-link nav-home">
+                  <i class="fas fa-angle-right nav-icon"></i>
+                  <p>Domov</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link tree-item">
+                  <i class="fas fa-angle-right nav-icon"></i>
+                  <p>Harmonogram</p>
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link nav-edit_project nav-view_project">
@@ -45,7 +60,7 @@
           <li class="nav-item">
             <a href="./index.php?page=task_list" class="nav-link nav-task_list">
               <i class="fas fa-tasks nav-icon"></i>
-              <p>Úloha</p>
+              <p>Úlohy</p>
             </a>
           </li>
           <?php if ($_SESSION['login_type'] != 3) : ?>
@@ -78,11 +93,17 @@
                     <p>Zoznam používateľov</p>
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a href="" class="nav-link tree-item">
+                    <i class="fas fa-angle-right nav-icon"></i>
+                    <p>Dovolenky</p>
+                  </a>
+                </li>
               </ul>
             </li>
           <?php endif; ?>
           <li class="nav-item">
-            <a style="position: relative; padding-top: 639px;">
+            <a style="position: relative; padding-top: 640px;">
           </li>
           <li class="nav-item">
             <a style="position: relative; padding-left: 26px; opacity: 0.5;" href="ajax.php?action=logout" class="nav-link">
