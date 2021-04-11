@@ -25,7 +25,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link tree-item">
+                <a href="./schedule-template-master" class="nav-link tree-item">
                   <i class="fas fa-angle-right nav-icon"></i>
                   <p>Harmonogram</p>
                 </a>
