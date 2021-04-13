@@ -601,7 +601,7 @@
 
 .direct-chat-contacts {
   transform: translate(101%, 0);
-  background: #222222;
+  background: #003565;
   bottom: 0;
   color: #ffffff;
   height: 250px;
@@ -682,13 +682,13 @@
 }
 
 .direct-chat-primary .right > .direct-chat-text {
-  background: #3393FF;
-  border-color: #3393FF;
+  background: #0050AA;
+  border-color: #0050AA;
   color: #ffffff;
 }
 
 .direct-chat-primary .right > .direct-chat-text::after, .direct-chat-primary .right > .direct-chat-text::before {
-  border-left-color: #3393FF;
+  border-left-color: #0050AA;
 }
 
 .direct-chat-secondary .right > .direct-chat-text {
@@ -752,13 +752,13 @@
 }
 
 .direct-chat-dark .right > .direct-chat-text {
-  background: #222222;
-  border-color: #222222;
+  background: #003565;
+  border-color: #003565;
   color: #ffffff;
 }
 
 .direct-chat-dark .right > .direct-chat-text::after, .direct-chat-dark .right > .direct-chat-text::before {
-  border-left-color: #222222;
+  border-left-color: #003565;
 }
 
 .direct-chat-lightblue .right > .direct-chat-text {
@@ -822,13 +822,13 @@
 }
 
 .direct-chat-blue .right > .direct-chat-text {
-  background: #3393FF;
-  border-color: #3393FF;
+  background: #0050AA;
+  border-color: #0050AA;
   color: #ffffff;
 }
 
 .direct-chat-blue .right > .direct-chat-text::after, .direct-chat-blue .right > .direct-chat-text::before {
-  border-left-color: #3393FF;
+  border-left-color: #0050AA;
 }
 
 .direct-chat-indigo .right > .direct-chat-text {
@@ -942,13 +942,13 @@
 }
 
 .direct-chat-gray-dark .right > .direct-chat-text {
-  background: #222222;
-  border-color: #222222;
+  background: #003565;
+  border-color: #003565;
   color: #ffffff;
 }
 
 .direct-chat-gray-dark .right > .direct-chat-text::after, .direct-chat-gray-dark .right > .direct-chat-text::before {
-  border-left-color: #222222;
+  border-left-color: #003565;
 }
 
 .users-list {

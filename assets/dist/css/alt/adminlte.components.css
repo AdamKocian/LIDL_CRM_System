@@ -175,7 +175,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-switch.custom-switch-off-primary .custom-control-input ~ .custom-control-label::before {
-  background: #3393FF;
+  background: #0050AA;
   border-color: #004a99;
 }
 
@@ -188,7 +188,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-switch.custom-switch-on-primary .custom-control-input:checked ~ .custom-control-label::before {
-  background: #3393FF;
+  background: #0050AA;
   border-color: #004a99;
 }
 
@@ -357,7 +357,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-switch.custom-switch-off-dark .custom-control-input ~ .custom-control-label::before {
-  background: #222222;
+  background: #003565;
   border-color: #060708;
 }
 
@@ -370,7 +370,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-switch.custom-switch-on-dark .custom-control-input:checked ~ .custom-control-label::before {
-  background: #222222;
+  background: #003565;
   border-color: #060708;
 }
 
@@ -539,7 +539,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-switch.custom-switch-off-blue .custom-control-input ~ .custom-control-label::before {
-  background: #3393FF;
+  background: #0050AA;
   border-color: #004a99;
 }
 
@@ -552,7 +552,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-switch.custom-switch-on-blue .custom-control-input:checked ~ .custom-control-label::before {
-  background: #3393FF;
+  background: #0050AA;
   border-color: #004a99;
 }
 
@@ -851,7 +851,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-switch.custom-switch-off-gray-dark .custom-control-input ~ .custom-control-label::before {
-  background: #222222;
+  background: #003565;
   border-color: #060708;
 }
 
@@ -864,7 +864,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-switch.custom-switch-on-gray-dark .custom-control-input:checked ~ .custom-control-label::before {
-  background: #222222;
+  background: #003565;
   border-color: #060708;
 }
 
@@ -893,7 +893,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-range.custom-range-primary::-webkit-slider-thumb {
-  background-color: #3393FF;
+  background-color: #0050AA;
 }
 
 .custom-range.custom-range-primary::-webkit-slider-thumb:active {
@@ -901,7 +901,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-range.custom-range-primary::-moz-range-thumb {
-  background-color: #3393FF;
+  background-color: #0050AA;
 }
 
 .custom-range.custom-range-primary::-moz-range-thumb:active {
@@ -909,7 +909,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-range.custom-range-primary::-ms-thumb {
-  background-color: #3393FF;
+  background-color: #0050AA;
 }
 
 .custom-range.custom-range-primary::-ms-thumb:active {
@@ -1173,7 +1173,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-range.custom-range-dark::-webkit-slider-thumb {
-  background-color: #222222;
+  background-color: #003565;
 }
 
 .custom-range.custom-range-dark::-webkit-slider-thumb:active {
@@ -1181,7 +1181,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-range.custom-range-dark::-moz-range-thumb {
-  background-color: #222222;
+  background-color: #003565;
 }
 
 .custom-range.custom-range-dark::-moz-range-thumb:active {
@@ -1189,7 +1189,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-range.custom-range-dark::-ms-thumb {
-  background-color: #222222;
+  background-color: #003565;
 }
 
 .custom-range.custom-range-dark::-ms-thumb:active {
@@ -1453,7 +1453,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-range.custom-range-blue::-webkit-slider-thumb {
-  background-color: #3393FF;
+  background-color: #0050AA;
 }
 
 .custom-range.custom-range-blue::-webkit-slider-thumb:active {
@@ -1461,7 +1461,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-range.custom-range-blue::-moz-range-thumb {
-  background-color: #3393FF;
+  background-color: #0050AA;
 }
 
 .custom-range.custom-range-blue::-moz-range-thumb:active {
@@ -1469,7 +1469,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-range.custom-range-blue::-ms-thumb {
-  background-color: #3393FF;
+  background-color: #0050AA;
 }
 
 .custom-range.custom-range-blue::-ms-thumb:active {
@@ -1933,7 +1933,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-range.custom-range-gray-dark::-webkit-slider-thumb {
-  background-color: #222222;
+  background-color: #003565;
 }
 
 .custom-range.custom-range-gray-dark::-webkit-slider-thumb:active {
@@ -1941,7 +1941,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-range.custom-range-gray-dark::-moz-range-thumb {
-  background-color: #222222;
+  background-color: #003565;
 }
 
 .custom-range.custom-range-gray-dark::-moz-range-thumb:active {
@@ -1949,7 +1949,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-range.custom-range-gray-dark::-ms-thumb {
-  background-color: #222222;
+  background-color: #003565;
 }
 
 .custom-range.custom-range-gray-dark::-ms-thumb:active {
@@ -2008,7 +2008,7 @@ textarea.form-control.is-warning {
 }
 
 .card-primary:not(.card-outline) > .card-header {
-  background-color: #3393FF;
+  background-color: #0050AA;
 }
 
 .card-primary:not(.card-outline) > .card-header,
@@ -2021,7 +2021,7 @@ textarea.form-control.is-warning {
 }
 
 .card-primary.card-outline {
-  border-top: 3px solid #3393FF;
+  border-top: 3px solid #0050AA;
 }
 
 .card-primary.card-outline-tabs > .card-header a:hover {
@@ -2029,7 +2029,7 @@ textarea.form-control.is-warning {
 }
 
 .card-primary.card-outline-tabs > .card-header a.active {
-  border-top: 3px solid #3393FF;
+  border-top: 3px solid #0050AA;
 }
 
 .bg-primary .btn-tool,
@@ -2505,7 +2505,7 @@ textarea.form-control.is-warning {
 }
 
 .card-dark:not(.card-outline) > .card-header {
-  background-color: #222222;
+  background-color: #003565;
 }
 
 .card-dark:not(.card-outline) > .card-header,
@@ -2518,7 +2518,7 @@ textarea.form-control.is-warning {
 }
 
 .card-dark.card-outline {
-  border-top: 3px solid #222222;
+  border-top: 3px solid #003565;
 }
 
 .card-dark.card-outline-tabs > .card-header a:hover {
@@ -2526,7 +2526,7 @@ textarea.form-control.is-warning {
 }
 
 .card-dark.card-outline-tabs > .card-header a.active {
-  border-top: 3px solid #222222;
+  border-top: 3px solid #003565;
 }
 
 .bg-dark .btn-tool,
@@ -3002,7 +3002,7 @@ textarea.form-control.is-warning {
 }
 
 .card-blue:not(.card-outline) > .card-header {
-  background-color: #3393FF;
+  background-color: #0050AA;
 }
 
 .card-blue:not(.card-outline) > .card-header,
@@ -3015,7 +3015,7 @@ textarea.form-control.is-warning {
 }
 
 .card-blue.card-outline {
-  border-top: 3px solid #3393FF;
+  border-top: 3px solid #0050AA;
 }
 
 .card-blue.card-outline-tabs > .card-header a:hover {
@@ -3023,7 +3023,7 @@ textarea.form-control.is-warning {
 }
 
 .card-blue.card-outline-tabs > .card-header a.active {
-  border-top: 3px solid #3393FF;
+  border-top: 3px solid #0050AA;
 }
 
 .bg-blue .btn-tool,
@@ -3854,7 +3854,7 @@ textarea.form-control.is-warning {
 }
 
 .card-gray-dark:not(.card-outline) > .card-header {
-  background-color: #222222;
+  background-color: #003565;
 }
 
 .card-gray-dark:not(.card-outline) > .card-header,
@@ -3867,7 +3867,7 @@ textarea.form-control.is-warning {
 }
 
 .card-gray-dark.card-outline {
-  border-top: 3px solid #222222;
+  border-top: 3px solid #003565;
 }
 
 .card-gray-dark.card-outline-tabs > .card-header a:hover {
@@ -3875,7 +3875,7 @@ textarea.form-control.is-warning {
 }
 
 .card-gray-dark.card-outline-tabs > .card-header a.active {
-  border-top: 3px solid #222222;
+  border-top: 3px solid #003565;
 }
 
 .bg-gray-dark .btn-tool,
@@ -4291,7 +4291,7 @@ html.maximized-card {
 }
 
 .todo-list .primary {
-  border-left-color: #3393FF;
+  border-left-color: #0050AA;
 }
 
 .todo-list .secondary {
@@ -4319,7 +4319,7 @@ html.maximized-card {
 }
 
 .todo-list .dark {
-  border-left-color: #222222;
+  border-left-color: #003565;
 }
 
 .todo-list .lightblue {
@@ -4347,7 +4347,7 @@ html.maximized-card {
 }
 
 .todo-list .blue {
-  border-left-color: #3393FF;
+  border-left-color: #0050AA;
 }
 
 .todo-list .indigo {
@@ -4395,7 +4395,7 @@ html.maximized-card {
 }
 
 .todo-list .gray-dark {
-  border-left-color: #222222;
+  border-left-color: #003565;
 }
 
 .todo-list .handle {
@@ -4426,7 +4426,7 @@ html.maximized-card {
 
 .modal-content.bg-warning .modal-header,
 .modal-content.bg-warning .modal-footer {
-  border-color: #222222;
+  border-color: #003565;
 }
 
 .modal-content.bg-primary .close, .modal-content.bg-secondary .close, .modal-content.bg-info .close, .modal-content.bg-danger .close, .modal-content.bg-success .close {
@@ -4978,7 +4978,7 @@ html.maximized-card {
 
 .alert-primary {
   color: #ffffff;
-  background: #3393FF;
+  background: #0050AA;
   border-color: #006fe6;
 }
 
@@ -5118,7 +5118,7 @@ html.maximized-card {
 
 .alert-dark {
   color: #ffffff;
-  background: #222222;
+  background: #003565;
   border-color: #292d32;
 }
 
