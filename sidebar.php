@@ -7,8 +7,8 @@
 
     </div>
     <div style="margin-top: 78px;" class="sidebar pb-4 mb-4">
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column nav-flat" data-widget="treeview" role="menu" data-accordion="false">
+      <nav class="mt-2 h-100">
+        <ul class="nav nav-pills nav-sidebar flex-column nav-flat h-100" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item dropdown">
             <a href="./" class="nav-link nav-home">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -102,11 +102,11 @@
               </ul>
             </li>
           <?php endif; ?>
-          <li class="nav-item">
-            <a style="position: relative; padding-top: 640px;">
+          <li class="nav-item mt-auto">
+            <a style="position: relative;">
           </li>
           <li class="nav-item">
-            <a style="position: relative; padding-left: 26px; opacity: 0.5;" href="ajax.php?action=logout" class="nav-link">
+            <a style="position: relative; padding-left: 26px; opacity: 0.5; margin-bottom: 10px;" href="ajax.php?action=logout" class="nav-link">
               <i class="fa fa-power-off"></i>
               <p>Odhlásiť sa</p>
             </a>
