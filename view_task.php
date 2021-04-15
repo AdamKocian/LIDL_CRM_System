@@ -1,8 +1,8 @@
-<?php 
+<?php
 include 'db_connect.php';
-if(isset($_GET['id'])){
-	$qry = $conn->query("SELECT * FROM task_list where id = ".$_GET['id'])->fetch_array();
-	foreach($qry as $k => $v){
+if (isset($_GET['id'])) {
+	$qry = $conn->query("SELECT * FROM task_list where id = " . $_GET['id'])->fetch_array();
+	foreach ($qry as $k => $v) {
 		$$k = $v;
 	}
 }
@@ -15,15 +15,15 @@ if(isset($_GET['id'])){
 	<dl>
 		<dt><b class="border-bottom border-primary">Stav</b></dt>
 		<dd>
-			<?php 
-        	if($status == 1){
-		  		echo "<span class='badge badge-secondary'>Čaká sa</span>";
-        	}elseif($status == 2){
-		  		echo "<span class='badge badge-primary'>Prebieha</span>";
-        	}elseif($status == 3){
-		  		echo "<span class='badge badge-success'>Splnené</span>";
-        	}
-        	?>
+			<?php
+			if ($status == 1) {
+				echo "<span class='badge badge-secondary'>Čaká sa</span>";
+			} elseif ($status == 2) {
+				echo "<span class='badge badge-primary'>Prebieha</span>";
+			} elseif ($status == 3) {
+				echo "<span class='badge badge-success'>Splnené</span>";
+			}
+			?>
 		</dd>
 	</dl>
 	<dl>

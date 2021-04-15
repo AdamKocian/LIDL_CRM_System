@@ -1,8 +1,8 @@
-<?php 
+<?php
 include 'db_connect.php';
-if(isset($_GET['id'])){
-	$qry = $conn->query("SELECT * FROM user_productivity where id = ".$_GET['id'])->fetch_array();
-	foreach($qry as $k => $v){
+if (isset($_GET['id'])) {
+	$qry = $conn->query("SELECT * FROM user_productivity where id = " . $_GET['id'])->fetch_array();
+	foreach ($qry as $k => $v) {
 		$$k = $v;
 	}
 }
@@ -14,37 +14,37 @@ if(isset($_GET['id'])){
 		<div class="col-lg-12">
 			<div class="row">
 				<div class="col-md-5">
-					<?php if(!isset($_GET['tid'])): ?>
-					 <div class="form-group">
-		              <label for="" class="control-label">Manažér tímu</label>
-		              <select class="form-control form-control-sm select2" name="task_id">
-		              	<option></option>
-		              	<?php 
-		              	$tasks = $conn->query("SELECT * FROM task_list where project_id = {$_GET['pid']} order by task asc ");
-		              	while($row= $tasks->fetch_assoc()):
-		              	?>
-		              	<option value="<?php echo $row['id'] ?>" <?php echo isset($task_id) && $task_id == $row['id'] ? "selected" : '' ?>><?php echo ucwords($row['task']) ?></option>
-		              	<?php endwhile; ?>
-		              </select>
-		            </div>
-		            <?php else: ?>
-					<input type="hidden" name="task_id" value="<?php echo isset($_GET['tid']) ? $_GET['tid'] : '' ?>">
-		            <?php endif; ?>
+					<?php if (!isset($_GET['tid'])) : ?>
+						<div class="form-group">
+							<label for="" class="control-label">Manažér tímu</label>
+							<select class="form-control form-control-sm select2" name="task_id">
+								<option></option>
+								<?php
+								$tasks = $conn->query("SELECT * FROM task_list where project_id = {$_GET['pid']} order by task asc ");
+								while ($row = $tasks->fetch_assoc()) :
+								?>
+									<option value="<?php echo $row['id'] ?>" <?php echo isset($task_id) && $task_id == $row['id'] ? "selected" : '' ?>><?php echo ucwords($row['task']) ?></option>
+								<?php endwhile; ?>
+							</select>
+						</div>
+					<?php else : ?>
+						<input type="hidden" name="task_id" value="<?php echo isset($_GET['tid']) ? $_GET['tid'] : '' ?>">
+					<?php endif; ?>
 					<div class="form-group">
 						<label for="">Subject</label>
 						<input type="text" class="form-control form-control-sm" name="subject" value="<?php echo isset($subject) ? $subject : '' ?>" required>
 					</div>
 					<div class="form-group">
 						<label for="">Date</label>
-						<input type="date" class="form-control form-control-sm" name="date" value="<?php echo isset($date) ? date("Y-m-d",strtotime($date)) : '' ?>" required>
+						<input type="date" class="form-control form-control-sm" name="date" value="<?php echo isset($date) ? date("Y-m-d", strtotime($date)) : '' ?>" required>
 					</div>
 					<div class="form-group">
 						<label for="">Start Time</label>
-						<input type="time" class="form-control form-control-sm" name="start_time" value="<?php echo isset($start_time) ? date("H:i",strtotime("2020-01-01 ".$start_time)) : '' ?>" required>
+						<input type="time" class="form-control form-control-sm" name="start_time" value="<?php echo isset($start_time) ? date("H:i", strtotime("2020-01-01 " . $start_time)) : '' ?>" required>
 					</div>
 					<div class="form-group">
 						<label for="">End Time</label>
-						<input type="time" class="form-control form-control-sm" name="end_time" value="<?php echo isset($end_time) ? date("H:i",strtotime("2020-01-01 ".$end_time)) : '' ?>" required>
+						<input type="time" class="form-control form-control-sm" name="end_time" value="<?php echo isset($end_time) ? date("H:i", strtotime("2020-01-01 " . $end_time)) : '' ?>" required>
 					</div>
 				</div>
 				<div class="col-md-7">
@@ -61,44 +61,44 @@ if(isset($_GET['id'])){
 </div>
 
 <script>
-	$(document).ready(function(){
-	$('.summernote').summernote({
-        height: 200,
-        toolbar: [
-            [ 'style', [ 'style' ] ],
-            [ 'font', [ 'bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'clear'] ],
-            [ 'fontname', [ 'fontname' ] ],
-            [ 'fontsize', [ 'fontsize' ] ],
-            [ 'color', [ 'color' ] ],
-            [ 'para', [ 'ol', 'ul', 'paragraph', 'height' ] ],
-            [ 'table', [ 'table' ] ],
-            [ 'view', [ 'undo', 'redo', 'fullscreen', 'codeview', 'help' ] ]
-        ]
-    })
-     $('.select2').select2({
-	    placeholder:"Please select here",
-	    width: "100%"
-	  });
-     })
-    $('#manage-progress').submit(function(e){
-    	e.preventDefault()
-    	start_load()
-    	$.ajax({
-    		url:'ajax.php?action=save_progress',
+	$(document).ready(function() {
+		$('.summernote').summernote({
+			height: 200,
+			toolbar: [
+				['style', ['style']],
+				['font', ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'clear']],
+				['fontname', ['fontname']],
+				['fontsize', ['fontsize']],
+				['color', ['color']],
+				['para', ['ol', 'ul', 'paragraph', 'height']],
+				['table', ['table']],
+				['view', ['undo', 'redo', 'fullscreen', 'codeview', 'help']]
+			]
+		})
+		$('.select2').select2({
+			placeholder: "Please select here",
+			width: "100%"
+		});
+	})
+	$('#manage-progress').submit(function(e) {
+		e.preventDefault()
+		start_load()
+		$.ajax({
+			url: 'ajax.php?action=save_progress',
 			data: new FormData($(this)[0]),
-		    cache: false,
-		    contentType: false,
-		    processData: false,
-		    method: 'POST',
-		    type: 'POST',
-			success:function(resp){
-				if(resp == 1){
-					alert_toast('Data successfully saved',"success");
-					setTimeout(function(){
+			cache: false,
+			contentType: false,
+			processData: false,
+			method: 'POST',
+			type: 'POST',
+			success: function(resp) {
+				if (resp == 1) {
+					alert_toast('Data successfully saved', "success");
+					setTimeout(function() {
 						location.reload()
-					},1500)
+					}, 1500)
 				}
 			}
-    	})
-    })
+		})
+	})
 </script>
