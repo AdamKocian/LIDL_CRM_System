@@ -87,7 +87,7 @@
     	<div class="card-footer border-top border-info">
     		<div class="d-flex w-100 justify-content-center align-items-center">
     			<button class="btn btn-flat  bg-gradient-primary mx-2" form="manage-project">Uložiť</button>
-    			<button class="btn btn-flat bg-gradient-secondary mx-2" type="button" onclick="location.href='index.php?page=project_list'">Zrušiť</button>
+    			<button class="btn btn-flat bg-gradient-secondary mx-2" type="button" onclick="location.href='index.php?page=team_list'">Zrušiť</button>
     		</div>
     	</div>
 	</div>
@@ -108,7 +108,7 @@
 				if(resp == 1){
 					alert_toast('Data successfully saved',"success");
 					setTimeout(function(){
-						location.href = 'index.php?page=project_list'
+						location.href = 'index.php?page=team_list'
 					},2000)
 				}
 			}

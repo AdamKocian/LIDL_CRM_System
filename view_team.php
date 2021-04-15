@@ -29,23 +29,23 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 					<div class="row">
 						<div class="col-sm-6">
 							<dl>
-								<dt><b class="border-bottom border-primary">Názov tímu</b></dt>
+								<dt><b class="border-primary">Názov tímu</b></dt>
 								<dd><?php echo ucwords($name) ?></dd>
-								<dt><b class="border-bottom border-primary">Popis</b></dt>
+								<dt><b class="border-primary">Popis</b></dt>
 								<dd><?php echo html_entity_decode($description) ?></dd>
 							</dl>
 						</div>
 						<div class="col-md-6">
 							<dl>
-								<dt><b class="border-bottom border-primary">Začiatok</b></dt>
+								<dt><b class="border-primary">Začiatok</b></dt>
 								<dd><?php echo date("F d, Y",strtotime($start_date)) ?></dd>
 							</dl>
 							<dl>
-								<dt><b class="border-bottom border-primary">Koniec</b></dt>
+								<dt><b class="border-primary">Koniec</b></dt>
 								<dd><?php echo date("F d, Y",strtotime($end_date)) ?></dd>
 							</dl>
 							<dl>
-								<dt><b class="border-bottom border-primary">Stav</b></dt>
+								<dt><b class="border-primary">Stav</b></dt>
 								<dd>
 									<?php
 									  if($stat[$status] =='ČAKÁ SA'){
@@ -65,7 +65,7 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 								</dd>
 							</dl>
 							<dl>
-								<dt><b class="border-bottom border-primary">Manažér</b></dt>
+								<dt><b class="border-primary">Manažér</b></dt>
 								<dd>
 									<?php if(isset($manager['id'])) : ?>
 									<div class="d-flex align-items-center mt-1">

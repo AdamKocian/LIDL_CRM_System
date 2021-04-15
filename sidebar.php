@@ -25,7 +25,8 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="harmonogram.php" class="nav-link tree-item">
+                <a href="./harmonogram/index.html" class="nav-link tree-item">
+                  <!-- harmonogram.php -->
                   <i class="fas fa-angle-right nav-icon"></i>
                   <p>Harmonogram</p>
                 </a>
@@ -43,14 +44,14 @@
             <ul class="nav nav-treeview">
               <?php if ($_SESSION['login_type'] != 3) : ?>
                 <li class="nav-item">
-                  <a href="./index.php?page=new_project" class="nav-link nav-new_project tree-item">
+                  <a href="./index.php?page=new_team" class="nav-link nav-new_project tree-item">
                     <i class="fas fa-angle-right nav-icon"></i>
                     <p>Pridať tím</p>
                   </a>
                 </li>
               <?php endif; ?>
               <li class="nav-item">
-                <a href="./index.php?page=project_list" class="nav-link nav-project_list tree-item">
+                <a href="./index.php?page=team_list" class="nav-link nav-project_list tree-item">
                   <i class="fas fa-angle-right nav-icon"></i>
                   <p>Zoznam tímov</p>
                 </a>

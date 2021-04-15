@@ -4,5 +4,5 @@ $qry = $conn->query("SELECT * FROM project_list where id = ".$_GET['id'])->fetch
 foreach($qry as $k => $v){
 	$$k = $v;
 }
-include 'new_project.php';
+include 'new_team.php';
 ?>

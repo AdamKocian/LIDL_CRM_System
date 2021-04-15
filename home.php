@@ -116,7 +116,7 @@ if($_SESSION['login_type'] != 1)
                           ?>
                       </td>
                       <td>
-                        <a class="btn btn-primary btn-sm" href="./index.php?page=view_project&id=<?php echo $row['id'] ?>">
+                        <a class="btn btn-primary btn-sm" href="./index.php?page=view_team&id=<?php echo $row['id'] ?>">
                               <i class="fas fa-folder">
                               </i>
                               Prehľad

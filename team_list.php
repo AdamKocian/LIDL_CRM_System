@@ -4,7 +4,7 @@
 		<div class="card-header">
             <?php if($_SESSION['login_type'] != 3): ?>
 			<div class="card-tools">
-				<a class="btn btn-block btn-sm btn-default btn-flat border-primary" href="./index.php?page=new_project"><i class="fa fa-plus"></i> Pridať nový tím</a>
+				<a class="btn btn-block btn-sm btn-default btn-flat border-primary" href="./index.php?page=new_team"><i class="fa fa-plus"></i> Pridať nový tím</a>
 			</div>
             <?php endif; ?>
 		</div>
@@ -89,10 +89,10 @@
 		                      Akcia
 		                    </button>
 		                    <div class="dropdown-menu" style="">
-		                      <a class="dropdown-item view_project" href="./index.php?page=view_project&id=<?php echo $row['id'] ?>" data-id="<?php echo $row['id'] ?>">Zobraziť</a>
+		                      <a class="dropdown-item view_project" href="./index.php?page=view_team&id=<?php echo $row['id'] ?>" data-id="<?php echo $row['id'] ?>">Zobraziť</a>
 		                      <div class="dropdown-divider"></div>
 		                      <?php if($_SESSION['login_type'] != 3): ?>
-		                      <a class="dropdown-item" href="./index.php?page=edit_project&id=<?php echo $row['id'] ?>">Upraviť</a>
+		                      <a class="dropdown-item" href="./index.php?page=edit_team&id=<?php echo $row['id'] ?>">Upraviť</a>
 		                      <div class="dropdown-divider"></div>
 		                      <a class="dropdown-item delete_project" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Vymazať</a>
 		                  <?php endif; ?>

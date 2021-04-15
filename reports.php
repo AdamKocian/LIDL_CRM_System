@@ -4,7 +4,7 @@
           <div class="card-header">
             <b>Progres tímu</b>
             <div class="card-tools">
-            	<button class="btn btn-flat btn-sm bg-gradient-success btn-success" id="print"><i class="fa fa-print"></i> Vytlačiť</button>
+            	<button class="btn btn-flat btn-sm bg-gradient-success btn-success" id="print"><i class="fa fa-print"></i> Vytlačiť alebo uložiť</button>
             </div>
           </div>
           <div class="card-body p-0">
@@ -20,9 +20,9 @@
                 <thead>
                   <th></th>
                   <th>Tím</th>
-                  <th>Úloha</th>
-                  <th>Dokončená úloha</th>
-                  <th>Trvanie</th>
+                  <th>Počet úloh</th>
+                  <th>Dokončených úloh</th>
+                  <th>Pracovný čas</th>
                   <th>Progres</th>
                   <th>Stav</th>
                 </thead>
@@ -41,7 +41,7 @@
                 $tprog = $conn->query("SELECT * FROM task_list where project_id = {$row['id']}")->num_rows;
                 $cprog = $conn->query("SELECT * FROM task_list where project_id = {$row['id']} and status = 3")->num_rows;
                 $prog = $tprog > 0 ? ($cprog/$tprog) * 100 : 0;
-                $prog = $prog > 0 ?  number_format($prog,2) : $prog;
+                $prog = $prog > 0 ?  number_format($prog,0) : $prog;
                 $prod = $conn->query("SELECT * FROM user_productivity where project_id = {$row['id']}")->num_rows;
                 $dur = $conn->query("SELECT sum(time_rendered) as duration FROM user_productivity where project_id = {$row['id']}");
                 $dur = $dur->num_rows > 0 ? $dur->fetch_assoc()['duration'] : 0;
@@ -74,7 +74,7 @@
                       	<?php echo number_format($cprog) ?>
                       </td>
                       <td class="text-center">
-                      	<?php echo number_format($dur).' Hr/s.' ?>
+                      	<?php echo number_format($dur).' Hodín' ?>
                       </td>
                       <td class="project_progress">
                           <div class="progress progress-sm">
@@ -82,7 +82,7 @@
                               </div>
                           </div>
                           <small>
-                              <?php echo $prog ?>% Splnené
+                          Splnené na <?php echo $prog ?>% 
                           </small>
                       </td>
                       <td class="project-state">
