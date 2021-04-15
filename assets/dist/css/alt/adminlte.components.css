@@ -253,7 +253,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-switch.custom-switch-off-info .custom-control-input ~ .custom-control-label::before {
-  background: #17a2b8;
+  background: #0050aa;
   border-color: #0c525d;
 }
 
@@ -266,7 +266,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-switch.custom-switch-on-info .custom-control-input:checked ~ .custom-control-label::before {
-  background: #17a2b8;
+  background: #0050aa;
   border-color: #0c525d;
 }
 
@@ -773,7 +773,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-switch.custom-switch-off-cyan .custom-control-input ~ .custom-control-label::before {
-  background: #17a2b8;
+  background: #0050aa;
   border-color: #0c525d;
 }
 
@@ -786,7 +786,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-switch.custom-switch-on-cyan .custom-control-input:checked ~ .custom-control-label::before {
-  background: #17a2b8;
+  background: #0050aa;
   border-color: #0c525d;
 }
 
@@ -1013,7 +1013,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-range.custom-range-info::-webkit-slider-thumb {
-  background-color: #17a2b8;
+  background-color: #0050aa;
 }
 
 .custom-range.custom-range-info::-webkit-slider-thumb:active {
@@ -1021,7 +1021,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-range.custom-range-info::-moz-range-thumb {
-  background-color: #17a2b8;
+  background-color: #0050aa;
 }
 
 .custom-range.custom-range-info::-moz-range-thumb:active {
@@ -1029,7 +1029,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-range.custom-range-info::-ms-thumb {
-  background-color: #17a2b8;
+  background-color: #0050aa;
 }
 
 .custom-range.custom-range-info::-ms-thumb:active {
@@ -1813,7 +1813,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-range.custom-range-cyan::-webkit-slider-thumb {
-  background-color: #17a2b8;
+  background-color: #0050aa;
 }
 
 .custom-range.custom-range-cyan::-webkit-slider-thumb:active {
@@ -1821,7 +1821,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-range.custom-range-cyan::-moz-range-thumb {
-  background-color: #17a2b8;
+  background-color: #0050aa;
 }
 
 .custom-range.custom-range-cyan::-moz-range-thumb:active {
@@ -1829,7 +1829,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-range.custom-range-cyan::-ms-thumb {
-  background-color: #17a2b8;
+  background-color: #0050aa;
 }
 
 .custom-range.custom-range-cyan::-ms-thumb:active {
@@ -2221,7 +2221,7 @@ textarea.form-control.is-warning {
 }
 
 .card-info:not(.card-outline) > .card-header {
-  background-color: #17a2b8;
+  background-color: #0050aa;
 }
 
 .card-info:not(.card-outline) > .card-header,
@@ -2234,7 +2234,7 @@ textarea.form-control.is-warning {
 }
 
 .card-info.card-outline {
-  border-top: 3px solid #17a2b8;
+  border-top: 3px solid #0050aa;
 }
 
 .card-info.card-outline-tabs > .card-header a:hover {
@@ -2242,7 +2242,7 @@ textarea.form-control.is-warning {
 }
 
 .card-info.card-outline-tabs > .card-header a.active {
-  border-top: 3px solid #17a2b8;
+  border-top: 3px solid #0050aa;
 }
 
 .bg-info .btn-tool,
@@ -3641,7 +3641,7 @@ textarea.form-control.is-warning {
 }
 
 .card-cyan:not(.card-outline) > .card-header {
-  background-color: #17a2b8;
+  background-color: #0050aa;
 }
 
 .card-cyan:not(.card-outline) > .card-header,
@@ -3654,7 +3654,7 @@ textarea.form-control.is-warning {
 }
 
 .card-cyan.card-outline {
-  border-top: 3px solid #17a2b8;
+  border-top: 3px solid #0050aa;
 }
 
 .card-cyan.card-outline-tabs > .card-header a:hover {
@@ -3662,7 +3662,7 @@ textarea.form-control.is-warning {
 }
 
 .card-cyan.card-outline-tabs > .card-header a.active {
-  border-top: 3px solid #17a2b8;
+  border-top: 3px solid #0050aa;
 }
 
 .bg-cyan .btn-tool,
@@ -4303,7 +4303,7 @@ html.maximized-card {
 }
 
 .todo-list .info {
-  border-left-color: #17a2b8;
+  border-left-color: #0050aa;
 }
 
 .todo-list .warning {
@@ -4383,7 +4383,7 @@ html.maximized-card {
 }
 
 .todo-list .cyan {
-  border-left-color: #17a2b8;
+  border-left-color: #0050aa;
 }
 
 .todo-list .white {
@@ -5038,7 +5038,7 @@ html.maximized-card {
 
 .alert-info {
   color: #ffffff;
-  background: #17a2b8;
+  background: #0050aa;
   border-color: #148ea1;
 }
 
