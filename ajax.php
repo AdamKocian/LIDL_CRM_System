@@ -21,7 +21,7 @@ if($action == 'logout'){
 		echo $logout;
 }
 if($action == 'logout2'){
-	$logout = $crud->logout2();
+	$logout = $crud->logout();
 	if($logout)
 		echo $logout;
 }
@@ -82,3 +82,4 @@ if($action == 'get_report'){
 		echo $get;
 }
 ob_end_flush();
+?>

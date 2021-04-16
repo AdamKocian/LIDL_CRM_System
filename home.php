@@ -78,15 +78,16 @@ if ($_SESSION['login_type'] == 2) {
               ?>
                 <tr>
                   <td>
-                    <?php echo $i++ ?>
+                    <a style="color: black;" href="./index.php?page=view_team&id=<?php echo $row['id'] ?>">
+                      <?php echo $i++ ?>
                   </td>
                   <td>
-                    <a>
+                    <a style="color: black;" href="./index.php?page=view_team&id=<?php echo $row['id'] ?>">
                       <?php echo ucwords($row['name']) ?>
                     </a>
                     <br>
                     <small>
-                      Do: <?php echo date("Y-m-d", strtotime($row['end_date'])) ?>
+                      Do <?php echo date("d.m.Y", strtotime($row['end_date'])) ?>
                     </small>
                   </td>
                   <td class="project_progress">
