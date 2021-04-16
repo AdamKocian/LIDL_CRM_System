@@ -25,7 +25,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="harmonogram.php" class="nav-link tree-item">
+                <a href="./index.php?page=harmonogram" class="nav-link tree-item">
                   <!-- harmonogram.php -->
                   <!-- ./harmonogram/index.html -->
                   <i class="fas fa-angle-right nav-icon"></i>

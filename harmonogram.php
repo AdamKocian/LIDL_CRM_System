@@ -1,15 +1,30 @@
-?php
-//index.php
-
-
-
-
+<?php include('db_connect.php') ?>
+<?php
+$twhere = "";
+if ($_SESSION['login_type'] != 1)
+  $twhere = "  ";
 ?>
+
+<?php
+
+$where = "";
+if ($_SESSION['login_type'] == 2) {
+  $where = " where manager_id = '{$_SESSION['login_id']}' ";
+} elseif ($_SESSION['login_type'] == 3) {
+  $where = " where concat('[',REPLACE(user_ids,',','],['),']') LIKE '%[{$_SESSION['login_id']}]%' ";
+}
+$where2 = "";
+if ($_SESSION['login_type'] == 2) {
+  $where2 = " where p.manager_id = '{$_SESSION['login_id']}' ";
+} elseif ($_SESSION['login_type'] == 3) {
+  $where2 = " where concat('[',REPLACE(p.user_ids,',','],['),']') LIKE '%[{$_SESSION['login_id']}]%' ";
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Jquery Fullcalandar Integration with PHP and Mysql</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -114,10 +129,7 @@
 </head>
 
 <body>
-    <br />
-    <h2 align="center"><a href="#">Jquery Fullcalandar Integration with PHP and Mysql</a></h2>
-    <br />
-    <div class="container">
+        <div class="container">
         <div id="calendar"></div>
     </div>
 </body>
@@ -132,7 +144,8 @@ load.php
 
 //load.php
 
-$connect = new PDO('mysql:host=localhost;dbname=testing', 'root', '');
+
+$connect = new mysqli('localhost', 'root', '', 'tms_db') or die("Could not connect to mysql" . mysqli_error($con));
 
 $data = array();
 

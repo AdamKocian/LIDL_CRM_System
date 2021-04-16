@@ -5,11 +5,10 @@ if ($_SESSION['login_type'] != 1)
   $twhere = "  ";
 ?>
 
-<div style="font-size: 26px;" class="col-12">
+<div style="font-size: 26px; margin-top: 15px; margin-bottom: 20px;" class="col-12">
   Vitaj späť!<br><b><?php echo $_SESSION['login_name'] ?></b>
 </div>
 
-<hr>
 <?php
 
 $where = "";
