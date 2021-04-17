@@ -2,22 +2,22 @@
 <?php
 $twhere = "";
 if ($_SESSION['login_type'] != 1)
-  $twhere = "  ";
+    $twhere = "  ";
 ?>
 
 <?php
 
 $where = "";
 if ($_SESSION['login_type'] == 2) {
-  $where = " where manager_id = '{$_SESSION['login_id']}' ";
+    $where = " where manager_id = '{$_SESSION['login_id']}' ";
 } elseif ($_SESSION['login_type'] == 3) {
-  $where = " where concat('[',REPLACE(user_ids,',','],['),']') LIKE '%[{$_SESSION['login_id']}]%' ";
+    $where = " where concat('[',REPLACE(user_ids,',','],['),']') LIKE '%[{$_SESSION['login_id']}]%' ";
 }
 $where2 = "";
 if ($_SESSION['login_type'] == 2) {
-  $where2 = " where p.manager_id = '{$_SESSION['login_id']}' ";
+    $where2 = " where p.manager_id = '{$_SESSION['login_id']}' ";
 } elseif ($_SESSION['login_type'] == 3) {
-  $where2 = " where concat('[',REPLACE(p.user_ids,',','],['),']') LIKE '%[{$_SESSION['login_id']}]%' ";
+    $where2 = " where concat('[',REPLACE(p.user_ids,',','],['),']') LIKE '%[{$_SESSION['login_id']}]%' ";
 }
 ?>
 
@@ -129,7 +129,7 @@ if ($_SESSION['login_type'] == 2) {
 </head>
 
 <body>
-        <div class="container">
+    <div class="container">
         <div id="calendar"></div>
     </div>
 </body>
@@ -137,7 +137,7 @@ if ($_SESSION['login_type'] == 2) {
 </html>
 
 
-load.php
+<!-- load.php -->
 
 
 <?php
@@ -168,4 +168,6 @@ foreach ($result as $row) {
 
 echo json_encode($data);
 
+
+// https://www.webslesson.info/2017/12/jquery-fullcalandar-integration-with-php-and-mysql.html
 ?>
