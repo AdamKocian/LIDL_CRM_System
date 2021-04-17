@@ -35,13 +35,13 @@ if ($_SESSION['login_type'] == 2) {
             margin: 10px auto;
         }
     </style>
-    <link href='https://unpkg.com/@fullcalendar/core@4.4.1/main.min.css' rel='stylesheet' />
-    <link href='https://unpkg.com/@fullcalendar/daygrid@4.4.1/main.min.css' rel='stylesheet' />
-    <link href='https://unpkg.com/@fullcalendar/timegrid@4.4.1/main.min.css' rel='stylesheet' />
-    <script src='https://unpkg.com/@fullcalendar/core@4.4.1/main.min.js'></script>
-    <script src='https://unpkg.com/@fullcalendar/interaction@4.4.0/main.min.js'></script>
-    <script src='https://unpkg.com/@fullcalendar/daygrid@4.4.1/main.min.js'></script>
-    <script src='https://unpkg.com/@fullcalendar/timegrid@4.4.1/main.min.js'></script>
+    <link href="./harmonogram/core@4.4.1/main.min.css" rel="stylesheet" />
+    <link href="./harmonogram/daygrid@4.4.1/main.min.css" rel="stylesheet" />
+    <link href="./harmonogram/timegrid@4.4.1/main.min.css" rel="stylesheet" />
+    <script src="./harmonogram/core@4.4.1/main.min.js"></script>
+    <script src="./harmonogram/interaction@4.4.1/main.min.js"></script>
+    <script src="./harmonogram/daygrid@4.4.1/main.min.js"></script>
+    <script src="./harmonogram/timegrid@4.4.1/main.min.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
