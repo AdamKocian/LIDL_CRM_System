@@ -203,12 +203,12 @@ a[data-goto]:hover {
     font-size: .85em;
     line-height: 1.4;
     border-radius: 3px;
-    border: 1px solid #3788d8
+    border: 1px solid #0050AA
 }
 
 .fc-event,
 .fc-event-dot {
-    background-color: #3788d8
+    background-color: #0050AA
 }
 
 .fc-event,
@@ -555,7 +555,7 @@ a.fc-more:hover {
 
 .fc-button-primary:hover {
     color: #fff;
-    background-color: #1e2b37;
+    background-color: #003565;
     border-color: #003565
 }
 
@@ -574,7 +574,7 @@ a.fc-more:hover {
 .fc-button-primary:not(:disabled):active {
     color: #fff;
     background-color: #003565;
-    border-color: #151e27
+    border-color: #003565
 }
 
 .fc-button-primary:not(:disabled).fc-button-active:focus,
