@@ -69,7 +69,7 @@
             <li class="nav-item">
               <a href="./index.php?page=reports" class="nav-link nav-reports">
                 <i class="fas fa-th-list nav-icon"></i>
-                <p>Report</p>
+                <p>Reporty</p>
               </a>
             </li>
           <?php endif; ?>
@@ -96,7 +96,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="" class="nav-link tree-item">
+                  <a href="./index.php?page=vacations" class="nav-link tree-item">
                     <i class="fas fa-angle-right nav-icon"></i>
                     <p>Dovolenky</p>
                   </a>

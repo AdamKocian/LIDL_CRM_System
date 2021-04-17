@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="shortcut icon" type="image/png" href="assets\uploads\Favicon.svg" />
 <?php session_start() ?>
 <?php
 if (!isset($_SESSION['login_id']))
