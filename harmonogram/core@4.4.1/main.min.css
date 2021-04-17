@@ -549,14 +549,14 @@ a.fc-more:hover {
 
 .fc-button-primary {
     color: #fff;
-    background-color: #2C3E50;
-    border-color: #2C3E50
+    background-color: #0050aa;
+    border-color: #0050aa
 }
 
 .fc-button-primary:hover {
     color: #fff;
     background-color: #1e2b37;
-    border-color: #1a252f
+    border-color: #003565
 }
 
 .fc-button-primary:focus {
@@ -566,14 +566,14 @@ a.fc-more:hover {
 
 .fc-button-primary:disabled {
     color: #fff;
-    background-color: #2C3E50;
-    border-color: #2C3E50
+    background-color: #0050aa;
+    border-color: #0050aa
 }
 
 .fc-button-primary:not(:disabled).fc-button-active,
 .fc-button-primary:not(:disabled):active {
     color: #fff;
-    background-color: #1a252f;
+    background-color: #003565;
     border-color: #151e27
 }
 
