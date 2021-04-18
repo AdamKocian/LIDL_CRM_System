@@ -51,6 +51,7 @@ if ($_SESSION['login_type'] == 2) {
                 plugins: ['interaction', 'dayGrid', 'timeGrid'],
                 defaultView: 'dayGridMonth',
                 defaultDate: '2020-05-07',
+                nowIndicator: 'true',
                 header: {
                     left: 'prev,next today',
                     center: 'title',
