@@ -115,10 +115,10 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 		<div class="col-md-8">
 			<div class="card card-outline card-primary">
 				<div class="card-header">
-					<span><b>Úlohy</b></span>
+					<span><b>Ciele tímu</b></span>
 					<?php if ($_SESSION['login_type'] != 3) : ?>
 						<div class="card-tools">
-							<button class="btn btn-primary bg-gradient-primary btn-sm" type="button" id="new_task"><i class="fa fa-plus"></i> Pridať úlohu</button>
+							<button class="btn btn-primary bg-gradient-primary btn-sm" type="button" id="new_task"><i class="fa fa-plus"></i> Pridať cieľ</button>
 						</div>
 					<?php endif; ?>
 				</div>
@@ -188,9 +188,9 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-header">
-					<b>Aktivity členov</b>
+					<b>Úlohy členov</b>
 					<div class="card-tools">
-						<button class="btn btn-primary bg-gradient-primary btn-sm" type="button" id="new_productivity"><i class="fa fa-plus"></i> Pridať aktivitu</button>
+						<button class="btn btn-primary bg-gradient-primary btn-sm" type="button" id="new_productivity"><i class="fa fa-plus"></i> Pridať úlohu</button>
 					</div>
 				</div>
 				<div class="card-body">
