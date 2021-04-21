@@ -16,7 +16,7 @@ if (isset($_GET['id'])) {
 				<div class="col-md-5">
 					<?php if (!isset($_GET['tid'])) : ?>
 						<div class="form-group">
-							<label for="" class="control-label">Manažér tímu</label>
+							<label for="" class="control-label">Cieľ tímu</label>
 							<select class="form-control form-control-sm select2" name="task_id">
 								<option></option>
 								<?php
@@ -31,25 +31,25 @@ if (isset($_GET['id'])) {
 						<input type="hidden" name="task_id" value="<?php echo isset($_GET['tid']) ? $_GET['tid'] : '' ?>">
 					<?php endif; ?>
 					<div class="form-group">
-						<label for="">Subject</label>
-						<input type="text" class="form-control form-control-sm" name="subject" value="<?php echo isset($subject) ? $subject : '' ?>" required>
+						<label for="">Názov</label>
+						<input type="text" class="form-control form-control-sm" name="title" value="<?php echo isset($title) ? $title : '' ?>" required>
 					</div>
 					<div class="form-group">
-						<label for="">Date</label>
+						<label for="">Dátum</label>
 						<input type="date" class="form-control form-control-sm" name="date" value="<?php echo isset($date) ? date("Y-m-d", strtotime($date)) : '' ?>" required>
 					</div>
 					<div class="form-group">
-						<label for="">Start Time</label>
-						<input type="time" class="form-control form-control-sm" name="start_time" value="<?php echo isset($start_time) ? date("H:i", strtotime("2020-01-01 " . $start_time)) : '' ?>" required>
+						<label for="">Začiatok</label>
+						<input type="time" class="form-control form-control-sm" name="start" value="<?php echo isset($start) ? date("H:i", strtotime("2020-01-01 " . $start)) : '' ?>" required>
 					</div>
 					<div class="form-group">
-						<label for="">End Time</label>
-						<input type="time" class="form-control form-control-sm" name="end_time" value="<?php echo isset($end_time) ? date("H:i", strtotime("2020-01-01 " . $end_time)) : '' ?>" required>
+						<label for="">Koniec</label>
+						<input type="time" class="form-control form-control-sm" name="end" value="<?php echo isset($end) ? date("H:i", strtotime("2020-01-01 " . $end)) : '' ?>" required>
 					</div>
 				</div>
 				<div class="col-md-7">
 					<div class="form-group">
-						<label for="">Popis progresu</label>
+						<label for="">Popis úlohy</label>
 						<textarea name="comment" id="" cols="30" rows="10" class="summernote form-control" required="">
 							<?php echo isset($comment) ? $comment : '' ?>
 						</textarea>
