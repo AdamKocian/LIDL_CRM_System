@@ -65,6 +65,8 @@ if ($_SESSION['login_type'] == 2) {
                 events: './calendar/load.php',
                 selectable: true,
                 selectHelper: true,
+                minTime: '07:00:00',
+                maxTime: '19:00:00',                
                 select: function(start, end, allDay) {
                     var title = prompt("Zadajte názov udalosti");
                     if (title) {
