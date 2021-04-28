@@ -1,12 +1,15 @@
 <?php
 
 //load.php
-
+session_start();
 $connect = new PDO('mysql:host=localhost;dbname=tms_db', 'root', '');
 
 $data = array();
 
-$query = "SELECT * FROM user_productivity ORDER BY id";
+$query = "
+SELECT * FROM user_productivity
+
+ WHERE project_id = " . $_SESSION['project_id'] . " ORDER BY id";
 
 $statement = $connect->prepare($query);
 

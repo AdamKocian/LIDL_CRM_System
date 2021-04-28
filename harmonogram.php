@@ -1,6 +1,15 @@
 <?php include('db_connect.php') ?>
 <?php
-$sql = "SELECT id, title, description, start, end, color FROM user_productivity";
+$sql = "SELECT id, title, description, start, end, project_id, color FROM user_productivity WHERE user_id = " . $_SESSION['login_id'];
+
+
+
+
+echo "user_id: " . $_SESSION['login_id']. "<br>";
+echo "project_id (tím): " . $_SESSION['project_id']. "<br>";
+
+
+
 
 
 
@@ -12,6 +21,8 @@ if ($_SESSION['login_type'] != 1)
 ?>
 
 <?php
+                        //var_dump($_SESSION);
+
 
 $where = "";
 if ($_SESSION['login_type'] == 2) {
@@ -51,6 +62,9 @@ if ($_SESSION['login_type'] == 2) {
     <script src="./calendar/locale-all.js"></script>
 
     <script>
+
+
+
         $(document).ready(function() {
             var calendar = $('#calendar').fullCalendar({
                 editable: true,
@@ -72,13 +86,20 @@ if ($_SESSION['login_type'] == 2) {
                     if (title) {
                         var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
                         var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
+                        var project_id = '<?php echo $_SESSION['project_id'];?>';
+                        var user_id = '<?php echo $_SESSION['login_id'];?>';
+                        console.log(project_id);
+                        console.log(user_id);
+
                         $.ajax({
                             url: "./calendar/insert.php",
                             type: "POST",
                             data: {
                                 title: title,
                                 start: start,
-                                end: end
+                                end: end,
+                                project_id: project_id,
+                                user_id: user_id
                             },
                             success: function() {
                                 calendar.fullCalendar('refetchEvents');
