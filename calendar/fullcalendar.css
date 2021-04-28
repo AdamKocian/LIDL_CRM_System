@@ -95,7 +95,7 @@ body .fc {
     font-size: 1em;
     text-align: center;
     overflow: hidden;
-    font-family: "Poppins", Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     /* don't allow browser text-selection */
     -webkit-touch-callout: none;
     -webkit-user-select: none;

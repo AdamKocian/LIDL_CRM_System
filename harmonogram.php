@@ -52,7 +52,6 @@ if ($_SESSION['login_type'] == 2) {
             margin: 10px auto;
         }
     </style>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link href="./calendar/fullcalendar.css" rel="stylesheet" />
     <link href="./calendar/bootstrap.css" rel="stylesheet" />
     <script src="./calendar/jquery.min.js"></script>
@@ -61,6 +60,11 @@ if ($_SESSION['login_type'] == 2) {
     <script src="./calendar/fullcalendar.min.js"></script>
     <script src="./calendar/locale-all.js"></script>
 
+    
+
+
+
+
     <script>
 
 
@@ -68,13 +72,13 @@ if ($_SESSION['login_type'] == 2) {
         $(document).ready(function() {
             var calendar = $('#calendar').fullCalendar({
                 editable: true,
-                locale: 'sk',
+                locale:	'sk',
                 nowIndicator: 'true',
                 header: {
                     left: 'prev,next today',
                     center: 'title',
                     right: 'month,agendaWeek,agendaDay'
-
+                    
                 },
                 events: './calendar/load.php',
                 selectable: true,
@@ -82,7 +86,7 @@ if ($_SESSION['login_type'] == 2) {
                 minTime: '07:00:00',
                 maxTime: '19:00:00',                
                 select: function(start, end, allDay) {
-                    var title = prompt("Zadajte názov udalosti");
+                    var title = prompt("Enter Event Title");
                     if (title) {
                         var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
                         var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
@@ -103,7 +107,7 @@ if ($_SESSION['login_type'] == 2) {
                             },
                             success: function() {
                                 calendar.fullCalendar('refetchEvents');
-                                alert("Udalosť bola úspešne pridaná");
+                                alert("Added Successfully");
                             }
                         })
                     }
@@ -125,7 +129,7 @@ if ($_SESSION['login_type'] == 2) {
                         },
                         success: function() {
                             calendar.fullCalendar('refetchEvents');
-                            alert('Aktualizácia udalosti');
+                            alert('Event Update');
                         }
                     })
                 },
@@ -146,13 +150,13 @@ if ($_SESSION['login_type'] == 2) {
                         },
                         success: function() {
                             calendar.fullCalendar('refetchEvents');
-                            alert("Udalosť bola aktualizovaná");
+                            alert("Event Updated");
                         }
                     });
                 },
 
                 eventClick: function(event) {
-                    if (confirm("Naozaj chcete odstrániť udalosť?")) {
+                    if (confirm("Are you sure you want to remove it?")) {
                         var id = event.id;
                         $.ajax({
                             url: "./calendar/delete.php",
@@ -162,7 +166,7 @@ if ($_SESSION['login_type'] == 2) {
                             },
                             success: function() {
                                 calendar.fullCalendar('refetchEvents');
-                                alert("Udalosť bola odstránená");
+                                alert("Event Removed");
                             }
                         })
                     }
