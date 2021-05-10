@@ -9,7 +9,6 @@ $system = $conn->query("SELECT * FROM system_settings")->fetch_array();
 foreach ($system as $k => $v) {
   $_SESSION['system'][$k] = $v;
 }
-// }
 ob_end_flush();
 ?>
 <?php
@@ -23,7 +22,6 @@ if (isset($_SESSION['login_id']))
   <div class="login-box">
     <div class="login-logo">
       <img style="width: 50%; margin-bottom: 10px;" src="assets\uploads\Lidl_WHITE.svg" alt="Lidl logo">
-      <?php echo $_SESSION['system']['name'] ?></b></a>
     </div>
     <div class="card">
       <div class="card-body login-card-body" style="border-radius: 5px;">
@@ -51,18 +49,14 @@ if (isset($_SESSION['login_id']))
                 </label>
               </div>
             </div>
-
             <div class="col-6">
               <button type="submit" class="btn btn-primary btn-block">Prihlásiť sa</button>
             </div>
-
           </div>
         </form>
       </div>
-
     </div>
   </div>
-
   <script>
     $(document).ready(function() {
       $('#login-form').submit(function(e) {
