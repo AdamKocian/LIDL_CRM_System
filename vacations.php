@@ -10,13 +10,6 @@
         <div class="card-body p-0">
             <div class="table-responsive" id="printable">
                 <table class="table m-0 table-bordered">
-                    <!--  <colgroup>
-                  <col width="5%">
-                  <col width="30%">
-                  <col width="35%">
-                  <col width="15%">
-                  <col width="15%">
-                </colgroup> -->
                     <thead>
 
                         <th class="text-center"></th>
@@ -27,32 +20,32 @@
 
                     </thead>
                     <tbody>
-					<?php
-					$i = 1;
-					$type = array('', "Admin", "Manažér tímu", "Zamestnanec");
-					$qry = $conn->query("SELECT *,concat(firstname,' ',lastname) as name FROM users order by concat(firstname,' ',lastname) asc");
-					while ($row = $qry->fetch_assoc()) :
-					?>
-						<tr>
-							<th class="text-center"><?php echo $i++ ?></th>
-							<td><b><?php echo ucwords($row['name']) ?></b></td>
-							<td><b><?php echo $row['email'] ?></b></td>
-							<td><b><?php echo $type[$row['type']] ?></b></td>
-							<td class="text-center">
-								<button type="button" class="btn btn-default btn-sm btn-flat border-info wave-effect text-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-									Upraviť
-								</button>
-								<div class="dropdown-menu" style="">
-									<a class="dropdown-item view_user" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Vidieť</a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="./index.php?page=edit_user&id=<?php echo $row['id'] ?>">Upraviť</a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item delete_user" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Vymazať</a>
-								</div>
-							</td>
-						</tr>
-					<?php endwhile; ?>
-				</tbody>
+                        <?php
+                        $i = 1;
+                        $type = array('', "Admin", "Manažér tímu", "Zamestnanec");
+                        $qry = $conn->query("SELECT *,concat(firstname,' ',lastname) as name FROM users order by concat(firstname,' ',lastname) asc");
+                        while ($row = $qry->fetch_assoc()) :
+                        ?>
+                            <tr>
+                                <th class="text-center"><?php echo $i++ ?></th>
+                                <td><b><?php echo ucwords($row['name']) ?></b></td>
+                                <td><b><?php echo $row['email'] ?></b></td>
+                                <td><b><?php echo $type[$row['type']] ?></b></td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-default btn-sm btn-flat border-info wave-effect text-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                        Upraviť
+                                    </button>
+                                    <div class="dropdown-menu" style="">
+                                        <a class="dropdown-item view_user" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Vidieť</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="./index.php?page=edit_user&id=<?php echo $row['id'] ?>">Upraviť</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item delete_user" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Vymazať</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php endwhile; ?>
+                    </tbody>
                 </table>
             </div>
         </div>

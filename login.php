@@ -23,9 +23,8 @@ if (isset($_SESSION['login_id']))
   <div class="login-box">
     <div class="login-logo">
       <img style="width: 50%; margin-bottom: 10px;" src="assets\uploads\Lidl_WHITE.svg" alt="Lidl logo">
-      <!-- <a href="#" class="text-white"><b><?php echo $_SESSION['system']['name'] ?></b></a> -->
+      <?php echo $_SESSION['system']['name'] ?></b></a>
     </div>
-    <!-- /.login-logo -->
     <div class="card">
       <div class="card-body login-card-body" style="border-radius: 5px;">
         <form action="" id="login-form">
@@ -52,18 +51,18 @@ if (isset($_SESSION['login_id']))
                 </label>
               </div>
             </div>
-            <!-- /.col -->
+
             <div class="col-6">
               <button type="submit" class="btn btn-primary btn-block">Prihlásiť sa</button>
             </div>
-            <!-- /.col -->
+
           </div>
         </form>
       </div>
-      <!-- /.login-card-body -->
+
     </div>
   </div>
-  <!-- /.login-box -->
+
   <script>
     $(document).ready(function() {
       $('#login-form').submit(function(e) {

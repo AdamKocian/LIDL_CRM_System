@@ -1,6 +1,4 @@
-<!-- Navbar -->
 <nav class="main-header navbar navbar-expand navbar-primary navbar-dark " style="flex-direction: unset;">
-  <!-- Left navbar links -->
   <ul class="navbar-nav">
     <?php if (isset($_SESSION['login_id'])) : ?>
       <li class="nav-item">

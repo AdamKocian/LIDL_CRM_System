@@ -29,7 +29,7 @@ if ($_SESSION['login_type'] != 1)
 ?>
 
 <?php
-                        //var_dump($_SESSION);
+//var_dump($_SESSION);
 
 
 $where = "";
@@ -70,9 +70,6 @@ if ($_SESSION['login_type'] == 2) {
     <script src="./calendar/locale-all.js"></script>
 
     <script>
-
-
-
         $(document).ready(function() {
             var calendar = $('#calendar').fullCalendar({
                 editable: true,
@@ -88,14 +85,14 @@ if ($_SESSION['login_type'] == 2) {
                 selectable: true,
                 selectHelper: true,
                 minTime: '07:00:00',
-                maxTime: '19:00:00',                
+                maxTime: '19:00:00',
                 select: function(start, end, allDay) {
                     var title = prompt("Zadajte názov udalosti");
                     if (title) {
                         var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
                         var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
-                        var project_id = '<?php echo $_SESSION['project_id'];?>';
-                        var user_id = '<?php echo $_SESSION['login_id'];?>';
+                        var project_id = '<?php echo $_SESSION['project_id']; ?>';
+                        var user_id = '<?php echo $_SESSION['login_id']; ?>';
                         console.log(project_id);
                         console.log(user_id);
 

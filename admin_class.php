@@ -263,7 +263,6 @@ class Action
 		if (isset($user_ids)) {
 			$data .= ", user_ids='" . implode(',', $user_ids) . "' ";
 		}
-		// echo $data;exit;
 		if (empty($id)) {
 			$save = $this->db->query("INSERT INTO project_list set $data");
 		} else {
@@ -331,7 +330,6 @@ class Action
 		$dur = abs(strtotime("2020-01-01 " . $end_time)) - abs(strtotime("2020-01-01 " . $start_time));
 		$dur = $dur / (60 * 60);
 		$data .= ", time_rendered='$dur' ";
-		// echo "INSERT INTO user_productivity set $data"; exit;
 		if (empty($id)) {
 			$data .= ", user_id={$_SESSION['login_id']} ";
 

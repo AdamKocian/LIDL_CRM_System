@@ -89,7 +89,6 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 				<div class="card-header">
 					<span><b>Členovia tímu</b></span>
 					<div class="card-tools">
-						<!-- <button class="btn btn-primary bg-gradient-primary btn-sm" type="button" id="manage_team">Manage</button> -->
 					</div>
 				</div>
 				<div class="card-body">
@@ -102,7 +101,6 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 								<li>
 									<img src="assets/uploads/<?php echo $row['avatar'] ?>" alt="Profilový obrázok">
 									<a class="users-list-name" href="javascript:void(0)"><?php echo ucwords($row['name']) ?></a>
-									<!-- <span class="users-list-date">Today</span> -->
 								</li>
 						<?php
 							endwhile;
@@ -225,18 +223,10 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 									<span> | </span>
 									<span>Koniec: <b><?php echo date('h:i A', strtotime($row['date'] . ' ' . $row['end'])) ?></b></span>
 								</span>
-
-
-
 							</div>
-							<!-- /.user-block -->
 							<div>
 								<?php echo html_entity_decode($row['comment']) ?>
 							</div>
-
-							<p>
-								<!-- <a href="#" class="link-black text-sm"><i class="fas fa-link mr-1"></i> Demo File 1 v2</a> -->
-							</p>
 						</div>
 						<div class="post clearfix"></div>
 					<?php endwhile; ?>

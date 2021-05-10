@@ -24,18 +24,18 @@ include 'header.php'
     <?php include 'topbar.php' ?>
     <?php include 'sidebar.php' ?>
 
-    <!-- Content Wrapper. Contains page content -->
+    <!-- Obsah stránky -->
     <div class="content-wrapper">
       <div class="toast" id="alert_toast" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-body text-white">
         </div>
       </div>
       <div id="toastsContainerTopRight" class="toasts-top-right fixed"></div>
-      <!-- Content Header (Page header) -->
+      <!-- Napis -->
       <div class="content-header">
         <div class="container-fluid">
 
-          <!-- Main content -->
+          <!-- Hlavný obsah -->
           <section class="content">
             <div class="container-fluid">
               <?php
@@ -47,9 +47,7 @@ include 'header.php'
               }
               ?>
             </div>
-            <!--/. container-fluid -->
           </section>
-          <!-- /.content -->
           <div class="modal fade" id="confirm_modal" role='dialog'>
             <div class="modal-dialog modal-md" role="document">
               <div class="modal-content">
@@ -104,15 +102,12 @@ include 'header.php'
             </div>
           </div>
         </div>
-        <!-- /.content-wrapper -->
 
-        <!-- Control Sidebar -->
+        <!-- Bočný panel -->
         <aside class="control-sidebar control-sidebar-dark">
-          <!-- Control sidebar content goes here -->
         </aside>
-        <!-- /.control-sidebar -->
 
-        <!-- Main Footer -->
+        <!-- Footer -->
         <footer class="main-footer">
           <strong>&copy; 2021 Adam Kocian & Dávid Krátky </strong>
           <div class="float-right d-none d-sm-inline-block">
@@ -120,11 +115,6 @@ include 'header.php'
           </div>
         </footer>
       </div>
-      <!-- ./wrapper -->
-
-      <!-- REQUIRED SCRIPTS -->
-      <!-- jQuery -->
-      <!-- Bootstrap -->
       <?php include 'footer.php' ?>
 </body>
 

@@ -10,13 +10,6 @@
     <div class="card-body p-0">
       <div class="table-responsive" id="printable">
         <table class="table m-0 table-bordered">
-          <!--  <colgroup>
-                  <col width="5%">
-                  <col width="30%">
-                  <col width="35%">
-                  <col width="15%">
-                  <col width="15%">
-                </colgroup> -->
           <thead>
             <th></th>
             <th>Tím</th>
