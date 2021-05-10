@@ -145,7 +145,7 @@ load.php
 //load.php
 
 
-$connect = new mysqli('localhost', 'root', '', 'tms_db') or die("Could not connect to mysql" . mysqli_error($con));
+$connect = new mysqli('localhost', 'root', '', 'lidl_db') or die("Could not connect to mysql" . mysqli_error($con));
 
 $data = array();
 

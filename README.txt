@@ -1,4 +1,4 @@
-Tento priečinok obsahuje okrem kódu export databázy (database/tms_db.sql) , ktorá pre fungovanie musí byť importovaná a prepojená.
+Tento priečinok obsahuje okrem kódu export databázy (database/lidl_db.sql) , ktorá pre fungovanie musí byť importovaná a prepojená.
 
     V tejto verzií používajú prepojenie s databázou súbory:
 

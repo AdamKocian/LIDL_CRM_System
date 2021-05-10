@@ -2,7 +2,7 @@
 
 if(isset($_POST["id"]))
 {
- $connect = new PDO('mysql:host=localhost;dbname=tms_db', 'root', '');
+ $connect = new PDO('mysql:host=localhost;dbname=lidl_db', 'root', '');
  $query = "
  DELETE from user_productivity WHERE id=:id
  ";

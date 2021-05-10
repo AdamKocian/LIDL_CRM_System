@@ -1,6 +1,6 @@
 <?php
 
-$connect = new PDO('mysql:host=localhost;dbname=tms_db', 'root', '');
+$connect = new PDO('mysql:host=localhost;dbname=lidl_db', 'root', '');
 
 if(isset($_POST["title"]))
 {
