@@ -1,9 +1,6 @@
 <?php
 
-//insert.php
-
 $connect = new PDO('mysql:host=localhost;dbname=tms_db', 'root', '');
-//var_dump($_POST);
 
 if(isset($_POST["title"]))
 {

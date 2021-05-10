@@ -1,7 +1,5 @@
 <?php
 
-//delete.php
-
 if(isset($_POST["id"]))
 {
  $connect = new PDO('mysql:host=localhost;dbname=tms_db', 'root', '');

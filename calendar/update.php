@@ -1,7 +1,5 @@
 <?php
 
-//update.php
-
 $connect = new PDO('mysql:host=localhost;dbname=tms_db', 'root', '');
 
 if(isset($_POST["id"]))
