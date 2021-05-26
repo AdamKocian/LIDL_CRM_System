@@ -95,7 +95,7 @@ body .fc {
     font-size: 1em;
     text-align: center;
     overflow: hidden;
-    font-family: "Poppins", Courier, monospace;
+    font-family: "Poppins";
     /* don't allow browser text-selection */
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -1406,7 +1406,7 @@ be a descendant of the grid when it is being dragged.
     overflow: hidden;
     line-height: 8px;
     font-size: 11px;
-    font-family: monospace;
+    font-family: "Poppins";
     text-align: center;
     cursor: s-resize;
 }

@@ -26,9 +26,10 @@ if ($_SESSION['login_type'] != 1)
     $twhere = "  ";
 ?>
 
-<!-- <div class="card-tools">
-    <button class="btn btn-primary bg-gradient-primary btn-sm" type="button" id="new_productivity_task"><i class="fa fa-plus"></i> Pridať task</button>
-</div> -->
+<div class="card-tools">
+     <button style="position: fixed; right: 40px; bottom: 90px; padding: 12px; z-index: 3; " class="btn btn-primary bg-gradient-primary btn-sm" type="text" id="new_productivity_task"><i class="fa fa-plus"></i> Pridať task</button> 
+    <!-- <button style="position: block; right: 40px; top: 30px; padding: 7px; " class="btn btn-primary bg-gradient-primary btn-sm" type="text" id="new_productivity_task"><i class="fa fa-plus"></i> Pridať task</button>-->
+</div>
 <script>
     /*
     $('#new_task').click(function() {
