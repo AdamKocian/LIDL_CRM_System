@@ -6,7 +6,7 @@ $connect = new PDO('mysql:host=localhost;dbname=lidl_db', 'root', '');
 $data = array();
 
 $query = "
-SELECT * FROM user_productivity
+SELECT * FROM task_list
 
  WHERE project_id = " . $_SESSION['project_id'] . " ORDER BY id";
 

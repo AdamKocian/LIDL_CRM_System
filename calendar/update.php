@@ -5,7 +5,7 @@ $connect = new PDO('mysql:host=localhost;dbname=lidl_db', 'root', '');
 if(isset($_POST["id"]))
 {
  $query = "
- UPDATE user_productivity 
+ UPDATE task_list 
  SET title=:title, start=:start, end=:end 
  WHERE id=:id
  ";
