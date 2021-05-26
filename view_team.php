@@ -5,8 +5,8 @@ $qry = $conn->query("SELECT * FROM project_list where id = " . $_GET['id'])->fet
 foreach ($qry as $k => $v) {
 	$$k = $v;
 }
-$tprog = $conn->query("SELECT * FROM task_list where project_id = {$id}")->num_rows;
-$cprog = $conn->query("SELECT * FROM task_list where project_id = {$id} and status = 3")->num_rows;
+$tprog = $conn->query("SELECT * FROM goals_list where project_id = {$id}")->num_rows;
+$cprog = $conn->query("SELECT * FROM goals_list where project_id = {$id} and status = 3")->num_rows;
 $prog = $tprog > 0 ? ($cprog / $tprog) * 100 : 0;
 $prog = $prog > 0 ?  number_format($prog, 2) : $prog;
 $prod = $conn->query("SELECT * FROM user_productivity where project_id = {$id}")->num_rows;
@@ -133,7 +133,7 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 							<tbody>
 								<?php
 								$i = 1;
-								$tasks = $conn->query("SELECT * FROM task_list where project_id = {$id} order by task asc");
+								$tasks = $conn->query("SELECT * FROM goals_list where project_id = {$id} order by task asc");
 								while ($row = $tasks->fetch_assoc()) :
 									$trans = get_html_translation_table(HTML_ENTITIES, ENT_QUOTES);
 									unset($trans["\""], $trans["<"], $trans[">"], $trans["<h2"]);
@@ -193,7 +193,7 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 				</div>
 				<div class="card-body">
 					<?php
-					$progress = $conn->query("SELECT p.*,concat(u.firstname,' ',u.lastname) as uname,u.avatar,t.task FROM user_productivity p inner join users u on u.id = p.user_id inner join task_list t on t.id = p.task_id where p.project_id = $id order by unix_timestamp(p.date_created) desc ");
+					$progress = $conn->query("SELECT p.*,concat(u.firstname,' ',u.lastname) as uname,u.avatar,t.task FROM user_productivity p inner join users u on u.id = p.user_id inner join goals_list t on t.id = p.task_id where p.project_id = $id order by unix_timestamp(p.date_created) desc ");
 					while ($row = $progress->fetch_assoc()) :
 					?>
 						<div class="post">

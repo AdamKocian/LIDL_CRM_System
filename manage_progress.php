@@ -20,7 +20,7 @@ if (isset($_GET['id'])) {
 							<select class="form-control form-control-sm select2" name="task_id">
 								<option></option>
 								<?php
-								$tasks = $conn->query("SELECT * FROM task_list where project_id = {$_GET['pid']} order by task asc ");
+								$tasks = $conn->query("SELECT * FROM goals_list where project_id = {$_GET['pid']} order by task asc ");
 								while ($row = $tasks->fetch_assoc()) :
 								?>
 									<option value="<?php echo $row['id'] ?>" <?php echo isset($task_id) && $task_id == $row['id'] ? "selected" : '' ?>><?php echo ucwords($row['task']) ?></option>

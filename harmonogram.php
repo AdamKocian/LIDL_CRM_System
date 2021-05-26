@@ -42,7 +42,7 @@ if ($_SESSION['login_type'] != 1)
     })
     */
     $('#new_productivity_task').click(function() {
-        uni_modal("<i class='fa fa-plus'></i> Nový proges", "manage_progress.php?pid=<?php echo 3 ?>", 'large',)
+        uni_modal("<i class='fa fa-plus'></i> Nová úloha", "manage_progress.php?pid=<?php echo 3 ?>", 'large',)
     })
     /*
     $('.manage_progress').click(function() {

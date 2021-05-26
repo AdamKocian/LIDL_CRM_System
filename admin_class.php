@@ -296,9 +296,9 @@ class Action
 			}
 		}
 		if (empty($id)) {
-			$save = $this->db->query("INSERT INTO task_list set $data");
+			$save = $this->db->query("INSERT INTO goals_list set $data");
 		} else {
-			$save = $this->db->query("UPDATE task_list set $data where id = $id");
+			$save = $this->db->query("UPDATE goals_list set $data where id = $id");
 		}
 		if ($save) {
 			return 1;
@@ -307,7 +307,7 @@ class Action
 	function delete_task()
 	{
 		extract($_POST);
-		$delete = $this->db->query("DELETE FROM task_list where id = $id");
+		$delete = $this->db->query("DELETE FROM goals_list where id = $id");
 		if ($delete) {
 			return 1;
 		}
