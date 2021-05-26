@@ -26,9 +26,9 @@ if ($_SESSION['login_type'] != 1)
     $twhere = "  ";
 ?>
 
-<div class="card-tools">
+<!-- <div class="card-tools">
     <button class="btn btn-primary bg-gradient-primary btn-sm" type="button" id="new_productivity_task"><i class="fa fa-plus"></i> Pridať task</button>
-</div>
+</div> -->
 <script>
     /*
     $('#new_task').click(function() {
