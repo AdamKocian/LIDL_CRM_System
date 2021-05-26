@@ -130,7 +130,7 @@
 	$(document).ready(function() {
 		$('#list').dataTable()
 		$('.new_productivity').click(function() {
-			uni_modal("<i class='fa fa-plus'></i> Nový progres pre: " + $(this).attr('data-task'), "manage_progress.php?pid=" + $(this).attr('data-pid') + "&tid=" + $(this).attr('data-tid'), 'large')
+			uni_modal("<i class='fa fa-plus'></i> Nový progres pre: " + $(this).attr('data-task'), "manage_task.php?pid=" + $(this).attr('data-pid') + "&tid=" + $(this).attr('data-tid'), 'large')
 		})
 	})
 

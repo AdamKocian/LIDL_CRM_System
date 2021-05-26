@@ -253,19 +253,19 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 </style>
 <script>
 	$('#new_task').click(function() {
-		uni_modal("Nová úloha pre <?php echo ucwords($name) ?>", "manage_task.php?pid=<?php echo $id ?>", "mid-large")
+		uni_modal("Nová úloha pre <?php echo ucwords($name) ?>", "manage_goal.php?pid=<?php echo $id ?>", "mid-large")
 	})
 	$('.edit_task').click(function() {
-		uni_modal("Upraviť Úlohu: " + $(this).attr('data-task'), "manage_task.php?pid=<?php echo $id ?>&id=" + $(this).attr('data-id'), "mid-large")
+		uni_modal("Upraviť Úlohu: " + $(this).attr('data-task'), "manage_goal.php?pid=<?php echo $id ?>&id=" + $(this).attr('data-id'), "mid-large")
 	})
 	$('.view_task').click(function() {
 		uni_modal("Detaily Úlohy", "view_task.php?id=" + $(this).attr('data-id'), "mid-large")
 	})
 	$('#new_productivity').click(function() {
-		uni_modal("<i class='fa fa-plus'></i> Nový proges", "manage_progress.php?pid=<?php echo $id ?>", 'large')
+		uni_modal("<i class='fa fa-plus'></i> Nová úloha", "manage_task.php?pid=<?php echo $id ?>", 'large')
 	})
 	$('.manage_progress').click(function() {
-		uni_modal("<i class='fa fa-edit'></i> Upraviť progres", "manage_progress.php?pid=<?php echo $id ?>&id=" + $(this).attr('data-id'), 'large')
+		uni_modal("<i class='fa fa-edit'></i> Upraviť úlohu", "manage_task.php?pid=<?php echo $id ?>&id=" + $(this).attr('data-id'), 'large')
 	})
 	$('.delete_progress').click(function() {
 		_conf("Naozaj chcete vymazať tento progres?", "delete_progress", [$(this).attr('data-id')])
