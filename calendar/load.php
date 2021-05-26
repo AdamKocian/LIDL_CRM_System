@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-$connect = new PDO('mysql:host=localhost;dbname=tms_db', 'root', '');
+$connect = new PDO('mysql:host=localhost;dbname=lidl_db', 'root', '');
 
 $data = array();
 

@@ -2,23 +2,21 @@
 <?php
 $sql = "SELECT id, title, description, start, end, project_id, color FROM user_productivity WHERE user_id = " . $_SESSION['login_id'];
 
-$project_id_query = "SELECT project_id FROM user_productivity WHERE user_id = " . $_SESSION['login_id'];
+$project_id_query = "SELECT id FROM project_list WHERE user_ids OR manager_id LIKE '%" . $_SESSION['login_id'] . "%'";
 $statement = $conn->prepare($project_id_query);
 
 $result = mysqli_query($conn, $project_id_query);
 
 $project_id = mysqli_fetch_assoc($result);
 
-$_SESSION['project_id'] =  3 //$project_id['project_id'];
-
+$_SESSION['project_id'] = $project_id['id'];
 
 
 //echo "user_id: " . $_SESSION['login_id']. "<br>";
-//echo "project_id (tím): " . $_SESSION['project_id']. "<br>";
-//echo "<pre>".var_export($_SESSION, true)."</pre>";
+//echo "project_id (tím): " . $_SESSION['project_id'] . "<br>";
+//echo "<pre>" . var_export($_SESSION, true) . "</pre>";
 
 //echo "<pre>".var_export($project_id['project_id'], true)."</pre>";
-
 
 
 ?>
@@ -28,7 +26,55 @@ if ($_SESSION['login_type'] != 1)
     $twhere = "  ";
 ?>
 
+<div class="card-tools">
+    <button class="btn btn-primary bg-gradient-primary btn-sm" type="button" id="new_productivity_task"><i class="fa fa-plus"></i> Pridať task</button>
+</div> 
+<script>
+/*
+    $('#new_task').click(function() {
+        uni_modal("Nová úloha pre <?php echo ucwords($name) ?>", "manage_task.php?pid=<?php echo $id ?>", "mid-large")
+    })
+    $('.edit_task').click(function() {
+        uni_modal("Upraviť Úlohu: " + $(this).attr('data-task'), "manage_task.php?pid=<?php echo $id ?>&id=" + $(this).attr('data-id'), "mid-large")
+    })
+    $('.view_task').click(function() {
+        uni_modal("Detaily Úlohy", "view_task.php?id=" + $(this).attr('data-id'), "mid-large")
+    })
+    */
+    $('#new_productivity_task').click(function() {
+        uni_modal("<i class='fa fa-plus'></i> Nový proges", "manage_progress.php?pid=<?php echo $project_id ?>", 'large',)
+    })
+    /*
+    $('.manage_progress').click(function() {
+        uni_modal("<i class='fa fa-edit'></i> Upraviť progres", "manage_progress.php?pid=<?php echo $id ?>&id=" + $(this).attr('data-id'), 'large')
+    })
+    $('.delete_progress').click(function() {
+        _conf("Naozaj chcete vymazať tento progres?", "delete_progress", [$(this).attr('data-id')])
+    })
+    */
+
+    function delete_progress($project_id) {
+        start_load()
+        $.ajax({
+            url: 'ajax.php?action=delete_progress',
+            method: 'POST',
+            data: {
+                id: $project_id
+            },
+            success: function(resp) {
+                if (resp == 1) {
+                    alert_toast("Údaje boli úspešne odstránené", 'success')
+                    setTimeout(function() {
+                        location.reload()
+                    }, 1500)
+
+                }
+            }
+        })
+    }
+</script>
 <?php
+
 //var_dump($_SESSION);
 
 
