@@ -1,7 +1,7 @@
 <?php
 include 'db_connect.php';
 if (isset($_GET['id'])) {
-	$qry = $conn->query("SELECT * FROM user_productivity where id = " . $_GET['id'])->fetch_array();
+	$qry = $conn->query("SELECT * FROM task_list where id = " . $_GET['id'])->fetch_array();
 	foreach ($qry as $k => $v) {
 		$$k = $v;
 	}
@@ -15,18 +15,6 @@ if (isset($_GET['id'])) {
 			<div class="row">
 				<div class="col-md-5">
 					<?php if (!isset($_GET['tid'])) : ?>
-						<div class="form-group">
-							<label for="" class="control-label">Cieľ tímu</label>
-							<select class="form-control form-control-sm select2" name="task_id">
-								<option></option>
-								<?php
-								$tasks = $conn->query("SELECT * FROM goals_list where project_id = {$_GET['pid']} order by task asc ");
-								while ($row = $tasks->fetch_assoc()) :
-								?>
-									<option value="<?php echo $row['id'] ?>" <?php echo isset($task_id) && $task_id == $row['id'] ? "selected" : '' ?>><?php echo ucwords($row['task']) ?></option>
-								<?php endwhile; ?>
-							</select>
-						</div>
 					<?php else : ?>
 						<input type="hidden" name="task_id" value="<?php echo isset($_GET['tid']) ? $_GET['tid'] : '' ?>">
 					<?php endif; ?>
@@ -35,17 +23,32 @@ if (isset($_GET['id'])) {
 						<input type="text" class="form-control form-control-sm" name="title" value="<?php echo isset($title) ? $title : '' ?>" required>
 					</div>
 					<div class="form-group">
-						<label for="">Dátum</label>
-						<input type="date" class="form-control form-control-sm" name="date" value="<?php echo isset($date) ? date("Y-m-d", strtotime($date)) : '' ?>" required>
+						<label for="" class="control-label">Cieľ tímu</label>
+						<select class="form-control form-control-sm select2" name="task_id">
+							<option></option>
+							<?php
+							$tasks = $conn->query("SELECT * FROM goals_list where project_id = {$_GET['pid']} order by task asc ");
+							while ($row = $tasks->fetch_assoc()) :
+							?>
+								<option value="<?php echo $row['id'] ?>" <?php echo isset($task_id) && $task_id == $row['id'] ? "selected" : '' ?>><?php echo ucwords($row['task']) ?></option>
+							<?php endwhile; ?>
+						</select>
 					</div>
+					<div class="form-group">
+						<label for="">Dátum začiatku</label>
+						<input type="datetime-local" class="form-control form-control-sm" name="start" value="<?php echo isset($date) ? date("Y-m-d H:i", strtotime($date)) : '' ?>" required>
+					</div>
+
+					<div class="form-group">
+						<label for="">Dátum konca</label>
+						<input type="datetime-local" class="form-control form-control-sm" name="end" value="<?php echo isset($date) ? date("Y-m-d H:i", strtotime($date)) : '' ?>" required>
+					</div>
+					<!-- 
 					<div class="form-group">
 						<label for="">Začiatok</label>
 						<input type="time" class="form-control form-control-sm" name="start" value="<?php echo isset($start) ? date("H:i", strtotime("2020-01-01 " . $start)) : '' ?>" required>
-					</div>
-					<div class="form-group">
-						<label for="">Koniec</label>
-						<input type="time" class="form-control form-control-sm" name="end" value="<?php echo isset($end) ? date("H:i", strtotime("2020-01-01 " . $end)) : '' ?>" required>
-					</div>
+					</div> 
+					-->
 				</div>
 				<div class="col-md-7">
 					<div class="form-group">
@@ -76,7 +79,7 @@ if (isset($_GET['id'])) {
 			]
 		})
 		$('.select2').select2({
-			placeholder: "Please select here",
+			placeholder: "Vyberte cieľ úlohy",
 			width: "100%"
 		});
 	})
@@ -93,7 +96,7 @@ if (isset($_GET['id'])) {
 			type: 'POST',
 			success: function(resp) {
 				if (resp == 1) {
-					alert_toast('Data successfully saved', "success");
+					alert_toast('Údaje sa úspešne uložili', "success");
 					setTimeout(function() {
 						location.reload()
 					}, 1500)

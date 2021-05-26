@@ -50,7 +50,7 @@
                 </li>
               <?php endif; ?>
               <li class="nav-item">
-                <a href="./index.php?page=team_list" class="nav-link nav-project_list tree-item">
+                <a href="./index.php?page=team_list" class="nav-link nav-team_list tree-item">
                   <i class="fas fa-angle-right nav-icon"></i>
                   <p>Zoznam tímov</p>
                 </a>

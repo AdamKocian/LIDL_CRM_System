@@ -108,7 +108,7 @@
 			type: 'POST',
 			success: function(resp) {
 				if (resp == 1) {
-					alert_toast('Data successfully saved', "success");
+					alert_toast('Údaje sa úspešne uložili', "success");
 					setTimeout(function() {
 						location.href = 'index.php?page=team_list'
 					}, 2000)

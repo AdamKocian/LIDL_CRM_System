@@ -34,7 +34,7 @@ class Action
 			return 2;
 		}
 		$uid = $this->db->query("SELECT id FROM users where email = '" . $email . "' and password = '" . md5($password) . "'  ");
-		$_SESSION['project_id'] = $this->db->query("SELECT project_id FROM user_productivity WHERE user_id == '" . $uid);
+		$_SESSION['project_id'] = $this->db->query("SELECT project_id FROM task_list WHERE user_id == '" . $uid);
 		//if($_SESSION['login_id']== id v tabuľke users){}
 
 	}
@@ -264,9 +264,9 @@ class Action
 			$data .= ", user_ids='" . implode(',', $user_ids) . "' ";
 		}
 		if (empty($id)) {
-			$save = $this->db->query("INSERT INTO project_list set $data");
+			$save = $this->db->query("INSERT INTO team_list set $data");
 		} else {
-			$save = $this->db->query("UPDATE project_list set $data where id = $id");
+			$save = $this->db->query("UPDATE team_list set $data where id = $id");
 		}
 		if ($save) {
 			return 1;
@@ -275,7 +275,7 @@ class Action
 	function delete_project()
 	{
 		extract($_POST);
-		$delete = $this->db->query("DELETE FROM project_list where id = $id");
+		$delete = $this->db->query("DELETE FROM team_list where id = $id");
 		if ($delete) {
 			return 1;
 		}
@@ -333,9 +333,9 @@ class Action
 		if (empty($id)) {
 			$data .= ", user_id={$_SESSION['login_id']} ";
 
-			$save = $this->db->query("INSERT INTO user_productivity set $data");
+			$save = $this->db->query("INSERT INTO task_list set $data");
 		} else {
-			$save = $this->db->query("UPDATE user_productivity set $data where id = $id");
+			$save = $this->db->query("UPDATE task_list set $data where id = $id");
 		}
 		if ($save) {
 			return 1;
@@ -344,7 +344,7 @@ class Action
 	function delete_progress()
 	{
 		extract($_POST);
-		$delete = $this->db->query("DELETE FROM user_productivity where id = $id");
+		$delete = $this->db->query("DELETE FROM task_list where id = $id");
 		if ($delete) {
 			return 1;
 		}

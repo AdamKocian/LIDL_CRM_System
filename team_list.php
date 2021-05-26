@@ -38,7 +38,7 @@
 					} elseif ($_SESSION['login_type'] == 3) {
 						$where = " where concat('[',REPLACE(user_ids,',','],['),']') LIKE '%[{$_SESSION['login_id']}]%' ";
 					}
-					$qry = $conn->query("SELECT * FROM project_list $where order by name asc");
+					$qry = $conn->query("SELECT * FROM team_list $where order by name asc");
 					while ($row = $qry->fetch_assoc()) :
 						$trans = get_html_translation_table(HTML_ENTITIES, ENT_QUOTES);
 						unset($trans["\""], $trans["<"], $trans[">"], $trans["<h2"]);
@@ -49,7 +49,7 @@
 						$cprog = $conn->query("SELECT * FROM goals_list where project_id = {$row['id']} and status = 3")->num_rows;
 						$prog = $tprog > 0 ? ($cprog / $tprog) * 100 : 0;
 						$prog = $prog > 0 ?  number_format($prog, 2) : $prog;
-						$prod = $conn->query("SELECT * FROM user_productivity where project_id = {$row['id']}")->num_rows;
+						$prod = $conn->query("SELECT * FROM task_list where project_id = {$row['id']}")->num_rows;
 						if ($row['status'] == 0 && strtotime(date('Y-m-d')) >= strtotime($row['start_date'])) :
 							if ($prod  > 0  || $cprog > 0)
 								$row['status'] = 2;
