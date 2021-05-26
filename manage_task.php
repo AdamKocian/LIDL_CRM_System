@@ -36,19 +36,13 @@ if (isset($_GET['id'])) {
 					</div>
 					<div class="form-group">
 						<label for="">Dátum začiatku</label>
-						<input type="datetime-local" class="form-control form-control-sm" name="start" value="<?php echo isset($date) ? date("Y-m-d H:i", strtotime($date)) : '' ?>" required>
+						<input type="datetime-local" class="form-control form-control-sm" name="start" value="<?php echo isset($date) ? date("Y-MM-DD HH:mm:ss", strtotime($date)) : '' ?>" required>
 					</div>
 
 					<div class="form-group">
 						<label for="">Dátum konca</label>
-						<input type="datetime-local" class="form-control form-control-sm" name="end" value="<?php echo isset($date) ? date("Y-m-d H:i", strtotime($date)) : '' ?>" required>
+						<input type="datetime-local" class="form-control form-control-sm" name="end" value="<?php echo isset($date) ? date("Y-MM-DD HH:mm:ss", strtotime($date)) : '' ?>" required>
 					</div>
-					<!-- 
-					<div class="form-group">
-						<label for="">Začiatok</label>
-						<input type="time" class="form-control form-control-sm" name="start" value="<?php echo isset($start) ? date("H:i", strtotime("2020-01-01 " . $start)) : '' ?>" required>
-					</div> 
-					-->
 				</div>
 				<div class="col-md-7">
 					<div class="form-group">
@@ -86,6 +80,9 @@ if (isset($_GET['id'])) {
 	$('#manage-progress').submit(function(e) {
 		e.preventDefault()
 		start_load()
+		setTimeout(function() {
+			location.reload()
+		}, 1500)
 		$.ajax({
 			url: 'ajax.php?action=save_progress',
 			data: new FormData($(this)[0]),

@@ -28,9 +28,9 @@ if ($_SESSION['login_type'] != 1)
 
 <div class="card-tools">
     <button class="btn btn-primary bg-gradient-primary btn-sm" type="button" id="new_productivity_task"><i class="fa fa-plus"></i> Pridať task</button>
-</div> 
+</div>
 <script>
-/*
+    /*
     $('#new_task').click(function() {
         uni_modal("Nová úloha pre <?php echo ucwords($name) ?>", "manage_goal.php?pid=<?php echo $id ?>", "mid-large")
     })
@@ -42,7 +42,7 @@ if ($_SESSION['login_type'] != 1)
     })
     */
     $('#new_productivity_task').click(function() {
-        uni_modal("<i class='fa fa-plus'></i> Nová úloha", "manage_task.php?pid=<?php echo 3 ?>", 'large',)
+        uni_modal("<i class='fa fa-plus'></i> Nová úloha", "manage_task.php?pid=<?php echo 3 ?>", 'large', )
     })
     /*
     $('.manage_progress').click(function() {
@@ -135,7 +135,11 @@ if ($_SESSION['login_type'] == 2) {
                 minTime: '07:00:00',
                 maxTime: '19:00:00',
                 select: function(start, end, allDay) {
-                    var title = prompt("Zadajte názov udalosti");
+                    // var title = prompt("Zadajte názov udalosti");
+                    var title = $('#new_productivity_task').click(function() {
+                        uni_modal("<i class='fa fa-plus'></i> Nová úloha", "manage_task.php?pid=<?php echo 3 ?>", 'large', )
+                    })
+
                     if (title) {
                         var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
                         var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
@@ -155,8 +159,7 @@ if ($_SESSION['login_type'] == 2) {
                                 user_id: user_id
                             },
                             success: function() {
-                                calendar.fullCalendar('refetchEvents');
-                                alert("Udalosť bola úspešne pridaná");
+                                alert_toast('Udalosť bola úspešne pridaná', "success");
                             }
                         })
                     }
@@ -177,8 +180,7 @@ if ($_SESSION['login_type'] == 2) {
                             id: id
                         },
                         success: function() {
-                            calendar.fullCalendar('refetchEvents');
-                            alert('Aktualizácia udalosti');
+                            alert_toast('Aktualizácia udalosti', "success");
                         }
                     })
                 },
@@ -197,9 +199,10 @@ if ($_SESSION['login_type'] == 2) {
                             end: end,
                             id: id
                         },
+
                         success: function() {
-                            calendar.fullCalendar('refetchEvents');
-                            alert("Udalosť bola aktualizovaná");
+                            alert_toast('Údaje sa úspešne uložili', "success");
+
                         }
                     });
                 },
@@ -214,8 +217,7 @@ if ($_SESSION['login_type'] == 2) {
                                 id: id
                             },
                             success: function() {
-                                calendar.fullCalendar('refetchEvents');
-                                alert("Udalosť bola odstránená");
+                                alert_toast('Udalosť bola odstránená', "success");
                             }
                         })
                     }
