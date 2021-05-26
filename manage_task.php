@@ -80,9 +80,6 @@ if (isset($_GET['id'])) {
 	$('#manage-progress').submit(function(e) {
 		e.preventDefault()
 		start_load()
-		setTimeout(function() {
-			location.reload()
-		}, 1500)
 		$.ajax({
 			url: 'ajax.php?action=save_progress',
 			data: new FormData($(this)[0]),
