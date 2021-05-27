@@ -31,8 +31,8 @@
             }
             $qry = $conn->query("SELECT * FROM team_list $where order by name asc");
             while ($row = $qry->fetch_assoc()) :
-              $tprog = $conn->query("SELECT * FROM goals_list where project_id = {$row['id']}")->num_rows;
-              $cprog = $conn->query("SELECT * FROM goals_list where project_id = {$row['id']} and status = 3")->num_rows;
+              $tprog = $conn->query("SELECT * FROM category_list where project_id = {$row['id']}")->num_rows;
+              $cprog = $conn->query("SELECT * FROM category_list where project_id = {$row['id']} and status = 3")->num_rows;
               $prog = $tprog > 0 ? ($cprog / $tprog) * 100 : 0;
               $prog = $prog > 0 ?  number_format($prog, 0) : $prog;
               $prod = $conn->query("SELECT * FROM task_list where project_id = {$row['id']}")->num_rows;
