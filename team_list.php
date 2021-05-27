@@ -45,8 +45,8 @@
 						$desc = strtr(html_entity_decode($row['description']), $trans);
 						$desc = str_replace(array("<li>", "</li>"), array("", ", "), $desc);
 
-						$tprog = $conn->query("SELECT * FROM goals_list where project_id = {$row['id']}")->num_rows;
-						$cprog = $conn->query("SELECT * FROM goals_list where project_id = {$row['id']} and status = 3")->num_rows;
+						$tprog = $conn->query("SELECT * FROM category_list where project_id = {$row['id']}")->num_rows;
+						$cprog = $conn->query("SELECT * FROM category_list where project_id = {$row['id']} and status = 3")->num_rows;
 						$prog = $tprog > 0 ? ($cprog / $tprog) * 100 : 0;
 						$prog = $prog > 0 ?  number_format($prog, 2) : $prog;
 						$prod = $conn->query("SELECT * FROM task_list where project_id = {$row['id']}")->num_rows;

@@ -23,11 +23,11 @@ if (isset($_GET['id'])) {
 						<input type="text" class="form-control form-control-sm" name="title" value="<?php echo isset($title) ? $title : '' ?>" required>
 					</div>
 					<div class="form-group">
-						<label for="" class="control-label">Cieľ tímu</label>
+						<label for="" class="control-label">Kategória</label>
 						<select class="form-control form-control-sm select2" name="task_id">
 							<option></option>
 							<?php
-							$tasks = $conn->query("SELECT * FROM goals_list where project_id = {$_GET['pid']} order by task asc ");
+							$tasks = $conn->query("SELECT * FROM category_list where project_id = {$_GET['pid']} order by task asc ");
 							while ($row = $tasks->fetch_assoc()) :
 							?>
 								<option value="<?php echo $row['id'] ?>" <?php echo isset($task_id) && $task_id == $row['id'] ? "selected" : '' ?>><?php echo ucwords($row['task']) ?></option>
@@ -73,7 +73,7 @@ if (isset($_GET['id'])) {
 			]
 		})
 		$('.select2').select2({
-			placeholder: "Vyberte cieľ úlohy",
+			placeholder: "Vyberte kategóriu",
 			width: "100%"
 		});
 	})

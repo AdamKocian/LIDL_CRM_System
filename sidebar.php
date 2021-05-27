@@ -58,7 +58,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="./index.php?page=goals_list" class="nav-link nav-goals_list">
+            <a href="./index.php?page=category_list" class="nav-link nav-category_list">
               <i class="fas fa-tasks nav-icon"></i>
               <p>Úlohy</p>
             </a>
