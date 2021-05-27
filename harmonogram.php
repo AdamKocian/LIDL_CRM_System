@@ -208,6 +208,10 @@ if ($_SESSION['login_type'] == 2) {
                     });
                 },
 
+
+
+
+
                 eventClick: function(event) {
                     if (confirm("Naozaj chcete odstrániť udalosť?")) {
                         var id = event.id;
