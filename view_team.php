@@ -148,13 +148,7 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 										</td>
 										<td>
 											<?php
-											if ($row['status'] == 1) {
-												echo "<span class='badge badge-secondary'>Čaká sa</span>";
-											} elseif ($row['status'] == 2) {
-												echo "<span class='badge badge-primary'>Prebieha</span>";
-											} elseif ($row['status'] == 3) {
-												echo "<span class='badge badge-success'>Splnené</span>";
-											}
+											echo $row["color"];
 											?>
 										</td>
 										<td class="text-center">
@@ -259,7 +253,7 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 		uni_modal("Upraviť kategóriu: " + $(this).attr('data-task'), "manage_category.php?pid=<?php echo $id ?>&id=" + $(this).attr('data-id'), "mid-large")
 	})
 	$('.view_task').click(function() {
-		uni_modal("Detaily kategórie:", "view_category.php?id=" + $(this).attr('data-id'), "mid-large")
+		uni_modal("Detaily kategórie", "view_category.php?id=" + $(this).attr('data-id'), "mid-large")
 	})
 	$('#new_productivity').click(function() {
 		uni_modal("<i class='fa fa-plus'></i> Nová úloha", "manage_task.php?pid=<?php echo $id ?>", 'large')

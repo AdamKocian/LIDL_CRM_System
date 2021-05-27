@@ -16,13 +16,7 @@ if (isset($_GET['id'])) {
 		<dt><b class="border-bottom border-primary">Farba</b></dt>
 		<dd>
 			<?php
-			if ($status == 1) {
-				echo "<span class='badge badge-secondary'>Čaká sa</span>";
-			} elseif ($status == 2) {
-				echo "<span class='badge badge-primary'>Prebieha</span>";
-			} elseif ($status == 3) {
-				echo "<span class='badge badge-success'>Splnené</span>";
-			}
+			echo $color;
 			?>
 		</dd>
 	</dl>
