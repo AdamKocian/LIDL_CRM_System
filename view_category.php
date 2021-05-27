@@ -9,11 +9,11 @@ if (isset($_GET['id'])) {
 ?>
 <div class="container-fluid">
 	<dl>
-		<dt><b class="border-bottom border-primary">Úloha</b></dt>
+		<dt><b class="border-bottom border-primary">Názov</b></dt>
 		<dd><?php echo ucwords($task) ?></dd>
 	</dl>
 	<dl>
-		<dt><b class="border-bottom border-primary">Stav</b></dt>
+		<dt><b class="border-bottom border-primary">Farba</b></dt>
 		<dd>
 			<?php
 			if ($status == 1) {

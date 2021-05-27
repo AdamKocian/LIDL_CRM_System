@@ -259,7 +259,7 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 		uni_modal("Upraviť kategóriu: " + $(this).attr('data-task'), "manage_category.php?pid=<?php echo $id ?>&id=" + $(this).attr('data-id'), "mid-large")
 	})
 	$('.view_task').click(function() {
-		uni_modal("Detaily kategórie:", "view_task.php?id=" + $(this).attr('data-id'), "mid-large")
+		uni_modal("Detaily kategórie:", "view_category.php?id=" + $(this).attr('data-id'), "mid-large")
 	})
 	$('#new_productivity').click(function() {
 		uni_modal("<i class='fa fa-plus'></i> Nová úloha", "manage_task.php?pid=<?php echo $id ?>", 'large')

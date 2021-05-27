@@ -25,7 +25,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index.php?page=harmonogram&id=3" class="nav-link tree-item"> 
+                <a href="./index.php?page=harmonogram&id=3" class="nav-link tree-item">
                   <i class="fas fa-angle-right nav-icon"></i>
                   <p>Harmonogram</p>
                 </a>
@@ -57,12 +57,12 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
+          <!--<li class="nav-item">
             <a href="./index.php?page=category_list" class="nav-link nav-category_list">
               <i class="fas fa-tasks nav-icon"></i>
               <p>Úlohy</p>
             </a>
-          </li>
+          </li>-->
           <?php if ($_SESSION['login_type'] != 3) : ?>
             <li class="nav-item">
               <a href="./index.php?page=reports" class="nav-link nav-reports">

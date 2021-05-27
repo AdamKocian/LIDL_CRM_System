@@ -39,7 +39,7 @@ if ($_SESSION['login_type'] != 1)
         uni_modal("Upraviť Úlohu: " + $(this).attr('data-task'), "manage_category.php?pid=<?php echo $id ?>&id=" + $(this).attr('data-id'), "mid-large")
     })
     $('.view_task').click(function() {
-        uni_modal("Detaily Úlohy", "view_task.php?id=" + $(this).attr('data-id'), "mid-large")
+        uni_modal("Detaily Úlohy", "view_category.php?id=" + $(this).attr('data-id'), "mid-large")
     })
     */
     $('#new_productivity_task').click(function() {
@@ -120,6 +120,17 @@ if ($_SESSION['login_type'] == 2) {
         $(document).ready(function() {
             var calendar = $('#calendar').fullCalendar({
                 eventRender: function(event, element) {
+                    /*if ($project_id = '1') {
+                        element.css('background-color', '#000');
+                    } else if ($project_id = '2') {
+                        element.css('background-color', '#FFF333');
+                    } else if ($project_id = '3') {
+                        element.css('background-color', '#F73B44');
+                    } else if ($project_id = '4') {
+                        element.css('background-color', '#3393FF');
+                    } else {
+                        element.css('background-color', '#0050aa');
+                    } */
                     if ($project_id = '1') {
                         element.css('background-color', '#000');
                     } else if ($project_id = '2') {
