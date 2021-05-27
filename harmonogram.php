@@ -27,16 +27,16 @@ if ($_SESSION['login_type'] != 1)
 ?>
 
 <div class="card-tools">
-     <button style="position: fixed; right: 40px; bottom: 90px; padding: 12px; z-index: 3; " class="btn btn-primary bg-gradient-primary btn-sm" type="text" id="new_productivity_task"><i class="fa fa-plus"></i> Pridať task</button> 
+    <button style="position: fixed; right: 40px; bottom: 90px; padding: 12px; z-index: 3; " class="btn btn-primary bg-gradient-primary btn-sm" type="text" id="new_productivity_task"><i class="fa fa-plus"></i> Pridať task</button>
     <!-- <button style="position: block; right: 40px; top: 30px; padding: 7px; " class="btn btn-primary bg-gradient-primary btn-sm" type="text" id="new_productivity_task"><i class="fa fa-plus"></i> Pridať task</button>-->
 </div>
 <script>
     /*
     $('#new_task').click(function() {
-        uni_modal("Nová úloha pre <?php echo ucwords($name) ?>", "manage_goal.php?pid=<?php echo $id ?>", "mid-large")
+        uni_modal("Nová úloha pre <?php echo ucwords($name) ?>", "manage_category.php?pid=<?php echo $id ?>", "mid-large")
     })
     $('.edit_task').click(function() {
-        uni_modal("Upraviť Úlohu: " + $(this).attr('data-task'), "manage_goal.php?pid=<?php echo $id ?>&id=" + $(this).attr('data-id'), "mid-large")
+        uni_modal("Upraviť Úlohu: " + $(this).attr('data-task'), "manage_category.php?pid=<?php echo $id ?>&id=" + $(this).attr('data-id'), "mid-large")
     })
     $('.view_task').click(function() {
         uni_modal("Detaily Úlohy", "view_task.php?id=" + $(this).attr('data-id'), "mid-large")
@@ -119,6 +119,19 @@ if ($_SESSION['login_type'] == 2) {
     <script>
         $(document).ready(function() {
             var calendar = $('#calendar').fullCalendar({
+                eventRender: function(event, element) {
+                    if ($project_id = '1') {
+                        element.css('background-color', '#000');
+                    } else if ($project_id = '2') {
+                        element.css('background-color', '#FFF333');
+                    } else if ($project_id = '3') {
+                        element.css('background-color', '#F73B44');
+                    } else if ($project_id = '4') {
+                        element.css('background-color', '#3393FF');
+                    } else {
+                        element.css('background-color', '#0050aa');
+                    }
+                },
                 eventTextColor: '#FFFFFF',
                 allDay: false,
                 editable: true,

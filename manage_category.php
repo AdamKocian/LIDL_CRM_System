@@ -29,6 +29,10 @@ if (isset($_GET['id'])) {
 				<option value="3" <?php echo isset($status) && $status == 3 ? 'selected' : '' ?>>Splnené</option>
 			</select>
 		</div>
+		<div class="form-group">
+			<label for="">Farba</label>
+			<input type="color" class="form-control form-control-sm" name="color" required>
+		</div>
 	</form>
 </div>
 

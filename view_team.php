@@ -116,7 +116,7 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 					<span><b>Kategórie</b></span>
 					<?php if ($_SESSION['login_type'] != 3) : ?>
 						<div class="card-tools">
-							<button class="btn btn-primary bg-gradient-primary btn-sm" type="button" id="new_task"><i class="fa fa-plus"></i> Pridať cieľ</button>
+							<button class="btn btn-primary bg-gradient-primary btn-sm" type="button" id="new_task"><i class="fa fa-plus"></i> Pridať kategóriu</button>
 						</div>
 					<?php endif; ?>
 				</div>
@@ -253,13 +253,13 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 </style>
 <script>
 	$('#new_task').click(function() {
-		uni_modal("Nová úloha pre <?php echo ucwords($name) ?>", "manage_goal.php?pid=<?php echo $id ?>", "mid-large")
+		uni_modal("Nová kategória pre <?php echo ucwords($name) ?>", "manage_category.php?pid=<?php echo $id ?>", "mid-large")
 	})
 	$('.edit_task').click(function() {
-		uni_modal("Upraviť Úlohu: " + $(this).attr('data-task'), "manage_goal.php?pid=<?php echo $id ?>&id=" + $(this).attr('data-id'), "mid-large")
+		uni_modal("Upraviť kategóriu: " + $(this).attr('data-task'), "manage_category.php?pid=<?php echo $id ?>&id=" + $(this).attr('data-id'), "mid-large")
 	})
 	$('.view_task').click(function() {
-		uni_modal("Detaily Úlohy", "view_task.php?id=" + $(this).attr('data-id'), "mid-large")
+		uni_modal("Detaily kategórie:", "view_task.php?id=" + $(this).attr('data-id'), "mid-large")
 	})
 	$('#new_productivity').click(function() {
 		uni_modal("<i class='fa fa-plus'></i> Nová úloha", "manage_task.php?pid=<?php echo $id ?>", 'large')
@@ -291,3 +291,5 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 		})
 	}
 </script>
+
+
