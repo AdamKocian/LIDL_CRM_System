@@ -139,8 +139,12 @@ if ($_SESSION['login_type'] == 2) {
                         element.css('background-color', ['category_color']);
                     } else if ($project_id = '4') {
                         element.css('background-color', ['category_color']);
-                    } else {
+                    } else if ($project_id = '5') {
                         element.css('background-color', ['category_color']);
+                    } else if ($project_id = '6') {
+                        element.css('background-color', ['category_color']);
+                    } else {
+                        element.css('background-color', '#0050aa');
                     }
                 },
                 eventTextColor: '#FFFFFF',
