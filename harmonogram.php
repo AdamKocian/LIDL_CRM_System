@@ -132,15 +132,15 @@ if ($_SESSION['login_type'] == 2) {
                         element.css('background-color', '#0050aa');
                     } */
                     if ($project_id = '1') {
-                        element.css('background-color', '#000');
+                        element.css('background-color', ['category_color']);
                     } else if ($project_id = '2') {
-                        element.css('background-color', '#FFF333');
+                        element.css('background-color', ['category_color']);
                     } else if ($project_id = '3') {
-                        element.css('background-color', '#F73B44');
+                        element.css('background-color', ['category_color']);
                     } else if ($project_id = '4') {
-                        element.css('background-color', '#3393FF');
+                        element.css('background-color', ['category_color']);
                     } else {
-                        element.css('background-color', '#0050aa');
+                        element.css('background-color', ['category_color']);
                     }
                 },
                 eventTextColor: '#FFFFFF',

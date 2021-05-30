@@ -16,7 +16,7 @@ if (isset($_GET['id'])) {
 		<dt><b class="border-bottom border-primary">Farba</b></dt>
 		<dd>
 			<?php
-			echo $color;
+			echo $category_color;
 			?>
 		</dd>
 	</dl>

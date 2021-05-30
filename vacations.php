@@ -35,7 +35,7 @@
                                     <button type="button" class="btn btn-default btn-sm btn-flat border-info wave-effect text-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                         Upraviť
                                     </button>
-                                    <div class="dropdown-menu" style="">
+                                    <div class="dropdown-menu">
                                         <a class="dropdown-item view_user" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Vidieť</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="./index.php?page=edit_user&id=<?php echo $row['id'] ?>">Upraviť</a>
