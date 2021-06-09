@@ -61,8 +61,8 @@ if ($_SESSION['login_type'] == 2) {
               $qry = $conn->query("SELECT * FROM team_list $where order by name asc");
               while ($row = $qry->fetch_assoc()) :
                 $prog = 0;
-                $tprog = $conn->query("SELECT * FROM category_color where project_id = {$row['id']}")->num_rows;
-                $cprog = $conn->query("SELECT * FROM category_color where project_id = {$row['id']}")->num_rows; // and status = 3
+                $tprog = $conn->query("SELECT * FROM category_list where project_id = {$row['id']}")->num_rows;
+                $cprog = $conn->query("SELECT * FROM category_list where project_id = {$row['id']}")->num_rows; // and status = 3
                 $prog = $tprog > 0 ? ($cprog / $tprog) * 100 : 0;
                 $prog = $prog > 0 ?  number_format($prog, 0) : $prog;
                 $prod = $conn->query("SELECT * FROM task_list where project_id = {$row['id']}")->num_rows;
@@ -149,7 +149,7 @@ if ($_SESSION['login_type'] == 2) {
       <div class="col-12 col-sm-6 col-md-12">
         <div class="small-box bg-light shadow-sm border">
           <div class="inner">
-            <h3><?php echo $conn->query("SELECT t.*,p.name as pname,p.start_date,p.status as pstatus, p.end_date,p.id as pid FROM category_color t inner join team_list p on p.id = t.project_id $where2")->num_rows; ?></h3>
+            <h3><?php echo $conn->query("SELECT t.*,p.name as pname,p.start_date,p.status as pstatus, p.end_date,p.id as pid FROM category_list t inner join team_list p on p.id = t.project_id $where2")->num_rows; ?></h3>
             <p>Počet úloh</p>
           </div>
           <div class="icon">

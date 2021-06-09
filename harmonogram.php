@@ -14,7 +14,9 @@ $_SESSION['project_id'] = $project_id['id'];
 
 //echo "user_id: " . $_SESSION['login_id']. "<br>";
 //echo "project_id (tím): " . $_SESSION['project_id'] . "<br>";
-//echo "<pre>" . var_export($_SESSION, true) . "</pre>";
+echo "<pre>" . var_export($_SESSION, true) . "</pre>";
+//echo "<pre>" . var_export($project_id, true) . "</pre>";
+
 
 //echo "<pre>".var_export($project_id['project_id'], true)."</pre>";
 
