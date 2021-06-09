@@ -14,8 +14,8 @@
 
                         <th class="text-center"></th>
                         <th>Meno</th>
-                        <th>Počet dní</th>
-                        <th>Zostatok dovolenky</th>
+                        <th>Email</th>
+                        <th>Pozícia</th>
                         <th>Akcia</th>
 
                     </thead>
@@ -25,20 +25,12 @@
                         $type = array('', "Admin", "Manažér tímu", "Zamestnanec");
                         $qry = $conn->query("SELECT *,concat(firstname,' ',lastname) as name FROM users order by concat(firstname,' ',lastname) asc");
                         while ($row = $qry->fetch_assoc()) :
-
-
-                            ($project_id == 2)->count;
-                            $timeDiff = abs($endTimeStamp - $startTimeStamp);
-
-                            $numberDays = $timeDiff / 86400;  // 86400 seconds in one day
-                            $numberDays = intval($numberDays);
                         ?>
                             <tr>
                                 <th class="text-center"><?php echo $i++ ?></th>
                                 <td><b><?php echo ucwords($row['name']) ?></b></td>
-                                <td><b><?php echo $type[$row['type']] ?></b></td>
                                 <td><b><?php echo $row['email'] ?></b></td>
-
+                                <td><b><?php echo $type[$row['type']] ?></b></td>
                                 <td class="text-center">
                                     <button type="button" class="btn btn-default btn-sm btn-flat border-info wave-effect text-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                         Upraviť
