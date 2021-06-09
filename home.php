@@ -100,7 +100,7 @@ if ($_SESSION['login_type'] == 2) {
                   </td>
                   <td class="project-state">
                     <?php
-                    /*
+                    
                     if ($stat[$row['status']] == 'ČAKÁ SA') {
                       echo "<span class='badge badge-secondary'>{$stat[$row['status']]}</span>";
                     } elseif ($stat[$row['status']] == 'ZAČALO') {
@@ -114,7 +114,7 @@ if ($_SESSION['login_type'] == 2) {
                     } elseif ($stat[$row['status']] == 'SPLNENÉ') {
                       echo "<span class='badge badge-success'>{$stat[$row['status']]}</span>";
                     }
-                    */
+                    
                     ?>
                   </td>
                   <td>

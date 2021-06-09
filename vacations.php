@@ -14,8 +14,8 @@
 
                         <th class="text-center"></th>
                         <th>Meno</th>
-                        <th>Email</th>
-                        <th>Pozícia</th>
+                        <th>Počet dní</th>
+                        <th>Zostatok dovolenky</th>
                         <th>Akcia</th>
 
                     </thead>
