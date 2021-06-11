@@ -2,7 +2,7 @@
 <?php
 $sql = "SELECT id, title, description, start, end, project_id, color FROM task_list WHERE user_id = " . $_SESSION['login_id'];
 
-$project_id_query = "SELECT id FROM team_list WHERE user_ids OR manager_id LIKE '%" . $_SESSION['login_id'] . "%'";
+$project_id_query = "SELECT id FROM team_list WHERE user_ids LIKE '%" . $_SESSION['login_id'] . "%'  OR manager_id LIKE '%" . $_SESSION['login_id'] . "%'";
 $statement = $conn->prepare($project_id_query);
 
 $result = mysqli_query($conn, $project_id_query);
@@ -172,6 +172,7 @@ if ($_SESSION['login_type'] == 2) {
                         var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
                         var project_id = '<?php echo $_SESSION['project_id']; ?>';
                         var user_id = '<?php echo $_SESSION['login_id']; ?>';
+                        var salesChartCanvas = $('#salesChart').get(0).getContext('2d');
                         console.log(project_id);
                         console.log(user_id);
 
