@@ -5,8 +5,8 @@ $qry = $conn->query("SELECT * FROM team_list where id = " . $_GET['id'])->fetch_
 foreach ($qry as $k => $v) {
 	$$k = $v;
 }
-$tprog = $conn->query("SELECT * FROM category_list where project_id = {$id}")->num_rows;
-$cprog = $conn->query("SELECT * FROM category_list where project_id = {$id}")->num_rows; // and status = 3
+$tprog = $conn->query("SELECT * FROM category_list where category_list_id = {$id}")->num_rows;
+$cprog = $conn->query("SELECT * FROM category_list where category_list_id = {$id}")->num_rows; // and status = 3
 $prog = $tprog > 0 ? ($cprog / $tprog) * 100 : 0;
 $prog = $prog > 0 ?  number_format($prog, 2) : $prog;
 $prod = $conn->query("SELECT * FROM task_list where project_id = {$id}")->num_rows;
@@ -133,7 +133,7 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 							<tbody>
 								<?php
 								$i = 1;
-								$tasks = $conn->query("SELECT * FROM category_list where project_id = {$id} order by task asc");
+								$tasks = $conn->query("SELECT * FROM category_list where category_list_id = {$id} order by task asc");
 								while ($row = $tasks->fetch_assoc()) :
 									$trans = get_html_translation_table(HTML_ENTITIES, ENT_QUOTES);
 									unset($trans["\""], $trans["<"], $trans[">"], $trans["<h2"]);

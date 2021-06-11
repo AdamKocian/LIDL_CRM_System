@@ -133,13 +133,13 @@ if ($_SESSION['login_type'] == 2) {
                     } else {
                         element.css('background-color', '#0050aa');
                     } */
-                    if ($project_id = '1') {
+                    if ($category_list_id = '1') {
                         element.css('background-color', ['category_color']);
-                    } else if ($project_id = '2') {
+                    } else if ($category_list_id = '2') {
                         element.css('background-color', ['category_color']);
-                    } else if ($project_id = '3') {
+                    } else if ($category_list_id = '3') {
                         element.css('background-color', ['category_color']);
-                    } else if ($project_id = '4') {
+                    } else if ($category_list_id = '4') {
                         element.css('background-color', ['category_color']);
                     } else {
                         element.css('background-color', ['category_color']);
