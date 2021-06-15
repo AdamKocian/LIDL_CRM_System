@@ -41,17 +41,17 @@
 					}
 
 					$stat = array("ČAKÁ SA", "ZAČALO", "PREBIEHA", "POZASTAVENÉ", "PO SPLATNOSTI", "SPLNENÉ");
-					$qry = $conn->query("SELECT t.*,p.name as pname,p.start_date,p.status as pstatus, p.end_date,p.id as pid FROM category_list t inner join team_list p on p.id = t.category_list_id $where order by p.name asc");
+					$qry = $conn->query("SELECT t.*,p.name as pname,p.start_date,p.status as pstatus, p.end_date,p.id as pid FROM category_list t inner join team_list p on p.id = t.project_id $where order by p.name asc");
 					while ($row = $qry->fetch_assoc()) :
 						$trans = get_html_translation_table(HTML_ENTITIES, ENT_QUOTES);
 						unset($trans["\""], $trans["<"], $trans[">"], $trans["<h2"]);
 						$desc = strtr(html_entity_decode($row['description']), $trans);
 						$desc = str_replace(array("<li>", "</li>"), array("", ", "), $desc);
-						$tprog = $conn->query("SELECT * FROM category_list where category_list_id = {$row['pid']}")->num_rows;
-						$cprog = $conn->query("SELECT * FROM category_list where category_list_id = {$row['pid']} and status = 3")->num_rows;
+						$tprog = $conn->query("SELECT * FROM category_list where project_id = {$row['pid']}")->num_rows;
+						$cprog = $conn->query("SELECT * FROM category_list where project_id = {$row['pid']} and status = 3")->num_rows;
 						$prog = $tprog > 0 ? ($cprog / $tprog) * 100 : 0;
 						$prog = $prog > 0 ?  number_format($prog, 2) : $prog;
-						$prod = $conn->query("SELECT * FROM task_list where category_list_id = {$row['pid']}")->num_rows;
+						$prod = $conn->query("SELECT * FROM task_list where project_id = {$row['pid']}")->num_rows;
 						if ($row['pstatus'] == 0 && strtotime(date('Y-m-d')) >= strtotime($row['start_date'])) :
 							if ($prod  > 0  || $cprog > 0)
 								$row['pstatus'] = 2;
