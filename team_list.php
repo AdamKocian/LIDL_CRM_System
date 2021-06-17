@@ -138,7 +138,12 @@
 						location.reload()
 					}, 1500)
 
-				} 
+				}else { // quickfix na if bez else
+                        alert_toast("Chyba! Neočakávaná response v team_list!", 'failue')
+					setTimeout(function() {
+						location.reload()
+					}, 1500)
+                    }
 			}
 		})
 	}

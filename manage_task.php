@@ -97,7 +97,10 @@ if (isset($_GET['id'])) {
 					setTimeout(function() {
 						location.reload()
 					}, 1500)
-				}
+				} /*else { // quickfix, no s tým mi to načítavalo, a bez toho mi to ide, to nabáda k tomu dať to rpeč aj z osattných a pzrieť sa na resp
+                        alert_toast("Chyba! Neočakávaná response v manage_task!", 'failue')
+
+                    } */
 			}
 		})
 	})

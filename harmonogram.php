@@ -15,7 +15,7 @@ $_SESSION['project_id'] = $project_id['id'];
 
 //echo "user_id: " . $_SESSION['login_id']. "<br>";
 //echo "project_id (tím): " . $_SESSION['project_id'] . "<br>";
-echo "<pre>" . var_export($_SESSION, true) . "</pre>";
+//echo "<pre>" . var_export($_SESSION, true) . "</pre>";
 //echo "<pre>" . var_export($project_id, true) . "</pre>";
 
 
@@ -191,6 +191,11 @@ if ($_SESSION['login_type'] == 2) {
                                 alert_toast('Udalosť bola úspešne pridaná', "success");
                             }
                         })
+                    }else { // quickfix na if bez else
+                        alert_toast("Chyba! Udalosť nebola pridaná", 'failue')
+					setTimeout(function() {
+						location.reload()
+					}, 1500)
                     }
                 },
                 editable: true,
