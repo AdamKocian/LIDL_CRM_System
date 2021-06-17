@@ -327,7 +327,7 @@ class Action
 				}
 			}
 		}
-		$dur = abs(strtotime("2020-01-01 " . $end_time)) - abs(strtotime("2020-01-01 " . $start_time));
+		$dur = abs(strtotime("2020-01-01 " . $end)) - abs(strtotime("2020-01-01 " . $start)); //was start_time, end_time
 		$dur = $dur / (60 * 60);
 		$data .= ", time_rendered='$dur' ";
 		if (empty($id)) {
