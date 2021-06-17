@@ -112,7 +112,7 @@
 					setTimeout(function() {
 						location.href = 'index.php?page=team_list'
 					}, 2000)
-				}
+				} 
 			}
 		})
 	})

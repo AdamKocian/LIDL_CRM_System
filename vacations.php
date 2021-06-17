@@ -1,5 +1,8 @@
 <?php include 'db_connect.php' ?>
-
+<?phpSELECT *,concat(firstname,' ',lastname) as name,
+ifnull((select sum( DATEDIFF(task_list.end,task_list.start)*8 ) from task_list join category_list on task_list.task_id = category_list.id where task_list.user_id = users.id and category_list.task = 'Dovolenka'),0) as dovolenka
+FROM users
+ORDER BY concat(firstname,' ',lastname) asc?>
 <div class="col-md-12">
     <div class="card card-outline card-success">
         <div class="card-header">

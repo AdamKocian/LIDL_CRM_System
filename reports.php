@@ -103,6 +103,56 @@
     </div>
   </div>
 </div>
+
+
+
+<div class="col-md-12">
+  <div class="card card-outline card-success">
+    <div class="card-header">
+      <b>Progres používateľov</b>
+      <div class="card-tools">
+        <button class="btn btn-flat btn-sm bg-gradient-success btn-success" id="print"><i class="fa fa-print"></i> Vytlačiť alebo uložiť</button>
+      </div>
+    </div>
+    <div class="card-body p-0">
+      <div class="table-responsive" id="printable">
+        <table class="table m-0 table-bordered">
+          <thead>
+            <th></th>
+            <th>Meno</th>
+            <th>Pozícia</th>
+            <th>Počet úloh</th>
+            <th>Dokončených úloh</th>
+            <th>Pracovný čas</th>
+            <th>Progres</th>
+            <th>Stav</th>
+          </thead>
+          <tbody>
+            <?php
+            $i = 1;
+            $type = array('', "Admin", "Manažér tímu", "Zamestnanec");
+            $qry = $conn->query("SELECT *,concat(firstname,' ',lastname) as name FROM users order by concat(firstname,' ',lastname) asc");
+            while ($row = $qry->fetch_assoc()) :
+
+
+
+              
+            ?>
+						<tr>
+							<th class="text-center"><?php echo $i++ ?></th>
+							<td><b><?php echo ucwords($row['name']) ?></b></td>
+							<td><b><?php echo $type[$row['type']]?></b></td>
+							<td><b><?php echo $row['email'] ?></b></td>
+
+							</td>
+						</tr>
+            <?php endwhile; ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
   $('#print').click(function() {
     start_load()

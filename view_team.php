@@ -147,7 +147,7 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 											<p class="truncate"><?php echo strip_tags($desc) ?></p>
 										</td>
 										<td>
-<?php
+											<?php
 											echo $row["category_color"];
 											?>
 										</td>
@@ -280,10 +280,13 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 						location.reload()
 					}, 1500)
 
+				} else {
+					alert_toast('Údaje sa úspešne uložili', "success");
+					setTimeout(function() {
+						location.reload()
+					}, 1500)
 				}
 			}
 		})
 	}
 </script>
-
-

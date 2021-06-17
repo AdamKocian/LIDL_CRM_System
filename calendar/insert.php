@@ -120,9 +120,13 @@ if(isset($_POST["title"]))
 					setTimeout(function() {
 						location.reload()
 					}, 1500)
-				}
+				} else {
+					alert_toast('Údaje sa úspešne uložili', "success");
+					setTimeout(function() {
+						location.reload()
+					}, 1500)
 			}
-		})
+		}
 	})
 </script>
 

@@ -3,6 +3,7 @@
 $sql = "SELECT id, title, description, start, end, project_id, color FROM task_list WHERE user_id = " . $_SESSION['login_id'];
 
 $project_id_query = "SELECT id FROM team_list WHERE user_ids LIKE '%" . $_SESSION['login_id'] . "%'  OR manager_id LIKE '%" . $_SESSION['login_id'] . "%'";
+
 $statement = $conn->prepare($project_id_query);
 
 $result = mysqli_query($conn, $project_id_query);

@@ -12,7 +12,7 @@ if (isset($_GET['id'])) {
 		<input type="hidden" name="id" value="<?php echo isset($id) ? $id : '' ?>">
 		<input type="hidden" name="project_id" value="<?php echo isset($_GET['pid']) ? $_GET['pid'] : '' ?>">
 		<div class="form-group">
-			<label for="">Úloha</label>
+			<label for="">Názov</label>
 			<input type="text" class="form-control form-control-sm" name="task" value="<?php echo isset($task) ? $task : '' ?>" required>
 		</div>
 		<div class="form-group">
