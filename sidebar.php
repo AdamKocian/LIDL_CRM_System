@@ -30,6 +30,12 @@
                   <p>Harmonogram</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="./index.php?page=occupancy" class="nav-link tree-item">
+                  <i class="fas fa-angle-right nav-icon"></i>
+                  <p>Vyťaženosť</p>
+                </a>
+              </li>
             </ul>
           </li>
           <li class="nav-item">

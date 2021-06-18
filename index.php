@@ -4,7 +4,7 @@
 <?php session_start() ?>
 <?php
 if (!isset($_SESSION['login_id']))
-  header('location:login.php'); //som tu hádam 2
+  header('location:login.php');
 include 'db_connect.php';
 ob_start();
 if (!isset($_SESSION['system'])) {
