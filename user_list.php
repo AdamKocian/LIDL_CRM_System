@@ -74,8 +74,8 @@
 						location.reload()
 					}, 1500)
 
-				}
-			}
+				} 
+			} 
 		})
 	}
 </script>
