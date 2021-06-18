@@ -22,7 +22,9 @@ foreach($result as $row)
   'id'   => $row["id"],
   'title'   => $row["title"],
   'start'   => $row["start"],
-  'end'   => $row["end"]
+  'end'   => $row["end"],
+  'color'   => $row["color"]
+
  );
 }
 

@@ -139,7 +139,7 @@ if ($_SESSION['login_type'] == 2) {
                         element.css('background-color', ['category_color']);
                     } else if ($project_id = '3') {
                         element.css('background-color', ['category_color']);
-                    } else if ($project_id = '4') {
+                    } else if ($project_id = '4') { 
                         element.css('background-color', ['category_color']);
                     } else {
                         element.css('background-color', ['category_color']);
@@ -164,7 +164,7 @@ if ($_SESSION['login_type'] == 2) {
                 select: function(start, end, allDay) {
                     // var title = prompt("Zadajte názov udalosti");
                     var title = $('#new_productivity_task').click(function() {
-                        uni_modal("<i class='fa fa-plus'></i> Nová úloha", "manage_task.php?pid=<?php echo 3 ?>", 'large', )
+                        uni_modal("<i class='fa fa-plus'></i> Nová úloha", "manage_task.php?pid=<?php echo isset($_GET['pid']) ? $_GET['pid'] : ''  ?>", 'large', ) //fix predtým statického teamu
                     })
 
                     if (title) {
@@ -172,7 +172,8 @@ if ($_SESSION['login_type'] == 2) {
                         var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
                         var project_id = '<?php echo $_SESSION['project_id']; ?>';
                         var user_id = '<?php echo $_SESSION['login_id']; ?>';
-                        var salesChartCanvas = $('#salesChart').get(0).getContext('2d');
+                        var salesChartCanvas = $('#salesChart').get(0); // Bez .getContext('2d') na konci to nerobí problémy, no funguje to aj bez tohto riadka.
+
                         console.log(project_id);
                         console.log(user_id);
 

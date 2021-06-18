@@ -111,7 +111,7 @@ include 'header.php'
         <footer class="main-footer">
           <strong>&copy; 2021 Adam Kocian & Dávid Krátky </strong>
           <div class="float-right d-none d-sm-inline-block">
-            <b><?php echo $_SESSION['system']['name'] ?> Verzia 1.3</b>
+            <b><?php echo $_SESSION['system']['name'] ?> Verzia 1.4</b>
           </div>
         </footer>
       </div>
