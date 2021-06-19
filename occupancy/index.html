@@ -62,9 +62,6 @@
 
     </div>
 
-
-
-
     <script type="text/javascript">
         var dp = new DayPilot.Scheduler("dp");
         //dp.init();
@@ -90,7 +87,7 @@
         dp.eventHeight = 40;
 
         dp.eventDeleteHandling = "Update";
-        /**/
+
         // http://api.daypilot.org/daypilot-scheduler-oneventmoved/
         dp.onEventMoved = function(args) {
             DayPilot.Http.ajax({
@@ -163,7 +160,7 @@
             var options = {
                 focus: "text"
             };
-
+            /*
             DayPilot.Modal.form(form, data, options).then(function(modal) {
                 dp.clearSelection();
                 if (modal.canceled) {
@@ -178,7 +175,7 @@
                         dp.message("Vytvorené.");
                     }
                 });
-            });
+            });*/
 
         };
 
