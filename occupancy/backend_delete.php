@@ -5,7 +5,7 @@ $json = file_get_contents('php://input');
 $params = json_decode($json);
 
 
-$stmt = $db->prepare("DELETE FROM events WHERE id = :id");
+$stmt = $db->prepare("DELETE FROM task_list WHERE id = :id");
 $stmt->bindParam(':id', $params->id);
 $stmt->execute();
 

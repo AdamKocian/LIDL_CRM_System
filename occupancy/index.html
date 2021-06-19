@@ -68,9 +68,20 @@
         //loadResources();
 
 
+
         dp.treeEnabled = true;
 
-        dp.scale = "Hour";
+        dp.scale = "Manual";
+        dp.timeline = [];
+
+        // 16 hours cells
+        for (var i = 7; i <= 19; i++) {
+            var hours = {};
+            hours.start = dp.startDate.addHours(i);
+            hours.end = hours.start.addHours(1);
+            dp.timeline.push(hours);
+        }
+        // dp.scale = "Hour";
 
         //dp.startDate = new DayPilot.Date().firstDayOfMonth();
         //dp.days = dp.startDate.daysInMonth();
@@ -160,7 +171,7 @@
             var options = {
                 focus: "text"
             };
-            /*
+
             DayPilot.Modal.form(form, data, options).then(function(modal) {
                 dp.clearSelection();
                 if (modal.canceled) {
@@ -175,7 +186,7 @@
                         dp.message("Vytvorené.");
                     }
                 });
-            });*/
+            });
 
         };
 

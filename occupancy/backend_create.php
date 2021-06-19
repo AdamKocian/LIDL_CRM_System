@@ -4,7 +4,7 @@ require_once '_db.php';
 $json = file_get_contents('php://input');
 $params = json_decode($json);
 
-$stmt = $db->prepare("INSERT INTO events (name, start, end, resource_id) VALUES (:name, :start, :end, :resource)");
+$stmt = $db->prepare("INSERT INTO task_list (title, start, end, user_id) VALUES (:name, :start, :end, :resource)");
 $stmt->bindParam(':start', $params->start);
 $stmt->bindParam(':end', $params->end);
 $stmt->bindParam(':name', $params->text);
