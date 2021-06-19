@@ -63,7 +63,7 @@
         newResource: args.newResource
       },
       success: function () {
-        dp.message("Moved.");
+        dp.message("Presunuté.");
       }
     });
   };
@@ -78,7 +78,7 @@
         newEnd: args.newEnd.toString()
       },
       success: function () {
-        dp.message("Resized.");
+        dp.message("Čas upravený."); //resized
       }
     });
   };
@@ -90,7 +90,7 @@
         id: args.e.id()
       },
       success: function () {
-        dp.message("Deleted.");
+        dp.message("Vymazané.");
       }
     });
   };
@@ -98,16 +98,16 @@
   dp.onTimeRangeSelected = function (args) {
     var form = [
       {name: "Text", id: "text"},
-      {name: "Start", id: "start", dateFormat: "M/d/yyyy h:mm:ss tt"},
-      {name: "End", id: "end", dateFormat: "M/d/yyyy h:mm:ss tt"},
-      {name: "Resource", id: "resource", options: flatten(dp.resources)}
+      {name: "Začiatok", id: "start", dateFormat: "M/d/yyyy h:mm:ss tt"},
+      {name: "Koniec", id: "end", dateFormat: "M/d/yyyy h:mm:ss tt"},
+      {name: "Osoba", id: "resource", options: flatten(dp.resources)} // bol tam "Resource", no vyklopia sa tímy a ľudia
     ];
 
     var data = {
       start: args.start,
       end: args.end,
       resource: args.resource,
-      text: "New event"
+      text: "Nová udalosť"
     };
 
     var options = {
@@ -125,7 +125,7 @@
         success: function(response) {
           modal.result.id = response.data.id
           dp.events.add(modal.result);
-          dp.message("Created.");
+          dp.message("Vytvorené.");
         }
       });
     });
@@ -157,7 +157,7 @@
         success: function(response) {
           console.log("Updating data", modal.result);
           dp.events.update(modal.result);
-          dp.message("Updated.");
+          dp.message("Aktualizované.");
         }
       });
     });
