@@ -1,202 +1,262 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HTML5 Scheduler</title>
-  <style type="text/css">
-    p, body, td { font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 10pt; }
-    body { padding: 0px; margin: 0px; background-color: #ffffff; }
-    a { color: #1155a3; }
-    .space { margin: 10px 0px 10px 0px; }
-    .header { background: #003267; background: linear-gradient(to right, #011329 0%,#00639e 44%,#011329 100%); padding:20px 10px; color: white; box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75); }
-    .header a { color: white; }
-    .header h1 a { text-decoration: none; }
-    .header h1 { padding: 0px; margin: 0px; }
-    .main { padding: 10px; margin-top: 10px; }
-  </style>
 
-  <!-- DayPilot library -->
-  <script src="occupancy/js/daypilot/daypilot-all.min.js"></script>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+        p,
+        body,
+        body {
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        a {
+            color: #1155a3;
+        }
+        
+        .space {
+            margin: 10px 0px 10px 0px;
+        }
+        
+        .header {
+            background: #003267;
+            background: linear-gradient(to right, #011329 0%, #00639e 44%, #011329 100%);
+            padding: 20px 10px;
+            color: white;
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.75);
+        }
+        
+        .header a {
+            color: white;
+        }
+        
+        .header h1 a {
+            text-decoration: none;
+        }
+        
+        .header h1 {
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        .main {
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+
+    <!-- DayPilot library -->
+    <script src="occupancy/js/daypilot/daypilot-all.min.js"></script>
 
 </head>
+
 <body>
-<!-- <div class="header" </div>> -->
- 
-
-<div class="main">
-  <div id="dp"></div>
-</div>
+    <!-- <div class="header" </div>> -->
 
 
-<script type="text/javascript">
-  var dp = new DayPilot.Scheduler("dp");
-  //dp.init();
-  //loadResources();
+    <div class="main">
+
+        <div id="dp"></div>
+
+    </div>
 
 
-  dp.treeEnabled = true;
 
-  dp.scale = "Hour";
 
-  //dp.startDate = new DayPilot.Date().firstDayOfMonth();
-  //dp.days = dp.startDate.daysInMonth();
+    <script type="text/javascript">
+        var dp = new DayPilot.Scheduler("dp");
+        //dp.init();
+        //loadResources();
 
-  dp.timeHeaders = [
-    {groupBy: "Day", format: "d. M. yy"},
-    {groupBy: "Hour", format: "hh"}
-  ];
 
-  dp.cellWidthSpec = "Auto";
-  dp.eventHeight = 40;
+        dp.treeEnabled = true;
 
-  dp.eventDeleteHandling = "Update";
+        dp.scale = "Hour";
 
-  // http://api.daypilot.org/daypilot-scheduler-oneventmoved/
-  dp.onEventMoved = function (args) {
-    DayPilot.Http.ajax({
-      url: "occupancy/backend_move.php",
-      data: {
-        id: args.e.id(),
-        newStart: args.newStart.toString(),
-        newEnd: args.newEnd.toString(),
-        newResource: args.newResource
-      },
-      success: function () {
-        dp.message("Presunuté.");
-      }
-    });
-  };
+        //dp.startDate = new DayPilot.Date().firstDayOfMonth();
+        //dp.days = dp.startDate.daysInMonth();
 
-  // http://api.daypilot.org/daypilot-scheduler-oneventresized/
-  dp.onEventResized = function (args) {
-    DayPilot.Http.ajax({
-      url: "occupancy/backend_resize.php",
-      data: {
-        id: args.e.id(),
-        newStart: args.newStart.toString(),
-        newEnd: args.newEnd.toString()
-      },
-      success: function () {
-        dp.message("Čas upravený."); //resized
-      }
-    });
-  };
+        dp.timeHeaders = [{
+            groupBy: "Day",
+            format: "d.M.yyyy"
+        }, {
+            groupBy: "Hour",
+            format: "hh:mm"
+        }];
 
-  dp.onEventDeleted = function (args) {
-    DayPilot.Http.ajax({
-      url: "occupancy/backend_delete.php",
-      data: {
-        id: args.e.id()
-      },
-      success: function () {
-        dp.message("Vymazané.");
-      }
-    });
-  };
+        dp.cellWidthSpec = "Auto";
+        dp.eventHeight = 40;
 
-  dp.onTimeRangeSelected = function (args) {
-    var form = [
-      {name: "Text", id: "text"},
-      {name: "Začiatok", id: "start", dateFormat: "M/d/yyyy h:mm:ss tt"},
-      {name: "Koniec", id: "end", dateFormat: "M/d/yyyy h:mm:ss tt"},
-      {name: "Osoba", id: "resource", options: flatten(dp.resources)} // bol tam "Resource", no vyklopia sa tímy a ľudia
-    ];
+        dp.eventDeleteHandling = "Update";
+        /**/
+        // http://api.daypilot.org/daypilot-scheduler-oneventmoved/
+        dp.onEventMoved = function(args) {
+            DayPilot.Http.ajax({
+                url: "occupancy/backend_move.php",
+                data: {
+                    id: args.e.id(),
+                    newStart: args.newStart.toString(),
+                    newEnd: args.newEnd.toString(),
+                    newResource: args.newResource
+                },
+                success: function() {
+                    dp.message("Presunuté.");
+                }
+            });
+        };
 
-    var data = {
-      start: args.start,
-      end: args.end,
-      resource: args.resource,
-      text: "Nová udalosť"
-    };
+        // http://api.daypilot.org/daypilot-scheduler-oneventresized/
+        dp.onEventResized = function(args) {
+            DayPilot.Http.ajax({
+                url: "occupancy/backend_resize.php",
+                data: {
+                    id: args.e.id(),
+                    newStart: args.newStart.toString(),
+                    newEnd: args.newEnd.toString()
+                },
+                success: function() {
+                    dp.message("Čas upravený."); //resized
+                }
+            });
+        };
 
-    var options = {
-      focus: "text"
-    };
+        dp.onEventDeleted = function(args) {
+            DayPilot.Http.ajax({
+                url: "occupancy/backend_delete.php",
+                data: {
+                    id: args.e.id()
+                },
+                success: function() {
+                    dp.message("Vymazané.");
+                }
+            });
+        };
 
-    DayPilot.Modal.form(form, data, options).then(function(modal) {
-      dp.clearSelection();
-      if (modal.canceled) {
-        return;
-      }
-      DayPilot.Http.ajax({
-        url: "occupancy/backend_create.php",
-        data: modal.result,
-        success: function(response) {
-          modal.result.id = response.data.id
-          dp.events.add(modal.result);
-          dp.message("Vytvorené.");
+        dp.onTimeRangeSelected = function(args) {
+            var form = [{
+                    name: "Text",
+                    id: "text"
+                }, {
+                    name: "Začiatok",
+                    id: "start",
+                    dateFormat: "M/d/yyyy h:mm:ss tt"
+                }, {
+                    name: "Koniec",
+                    id: "end",
+                    dateFormat: "M/d/yyyy h:mm:ss tt"
+                }, {
+                    name: "Osoba",
+                    id: "resource",
+                    options: flatten(dp.resources)
+                } // bol tam "Resource", no vyklopia sa tímy a ľudia
+            ];
+
+            var data = {
+                start: args.start,
+                end: args.end,
+                resource: args.resource,
+                text: "Nová udalosť"
+            };
+
+            var options = {
+                focus: "text"
+            };
+
+            DayPilot.Modal.form(form, data, options).then(function(modal) {
+                dp.clearSelection();
+                if (modal.canceled) {
+                    return;
+                }
+                DayPilot.Http.ajax({
+                    url: "occupancy/backend_create.php",
+                    data: modal.result,
+                    success: function(response) {
+                        modal.result.id = response.data.id
+                        dp.events.add(modal.result);
+                        dp.message("Vytvorené.");
+                    }
+                });
+            });
+
+        };
+
+        dp.onEventClick = function(args) {
+            var form = [{
+                name: "Text",
+                id: "text"
+            }, {
+                name: "Start",
+                id: "start",
+                dateFormat: "M/d/yyyy h:mm:ss tt"
+            }, {
+                name: "End",
+                id: "end",
+                dateFormat: "M/d/yyyy h:mm:ss tt"
+            }, {
+                name: "Resource",
+                id: "resource",
+                options: flatten(dp.resources)
+            }];
+
+            var data = args.e.data;
+
+            var options = {
+                focus: "text"
+            };
+
+            DayPilot.Modal.form(form, data, options).then(function(modal) {
+                dp.clearSelection();
+                if (modal.canceled) {
+                    return;
+                }
+                DayPilot.Http.ajax({
+                    url: "occupancy/backend_update.php",
+                    data: modal.result,
+                    success: function(response) {
+                        console.log("Updating data", modal.result);
+                        dp.events.update(modal.result);
+                        dp.message("Aktualizované.");
+                    }
+                });
+            });
+
+        };
+
+        dp.onBeforeEventRender = function(args) {
+            args.data.barHidden = true;
+            args.data.backColor = "#6d9eeb";
+            args.data.borderColor = "darker";
+            args.data.fontColor = "white";
+        };
+
+        dp.init();
+
+        loadResources();
+        loadEvents();
+
+        function loadEvents() {
+            dp.events.load("occupancy/backend_events.php");
         }
-      });
-    });
 
-  };
-
-  dp.onEventClick = function (args) {
-    var form = [
-      {name: "Text", id: "text"},
-      {name: "Start", id: "start", dateFormat: "M/d/yyyy h:mm:ss tt"},
-      {name: "End", id: "end", dateFormat: "M/d/yyyy h:mm:ss tt"},
-      {name: "Resource", id: "resource", options: flatten(dp.resources)}
-    ];
-
-    var data = args.e.data;
-
-    var options = {
-      focus: "text"
-    };
-
-    DayPilot.Modal.form(form, data, options).then(function(modal) {
-      dp.clearSelection();
-      if (modal.canceled) {
-        return;
-      }
-      DayPilot.Http.ajax({
-        url: "occupancy/backend_update.php",
-        data: modal.result,
-        success: function(response) {
-          console.log("Updating data", modal.result);
-          dp.events.update(modal.result);
-          dp.message("Aktualizované.");
+        function loadResources() {
+            dp.rows.load("occupancy/backend_resources.php");
         }
-      });
-    });
 
-  };
+        function flatten(resources, result) {
+            result = result || [];
 
-  dp.onBeforeEventRender = function(args) {
-    args.data.barHidden = true;
-    args.data.backColor = "#6d9eeb";
-    args.data.borderColor = "darker";
-    args.data.fontColor = "white";
-  };
+            resources && resources.forEach(function(r) {
+                result.push(r);
+                flatten(r.children, result);
+            })
 
-  dp.init();
-
-  loadResources();
-  loadEvents();
-
-  function loadEvents() {
-    dp.events.load("occupancy/backend_events.php");
-  }
-
-  function loadResources() {
-    dp.rows.load("occupancy/backend_resources.php");
-  }
-
-  function flatten(resources, result) {
-    result = result || [];
-
-    resources && resources.forEach(function(r) {
-      result.push(r);
-      flatten(r.children, result);
-    })
-
-    return result;
-  }
-
-</script>
+            return result;
+        }
+    </script>
 
 
 </body>
+
 </html>
