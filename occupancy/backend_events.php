@@ -1,7 +1,7 @@
 <?php
 require_once '_db.php';
     
-$stmt = $db->prepare('SELECT id, start, end, title as name, user_id as resource_id FROM lidl_db.task_list WHERE NOT ((end <= :start) OR (start >= :end))');
+$stmt = $db->prepare('SELECT id, start, end, title as name, user_id as resource_id FROM lidl_db.task_list WHERE start >= :start AND end <= :end');
 $stmt->bindParam(':start', $_GET['start']);
 $stmt->bindParam(':end', $_GET['end']);
 $stmt->execute();

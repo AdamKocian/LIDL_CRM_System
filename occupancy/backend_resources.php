@@ -16,7 +16,7 @@ foreach($scheduler_groups as $group) {
   $g->children = array();
   $groups[] = $g;
   
-  $stmt = $db->prepare("SELECT id, concat(firstname, ' ', lastname) FROM lidl_db.users WHERE type = :group ORDER BY name");
+  $stmt = $db->prepare("SELECT id, concat(firstname, ' ', lastname) as name FROM lidl_db.users WHERE type = :group ORDER BY lastname");
   $stmt->bindParam(':group', $group['id']);
   $stmt->execute();
   $scheduler_resources = $stmt->fetchAll();  

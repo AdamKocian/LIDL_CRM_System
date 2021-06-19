@@ -17,7 +17,7 @@
   </style>
 
   <!-- DayPilot library -->
-  <script src="js/daypilot/daypilot-all.min.js"></script>
+  <script src="occupancy/js/daypilot/daypilot-all.min.js"></script>
 
 </head>
 <body>
@@ -55,7 +55,7 @@
   // http://api.daypilot.org/daypilot-scheduler-oneventmoved/
   dp.onEventMoved = function (args) {
     DayPilot.Http.ajax({
-      url: "backend_move.php",
+      url: "occupancy/backend_move.php",
       data: {
         id: args.e.id(),
         newStart: args.newStart.toString(),
@@ -71,7 +71,7 @@
   // http://api.daypilot.org/daypilot-scheduler-oneventresized/
   dp.onEventResized = function (args) {
     DayPilot.Http.ajax({
-      url: "backend_resize.php",
+      url: "occupancy/backend_resize.php",
       data: {
         id: args.e.id(),
         newStart: args.newStart.toString(),
@@ -85,7 +85,7 @@
 
   dp.onEventDeleted = function (args) {
     DayPilot.Http.ajax({
-      url: "backend_delete.php",
+      url: "occupancy/backend_delete.php",
       data: {
         id: args.e.id()
       },
@@ -120,7 +120,7 @@
         return;
       }
       DayPilot.Http.ajax({
-        url: "backend_create.php",
+        url: "occupancy/backend_create.php",
         data: modal.result,
         success: function(response) {
           modal.result.id = response.data.id
@@ -152,7 +152,7 @@
         return;
       }
       DayPilot.Http.ajax({
-        url: "backend_update.php",
+        url: "occupancy/backend_update.php",
         data: modal.result,
         success: function(response) {
           console.log("Updating data", modal.result);
@@ -177,11 +177,11 @@
   loadEvents();
 
   function loadEvents() {
-    dp.events.load("backend_events.php");
+    dp.events.load("occupancy/backend_events.php");
   }
 
   function loadResources() {
-    dp.rows.load("backend_resources.php");
+    dp.rows.load("occupancy/backend_resources.php");
   }
 
   function flatten(resources, result) {
