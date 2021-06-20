@@ -20,7 +20,7 @@ if (isset($_GET['id'])) {
 					<h4><?php echo strtoupper(substr($firstname, 0, 1) . substr($lastname, 0, 1)) ?></h4>
 				</span>
 			<?php else : ?>
-				<img class="img-circle elevation-2" src="assets/uploads/<?php echo $avatar ?>" alt="User Avatar" style="width: 90px;height:90px;object-fit: cover">
+				<img class="img-circle elevation-2" src="assets/uploads/<?php echo $avatar ?>" alt="Profilový obrázok" style="width: 90px;height:90px;object-fit: cover">
 			<?php endif ?>
 		</div>
 		<div class="card-footer">
