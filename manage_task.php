@@ -42,6 +42,7 @@ if (isset($_GET['id'])) {
 						<label for="">Dátum konca</label>
 						<input type="datetime-local" class="form-control form-control-sm" name="end" value="<?php echo isset($date) ? date("Y-MM-DD HH:mm:ss", strtotime($date)) : '' ?>" required>
 					</div>
+
 					<!-- <div class="form-group">
 						<label for="">Farba</label>
 						<input type="color" class="form-control form-control-sm" name="color" required>

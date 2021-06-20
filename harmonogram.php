@@ -170,7 +170,7 @@ if ($_SESSION['login_type'] == 2) {
                      element.css('background-color', color);
                     */
 
-                    element.css('background-color','blue');
+                    //element.css('background-color','blue');
 
 
                 },
