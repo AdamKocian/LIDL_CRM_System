@@ -21,13 +21,13 @@ endif;
 $manager = $conn->query("SELECT *,concat(firstname,' ',lastname) as name FROM users where id = $manager_id");
 $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 ?>
-<div class="col-lg-12">
+<div class="col-lg-12 ">
 	<div class="row">
-		<div class="col-md-12">
-			<div class="callout callout-info">
+		<div class="col-md-12 ">
+			<div class="callout callout-info shadow-sm">
 				<div class="col-md-12">
 					<div class="row">
-						<div class="col-sm-6">
+						<div class="col-sm-6 ">
 							<dl>
 								<dt><b class="border-primary">Názov tímu</b></dt>
 								<dd><?php echo ucwords($name) ?></dd>
@@ -85,7 +85,7 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 	</div>
 	<div class="row">
 		<div class="col-md-4">
-			<div class="card card-outline card-primary">
+			<div class="card card-outline card-primary shadow-sm">
 				<div class="card-header">
 					<span><b>Členovia tímu</b></span>
 					<div class="card-tools">
@@ -111,7 +111,7 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 			</div>
 		</div>
 		<div class="col-md-8">
-			<div class="card card-outline card-primary">
+			<div class="card card-outline card-primary shadow-sm">
 				<div class="card-header">
 					<span><b>Kategórie</b></span>
 					<?php if ($_SESSION['login_type'] != 3) : ?>
@@ -178,7 +178,7 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<div class="card">
+			<div class="card card-outline card-primary shadow-sm">
 				<div class="card-header">
 					<b>Úlohy členov</b>
 					<div class="card-tools">

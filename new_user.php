@@ -1,7 +1,7 @@
 <?php
 ?>
 <div class="col-lg-12">
-	<div class="card">
+	<div class="card card-outline card-primary shadow-sm">
 		<div class="card-body">
 			<form action="" id="manage_user">
 				<input type="hidden" name="id" value="<?php echo isset($id) ? $id : '' ?>">
