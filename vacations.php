@@ -2,7 +2,6 @@
 <?php
 $project_id_query = "SELECT concat(firstname,' ',lastname) AS name, users.type, (select count( DATEDIFF(t.end,t.start)*8 ) FROM lidl_db.task_list t JOIN lidl_db.category_list c ON t.task_id = c.id WHERE c.task = 'Dovolenka' and t.user_id = users.id and year(t.start) = year(now())) AS 'dovolenka' FROM users";
 
-
 ?>
 <div class="col-md-12">
     <div class="card card-outline card-success shadow-sm">

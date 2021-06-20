@@ -64,10 +64,6 @@
 
     <script type="text/javascript">
         var dp = new DayPilot.Scheduler("dp");
-        //dp.init();
-        //loadResources();
-
-
 
         dp.treeEnabled = true;
 
@@ -141,7 +137,7 @@
                 }
             });
         };
-
+/* označovanie eventov v sekcií "Vyťaženosť" (funkcionality nie sú kompletne prepojené)
         dp.onTimeRangeSelected = function(args) {
             var form = [{
                     name: "Text",
@@ -230,7 +226,7 @@
                 });
             });
 
-        };
+        };*/
 
         dp.onBeforeEventRender = function(args) {
             args.data.barHidden = true;

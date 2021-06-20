@@ -26,7 +26,6 @@ class Action
 			foreach ($qry->fetch_array() as $key => $value) {
 				if ($key != 'password' && !is_numeric($key))
 					$_SESSION['login_' . $key] = $value;
-					//$_SESSION['project_id'] = 
 
 			}
 			return 1;
@@ -35,7 +34,7 @@ class Action
 		}
 		$uid = $this->db->query("SELECT id FROM users where email = '" . $email . "' and password = '" . md5($password) . "'  ");
 		$_SESSION['project_id'] = $this->db->query("SELECT project_id FROM task_list WHERE user_id == '" . $uid);
-		//if($_SESSION['login_id']== id v tabuľke users){}
+		//if($_SESSION['login_id']
 
 	}
 	function logout()

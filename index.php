@@ -31,7 +31,7 @@ include 'header.php'
         </div>
       </div>
       <div id="toastsContainerTopRight" class="toasts-top-right fixed"></div>
-      <!-- Napis -->
+      <!-- Nadpis -->
       <div class="content-header">
         <div class="container-fluid">
 
@@ -107,7 +107,7 @@ include 'header.php'
         <aside class="control-sidebar control-sidebar-dark">
         </aside>
 
-        <!-- Footer -->
+        <!-- Päta -->
         <footer class="main-footer">
           <strong>&copy; 2021 Adam Kocian & Dávid Krátky </strong>
           <div class="float-right d-none d-sm-inline-block">

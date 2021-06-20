@@ -1,6 +1,5 @@
 <?php include('db_connect.php') ?>
 <?php
-$sql = "SELECT id, title, description, start, end, project_id, color FROM task_list WHERE user_id = " . $_SESSION['login_id'];
 
 $project_id_query = "SELECT id FROM team_list WHERE user_ids LIKE '%" . $_SESSION['login_id'] . "%'  OR manager_id LIKE '%" . $_SESSION['login_id'] . "%'";
 
@@ -11,33 +10,6 @@ $result = mysqli_query($conn, $project_id_query);
 $project_id = mysqli_fetch_assoc($result);
 
 $_SESSION['project_id'] = $project_id['id'];
-
-
-$qry = "SELECT category_project.color, task_list.id FROM category_project JOIN task_list ON category_project.category_id = task_list.task_id";
-/*
-$statement = $conn->prepare($qry);
-
-$rslt = mysqli_query($conn, $qry);
-$colors = array();
-if(mysqli_num_rows($rslt)>0){
-    while($row = mysqli_fetch_assoc($rslt)){
-        $colors[] = $row;
-    }
-}
-echo "<pre>" . var_export($colors, true) . "</pre>";
-*/
-
-//$rslt = $mysqli->query($qry);
-//$colors = mysqli_fetch_assoc($rslt);
-
-
-//echo "user_id: " . $_SESSION['login_id']. "<br>";
-//echo "project_id (tím): " . $_SESSION['project_id'] . "<br>";
-//echo "<pre>" . var_export($_SESSION, true) . "</pre>";
-//echo "<pre>" . var_export($project_id, true) . "</pre>";
-
-
-//echo "<pre>".var_export($project_id['project_id'], true)."</pre>";
 
 ?>
 <?php
@@ -50,29 +22,12 @@ if ($_SESSION['login_type'] != 1)
     <button style="position: fixed; right: 40px; bottom: 90px; padding: 12px; z-index: 3; " class="btn btn-primary bg-gradient-primary btn-sm" type="text" id="new_productivity_task"><i class="fa fa-plus"></i> Pridať task</button>
     <!-- <button style="position: block; right: 40px; top: 30px; padding: 7px; " class="btn btn-primary bg-gradient-primary btn-sm" type="text" id="new_productivity_task"><i class="fa fa-plus"></i> Pridať task</button>-->
 </div>
+
 <script>
-    /*
-    $('#new_task').click(function() {
-        uni_modal("Nová úloha pre <?php echo ucwords($name) ?>", "manage_category.php?pid=<?php echo $id ?>", "mid-large")
-    })
-    $('.edit_task').click(function() {
-        uni_modal("Upraviť Úlohu: " + $(this).attr('data-task'), "manage_category.php?pid=<?php echo $id ?>&id=" + $(this).attr('data-id'), "mid-large")
-    })
-    $('.view_task').click(function() {
-        uni_modal("Detaily Úlohy", "view_category.php?id=" + $(this).attr('data-id'), "mid-large")
-    })
-    */
     $('#new_productivity_task').click(function() {
         uni_modal("<i class='fa fa-plus'></i> Nová úloha", "manage_task.php?pid=<?php echo isset($_GET['id']) ? $_GET['id'] : ''  ?>", 'large', ) //fix predtým statického teamu (ind)$project_id
     })
-    /*
-    $('.manage_progress').click(function() {
-        uni_modal("<i class='fa fa-edit'></i> Upraviť progres", "manage_task.php?pid=<?php echo $id ?>&id=" + $(this).attr('data-id'), 'large')
-    })
-    $('.delete_progress').click(function() {
-        _conf("Naozaj chcete vymazať tento progres?", "delete_progress", [$(this).attr('data-id')])
-    })
-    */
+
 
     function delete_progress($project_id) {
         start_load()
@@ -95,8 +50,6 @@ if ($_SESSION['login_type'] != 1)
     }
 </script>
 <?php
-
-//var_dump($_SESSION);
 
 $where = "";
 if ($_SESSION['login_type'] == 2) {
@@ -138,43 +91,8 @@ if ($_SESSION['login_type'] == 2) {
     <script>
         $(document).ready(function() {
             var calendar = $('#calendar').fullCalendar({
-                eventRender: function(event, element) {
-
-                     //console.log(element);
-                     //console.log(event);
-                     console.log(event.id);
-                     
-                  //  if(event.id = $colors["id"]){
-                  //      element.css('background-color', <?php //echo $colors["color"]; ?>);
-                  //  }
-/*
-                    <?php
-                    /*
-                     $qry = "SELECT category_project.color FROM category_project JOIN task_list ON category_project.category_id = task_list.task_id  WHERE task_list.id = . $event_id";
-
-                     $statement = $conn->prepare($qry);
-                     
-                     $rslt = mysqli_query($conn, $qry);
-                     
-                     $color = mysqli_fetch_assoc($rslt);
-                     */
-                     ?>
-                
-                     element.css('background-color', <?php echo $color; ?>);
-
-
-                     //var color = colors[event.id];
-
-
-
-                     element.css('background-color', color);
-                    */
-
-                    //element.css('background-color','blue');
-
-
-                },
-                eventTextColor: '#FFFFFF',
+                eventRender: function(event, element) {},
+                eventTextColor: '#FFFFFF', //#000000
                 allDay: false,
                 editable: true,
                 locale: 'sk',
@@ -193,7 +111,7 @@ if ($_SESSION['login_type'] == 2) {
                 select: function(start, end, allDay) {
                     // var title = prompt("Zadajte názov udalosti");
                     var title = $('#new_productivity_task').click(function() {
-                        uni_modal("<i class='fa fa-plus'></i> Nová úloha", "manage_task.php?pid=<?php echo isset($_GET['pid']) ? $_GET['pid'] : ''  ?>", 'large', ) //fix predtým statického teamu
+                        uni_modal("<i class='fa fa-plus'></i> Nová úloha", "manage_task.php?pid=<?php echo isset($_GET['pid']) ? $_GET['pid'] : ''  ?>", 'large', )
                     })
 
                     if (title) {
@@ -201,7 +119,7 @@ if ($_SESSION['login_type'] == 2) {
                         var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
                         var project_id = '<?php echo $_SESSION['project_id']; ?>';
                         var user_id = '<?php echo $_SESSION['login_id']; ?>';
-                        var salesChartCanvas = $('#salesChart').get(0); // Bez .getContext('2d') na konci to nerobí problémy, no funguje to aj bez tohto riadka.
+                        var salesChartCanvas = $('#salesChart').get(0); // Bez .getContext('2d') na konci to nerobí problémy, no funguje to aj bez tohto riadka
 
                         console.log(project_id);
                         console.log(user_id);
@@ -220,7 +138,7 @@ if ($_SESSION['login_type'] == 2) {
                                 alert_toast('Udalosť bola úspešne pridaná', "success");
                             }
                         })
-                    } else { // quickfix na if bez else
+                    } else { // quickfix
                         alert_toast("Chyba! Udalosť nebola pridaná", 'failue')
                         setTimeout(function() {
                             location.reload()
@@ -270,10 +188,6 @@ if ($_SESSION['login_type'] == 2) {
                     });
                 },
 
-
-
-
-
                 eventClick: function(event) {
                     if (confirm("Naozaj chcete odstrániť udalosť?")) {
                         var id = event.id;
@@ -300,8 +214,6 @@ if ($_SESSION['login_type'] == 2) {
 <body>
 
     <div id='calendar'></div>
-
-
 
 </body>
 

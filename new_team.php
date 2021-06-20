@@ -26,7 +26,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row">
+				<!--<div class="row">
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="" class="control-label">Začiatok</label>
@@ -39,7 +39,7 @@
 							<input type="date" class="form-control form-control-sm" autocomplete="off" name="end_date" value="<?php echo isset($end_date) ? date("Y-m-d", strtotime($end_date)) : '' ?>">
 						</div>
 					</div>
-				</div>
+				</div> -->
 				<div class="row">
 					<?php if ($_SESSION['login_type'] == 1) : ?>
 						<div class="col-md-6">

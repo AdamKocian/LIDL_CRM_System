@@ -72,7 +72,7 @@ if (isset($_GET['id'])) {
 					setTimeout(function() {
 						location.reload()
 					}, 1500)
-				}else { // quickfix na if bez else
+				}else { // quickfix
                         alert_toast("Chyba! Neočakávaná response v manage_category!", 'failue')
 					setTimeout(function() {
 						location.reload()

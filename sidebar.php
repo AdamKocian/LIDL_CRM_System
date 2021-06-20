@@ -77,7 +77,7 @@
               </a>
             </li>
           <?php endif; ?>
-          <?php if ($_SESSION['login_type'] == 1) : ?>
+          <?php if ($_SESSION['login_type'] != 3) : ?>
             <li class="nav-item">
               <a href="#" class="nav-link nav-edit_user">
                 <i class="nav-icon fas fa-users"></i>
