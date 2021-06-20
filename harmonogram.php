@@ -4,6 +4,8 @@ $sql = "SELECT id, title, description, start, end, project_id, color FROM task_l
 
 $project_id_query = "SELECT id FROM team_list WHERE user_ids LIKE '%" . $_SESSION['login_id'] . "%'  OR manager_id LIKE '%" . $_SESSION['login_id'] . "%'";
 
+//$project_id_query = "SELECT * FROM category_project";
+
 $statement = $conn->prepare($project_id_query);
 
 $result = mysqli_query($conn, $project_id_query);
@@ -123,17 +125,21 @@ if ($_SESSION['login_type'] == 2) {
         $(document).ready(function() {
             var calendar = $('#calendar').fullCalendar({
                 eventRender: function(event, element) {
-                    /*if ($project_id = '1') {
+                    if ($task_id = '0') {
                         element.css('background-color', '#000');
-                    } else if ($project_id = '2') {
+                    } else if ($task_id = '1') {
                         element.css('background-color', '#FFF333');
-                    } else if ($project_id = '3') {
+                    } else if ($task_id = '2') {
                         element.css('background-color', '#F73B44');
-                    } else if ($project_id = '4') {
+                    } else if ($task_id = '3') {
                         element.css('background-color', '#3393FF');
-                    } else {
-                        element.css('background-color', '#0050aa');
-                    } */
+                    } else if ($task_id = '4') {
+                        element.css('background-color', '#FFF333');
+                    } else if ($task_id = '5') {
+                        element.css('background-color', '#000');
+                    }{
+                        element.css('background-color', '#F73B44');
+                    } 
                     /* if ($project_id = '1') {
                          element.css('background-color', ['color']);
                      } else if ($project_id = '2') {
@@ -145,11 +151,18 @@ if ($_SESSION['login_type'] == 2) {
                      } else {
                          element.css('background-color', ['color']);
                      }*/
-                     console.log(element);
-                     element.css('background-color','red');
+
+
+                    /*if ($task_id = '5') {
+                        element.css('background-color', '#FFB347');
+                    }*/
+                    console.log(element);
+                    //element.css('background-color','color');
+
 
                 },
                 eventTextColor: '#FFFFFF',
+                // eventBackgroundColor: color;
                 allDay: false,
                 editable: true,
                 locale: 'sk',
