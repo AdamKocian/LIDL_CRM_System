@@ -43,9 +43,9 @@ if ($_SESSION['login_type'] == 2) {
             </colgroup>
             <thead>
               <th>#</th>
-              <th>Pracovný tím</th>
-              <th>Progres</th>
-              <th>Stav</th>
+              <th>Pracovný úsek</th>
+              <th>Progres úloh</th>
+              <th>Aktuálny stav</th>
               <th></th>
             </thead>
             <tbody>
@@ -66,6 +66,7 @@ if ($_SESSION['login_type'] == 2) {
                 $prog = $tprog > 0 ? ($cprog / $tprog) * 100 : 0;
                 $prog = $prog > 0 ?  number_format($prog, 0) : $prog;
                 $prod = $conn->query("SELECT * FROM task_list where project_id = {$row['id']}")->num_rows;
+                /*
                 if ($row['status'] == 0 && strtotime(date('Y-m-d')) >= strtotime($row['start_date'])) :
                   if ($prod  > 0  || $cprog > 0)
                     $row['status'] = 2;
@@ -74,6 +75,10 @@ if ($_SESSION['login_type'] == 2) {
                 elseif ($row['status'] == 0 && strtotime(date('Y-m-d')) > strtotime($row['end_date'])) :
                   $row['status'] = 4;
                 endif;
+                <small>
+                <?php echo date("d.m.Y", strtotime($row['end_date'])) ?>
+                </small>
+                    */
               ?>
                 <tr>
                   <td>
@@ -85,9 +90,7 @@ if ($_SESSION['login_type'] == 2) {
                       <?php echo ucwords($row['name']) ?>
                     </a>
                     <br>
-                    <small>
-                      Do <?php echo date("d.m.Y", strtotime($row['end_date'])) ?>
-                    </small>
+
                   </td>
                   <td class="project_progress">
                     <div class="progress progress-sm">
@@ -100,7 +103,7 @@ if ($_SESSION['login_type'] == 2) {
                   </td>
                   <td class="project-state">
                     <?php
-                    
+
                     if ($stat[$row['status']] == 'ČAKÁ SA') {
                       echo "<span class='badge badge-secondary'>{$stat[$row['status']]}</span>";
                     } elseif ($stat[$row['status']] == 'ZAČALO') {
@@ -114,7 +117,7 @@ if ($_SESSION['login_type'] == 2) {
                     } elseif ($stat[$row['status']] == 'SPLNENÉ') {
                       echo "<span class='badge badge-success'>{$stat[$row['status']]}</span>";
                     }
-                    
+
                     ?>
                   </td>
                   <td>
