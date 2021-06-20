@@ -1,11 +1,8 @@
 <?php include 'db_connect.php' ?>
-<?php 
-/*
-SELECT *,concat(firstname,' ',lastname) as name,
-ifnull((select sum( DATEDIFF(task_list.end,task_list.start)*8 ) from task_list join category_list on task_list.task_id = category_list.id where task_list.user_id = users.id and category_list.task = 'Dovolenka'),0) as dovolenka
-FROM users
-ORDER BY concat(firstname,' ',lastname) asc
-*/
+<?php
+$project_id_query = "SELECT * ,(select count( DATEDIFF(t.end,t.start)*8 ) FROM lidl_db.task_list t JOIN lidl_db.category_list c ON t.task_id = c.id WHERE c.task = 'Dovolenka' and t.user_id = users.id and year(t.start) = year(now())) FROM users";
+
+
 ?>
 <div class="col-md-12">
     <div class="card card-outline card-success">
@@ -22,10 +19,9 @@ ORDER BY concat(firstname,' ',lastname) asc
 
                         <th class="text-center"></th>
                         <th>Meno</th>
+                        <th>Pozícia</th>
                         <th>Počet dní</th>
                         <th>Zostatok dovolenky</th>
-                        <th>Akcia</th>
-
                     </thead>
                     <tbody>
                         <?php
@@ -33,24 +29,13 @@ ORDER BY concat(firstname,' ',lastname) asc
                         $type = array('', "Admin", "Manažér tímu", "Zamestnanec");
                         $qry = $conn->query("SELECT *,concat(firstname,' ',lastname) as name FROM users order by concat(firstname,' ',lastname) asc");
                         while ($row = $qry->fetch_assoc()) :
+
                         ?>
                             <tr>
                                 <th class="text-center"><?php echo $i++ ?></th>
                                 <td><b><?php echo ucwords($row['name']) ?></b></td>
-                                <td><b><?php echo $row['email'] ?></b></td>
                                 <td><b><?php echo $type[$row['type']] ?></b></td>
-                                <td class="text-center">
-                                    <button type="button" class="btn btn-default btn-sm btn-flat border-info wave-effect text-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                                        Upraviť
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item view_user" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Vidieť</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="./index.php?page=edit_user&id=<?php echo $row['id'] ?>">Upraviť</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item delete_user" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Vymazať</a>
-                                    </div>
-                                </td>
+                                <td><b><?php echo $row['Dovolenka'] ?></b></td>
                             </tr>
                         <?php endwhile; ?>
                     </tbody>

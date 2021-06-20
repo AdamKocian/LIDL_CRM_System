@@ -1,7 +1,7 @@
 <?php include 'db_connect.php' ?>
 <?php
 if (isset($_GET['id'])) {
-	$type_arr = array('', "Admin", "Project Manager", "Employee");
+	$type_arr = array('', "Admin", "Manažér tímu", "Zamestnanec");
 	$qry = $conn->query("SELECT *,concat(firstname,' ',lastname) as name FROM users where id = " . $_GET['id'])->fetch_array();
 	foreach ($qry as $k => $v) {
 		$$k = $v;
@@ -15,7 +15,7 @@ if (isset($_GET['id'])) {
 			<h5 class="widget-user-desc"><?php echo $email ?></h5>
 		</div>
 		<div class="widget-user-image">
-			<?php if (empty($avatar) || (!empty($avatar) && !is_file('assets/uploads/' . $avatar))) : ?>
+			<?php if (empty($avatar) || (!empty($avatar) && !is_file('assets/uploads/user.svg' . $avatar))) : ?>
 				<span class="brand-image img-circle elevation-2 d-flex justify-content-center align-items-center bg-primary text-white font-weight-500" style="width: 90px;height:90px">
 					<h4><?php echo strtoupper(substr($firstname, 0, 1) . substr($lastname, 0, 1)) ?></h4>
 				</span>

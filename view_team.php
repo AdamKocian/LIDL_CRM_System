@@ -73,7 +73,7 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 											<b><?php echo ucwords($manager['name']) ?></b>
 										</div>
 									<?php else : ?>
-										<small><i>Manažér bol zmazaný z databázy</i></small>
+										<small><i>Manažér bol z databázy odstránený</i></small>
 									<?php endif; ?>
 								</dd>
 							</dl>
@@ -207,15 +207,15 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 								<?php endif; ?>
 								<img class="img-circle img-bordered-sm" src="assets/uploads/<?php echo $row['avatar'] ?>" alt="Profilový obrázok">
 								<span class="username">
-									<a href="#"><?php echo ucwords($row['uname']) ?>[ <?php echo ucwords($row['task']) ?> ]</a>
+									<a href="#"><?php echo ucwords($row['uname']) ?>- <?php echo ucwords($row['task']) ?></a>
 								</span>
 								<span class="description">
 									<span class="fa fa-calendar-day"></span>
-									<span><b><?php echo date('M d, Y', strtotime($row['date'])) ?></b></span>
+									<span><b><?php echo date('M d, Y', strtotime($row['date_created'])) ?></b></span>
 									<span class="fa fa-user-clock"></span>
-									<span>Začiatok: <b><?php echo date('h:i A', strtotime($row['date'] . ' ' . $row['start'])) ?></b></span>
+									<span>Začiatok: <b><?php echo date('h:i A', strtotime($row['date_created'] . ' ' . $row['start'])) ?></b></span>
 									<span> | </span>
-									<span>Koniec: <b><?php echo date('h:i A', strtotime($row['date'] . ' ' . $row['end'])) ?></b></span>
+									<span>Koniec: <b><?php echo date('h:i A', strtotime($row['date_created'] . ' ' . $row['end'])) ?></b></span>
 								</span>
 							</div>
 							<div>

@@ -32,7 +32,7 @@
             $qry = $conn->query("SELECT * FROM team_list $where order by name asc");
             while ($row = $qry->fetch_assoc()) :
               $tprog = $conn->query("SELECT * FROM category_list where project_id = {$row['id']}")->num_rows;
-              $cprog = $conn->query("SELECT * FROM category_list where project_id = {$row['id']} ")->num_rows;// and status = 3
+              $cprog = $conn->query("SELECT * FROM category_list where project_id = {$row['id']} ")->num_rows; // and status = 3
               $prog = $tprog > 0 ? ($cprog / $tprog) * 100 : 0;
               $prog = $prog > 0 ?  number_format($prog, 0) : $prog;
               $prod = $conn->query("SELECT * FROM task_list where project_id = {$row['id']}")->num_rows;
@@ -104,51 +104,42 @@
   </div>
 </div>
 
-
-
-<div class="col-md-12">
-  <div class="card card-outline card-success">
-    <div class="card-header">
-      <b>Progres používateľov</b>
-      <div class="card-tools">
-        <button class="btn btn-flat btn-sm bg-gradient-success btn-success" id="print"><i class="fa fa-print"></i> Vytlačiť alebo uložiť</button>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card card-outline card-success">
+      <div class="card-header">
+        <b>Úlohy členov</b>
+        <div class="card-tools">
+          <button class="btn btn-flat btn-sm bg-gradient-success btn-success" id="print"><i class="fa fa-print"></i> Vytlačiť alebo uložiť</button>
+        </div>
       </div>
-    </div>
-    <div class="card-body p-0">
-      <div class="table-responsive" id="printable">
-        <table class="table m-0 table-bordered">
-          <thead>
-            <th></th>
-            <th>Meno</th>
-            <th>Pozícia</th>
-            <th>Počet úloh</th>
-            <th>Dokončených úloh</th>
-            <th>Pracovný čas</th>
-            <th>Progres</th>
-            <th>Stav</th>
-          </thead>
-          <tbody>
-            <?php
-            $i = 1;
-            $type = array('', "Admin", "Manažér tímu", "Zamestnanec");
-            $qry = $conn->query("SELECT *,concat(firstname,' ',lastname) as name FROM users order by concat(firstname,' ',lastname) asc");
-            while ($row = $qry->fetch_assoc()) :
+      <div class="card-body">
+        <?php
+        $progress = $conn->query("SELECT p.*,concat(u.firstname,' ',u.lastname) as uname,u.avatar,t.task FROM task_list p inner join users u on u.id = p.user_id inner join category_list t on t.id = p.task_id");
+        while ($row = $progress->fetch_assoc()) :
+        ?>
+          <div class="post">
 
-
-
-              
-            ?>
-						<tr>
-							<th class="text-center"><?php echo $i++ ?></th>
-							<td><b><?php echo ucwords($row['name']) ?></b></td>
-							<td><b><?php echo $type[$row['type']]?></b></td>
-							<td><b><?php echo $row['email'] ?></b></td>
-
-							</td>
-						</tr>
-            <?php endwhile; ?>
-          </tbody>
-        </table>
+            <div class="user-block">
+              <img class="img-circle img-bordered-sm" src="assets/uploads/<?php echo $row['avatar'] ?>" alt="Profilový obrázok">
+              <span class="username">
+                <a href="#"><?php echo ucwords($row['uname']) ?>- <?php echo ucwords($row['task']) ?></a>
+              </span>
+              <span class="description">
+                <span class="fa fa-calendar-day"></span>
+                <span><b><?php echo date('M d, Y', strtotime($row['date_created'])) ?></b></span>
+                <span class="fa fa-user-clock"></span>
+                <span>Začiatok: <b><?php echo date('h:i A', strtotime($row['date_created'] . ' ' . $row['start'])) ?></b></span>
+                <span> | </span>
+                <span>Koniec: <b><?php echo date('h:i A', strtotime($row['date_created'] . ' ' . $row['end'])) ?></b></span>
+              </span>
+            </div>
+            <div>
+              <?php echo html_entity_decode($row['comment']) ?>
+            </div>
+          </div>
+          <div class="post clearfix"></div>
+        <?php endwhile; ?>
       </div>
     </div>
   </div>
