@@ -48,7 +48,7 @@
 								<select class="form-control form-control-sm select2" name="manager_id">
 									<option></option>
 									<?php
-									$managers = $conn->query("SELECT *,concat(firstname,' ',lastname) as name FROM users where type = 2 order by concat(firstname,' ',lastname) asc ");
+									$managers = $conn->query("SELECT *,concat(firstname,' ',lastname) as name FROM users where type = 1 order by concat(firstname,' ',lastname) asc ");
 									while ($row = $managers->fetch_assoc()) :
 									?>
 										<option value="<?php echo $row['id'] ?>" <?php echo isset($manager_id) && $manager_id == $row['id'] ? "selected" : '' ?>><?php echo ucwords($row['name']) ?></option>
@@ -65,7 +65,7 @@
 							<select class="form-control form-control-sm select2" multiple="multiple" name="user_ids[]">
 								<option></option>
 								<?php
-								$employees = $conn->query("SELECT *,concat(firstname,' ',lastname) as name FROM users where type = 3 order by concat(firstname,' ',lastname) asc ");
+								$employees = $conn->query("SELECT *,concat(firstname,' ',lastname) as name FROM users order by concat(firstname,' ',lastname) asc ");
 								while ($row = $employees->fetch_assoc()) :
 								?>
 									<option value="<?php echo $row['id'] ?>" <?php echo isset($user_ids) && in_array($row['id'], explode(',', $user_ids)) ? "selected" : '' ?>><?php echo ucwords($row['name']) ?></option>

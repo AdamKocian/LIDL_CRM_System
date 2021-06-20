@@ -22,8 +22,10 @@
 					<tr>
 						<th class="text-center">#</th>
 						<th>Tím</th>
-						<th>Dátum začiatku</th>
-						<th>Dátum konca</th>
+
+						<th></th> <!--Dátum začiatku-->
+						<th></th> <!--Dátum konca-->
+
 						<th>Stav</th>
 						<th>Akcia</th>
 					</tr>
@@ -65,8 +67,8 @@
 								<p><b><?php echo ucwords($row['name']) ?></b></p>
 								<p class="truncate"><?php echo strip_tags($desc) ?></p>
 							</td>
-							<td><b><?php echo date("M d, Y", strtotime($row['start_date'])) ?></b></td>
-							<td><b><?php echo date("M d, Y", strtotime($row['end_date'])) ?></b></td>
+							<td><b><?php // echo date("M d, Y", strtotime($row['start_date'])) ?></b></td>
+							<td><b><?php //echo date("M d, Y", strtotime($row['end_date'])) ?></b></td>
 							<td class="text-center">
 								<?php
 								if ($stat[$row['status']] == 'ČAKÁ SA') {
