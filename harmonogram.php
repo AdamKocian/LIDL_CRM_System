@@ -69,7 +69,7 @@ if ($_SESSION['login_type'] != 1)
                 if (resp == 1) {
                     alert_toast("Údaje boli úspešne odstránené", 'success')
                     setTimeout(function() {
-                        location.reload()
+                        // location.reload()
                     }, 1500)
 
                 }
@@ -195,7 +195,7 @@ if ($_SESSION['login_type'] == 2) {
                     }else { // quickfix na if bez else
                         alert_toast("Chyba! Udalosť nebola pridaná", 'failue')
 					setTimeout(function() {
-						location.reload()
+						// location.reload()
 					}, 1500)
                     }
                 },
@@ -270,11 +270,7 @@ if ($_SESSION['login_type'] == 2) {
 </head>
 
 <body>
-
     <div id='calendar'></div>
-
-
-
 </body>
 
 </html>
