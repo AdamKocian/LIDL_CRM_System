@@ -134,17 +134,20 @@ if ($_SESSION['login_type'] == 2) {
                     } else {
                         element.css('background-color', '#0050aa');
                     } */
-                    if ($project_id = '1') {
-                        element.css('background-color', ['category_color']);
-                    } else if ($project_id = '2') {
-                        element.css('background-color', ['category_color']);
-                    } else if ($project_id = '3') {
-                        element.css('background-color', ['category_color']);
-                    } else if ($project_id = '4') { 
-                        element.css('background-color', ['category_color']);
-                    } else {
-                        element.css('background-color', ['category_color']);
-                    }
+                    /* if ($project_id = '1') {
+                         element.css('background-color', ['color']);
+                     } else if ($project_id = '2') {
+                         element.css('background-color', ['color']);
+                     } else if ($project_id = '3') {
+                         element.css('background-color', ['color']);
+                     } else if ($project_id = '4') { 
+                         element.css('background-color', ['color']);
+                     } else {
+                         element.css('background-color', ['color']);
+                     }*/
+                     console.log(element);
+                     element.css('background-color','red');
+
                 },
                 eventTextColor: '#FFFFFF',
                 allDay: false,
@@ -192,11 +195,11 @@ if ($_SESSION['login_type'] == 2) {
                                 alert_toast('Udalosť bola úspešne pridaná', "success");
                             }
                         })
-                    }else { // quickfix na if bez else
+                    } else { // quickfix na if bez else
                         alert_toast("Chyba! Udalosť nebola pridaná", 'failue')
-					setTimeout(function() {
-						location.reload()
-					}, 1500)
+                        setTimeout(function() {
+                            location.reload()
+                        }, 1500)
                     }
                 },
                 editable: true,
