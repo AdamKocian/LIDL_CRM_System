@@ -34,6 +34,18 @@ if (isset($_GET['id'])) {
 							<?php endwhile; ?>
 						</select>
 					</div>
+					<!--<div class="form-group">
+						<label for="" class="control-label">Priorita</label>
+						<select class="form-control form-control-sm select3" name="task_id">
+							<option></option>
+							<?php /*
+							$priority = $conn->query("SELECT * FROM lidl_db.priority");
+							while ($row = $priority->fetch_assoc()) :
+							?>
+								<option value="<?php echo $row['id'] ?>" <?php echo isset($task_id) && $task_id == $row['id'] ? "selected" : '' ?>><?php echo ucwords($row['priority']) ?></option>
+							<?php endwhile; */?>
+						</select>
+					</div>-->
 					<div class="form-group">
 						<label for="">Dátum začiatku</label>
 						<input type="datetime-local" class="form-control form-control-sm" name="start" value="<?php echo isset($date) ? date("Y-MM-DD HH:mm:ss", strtotime($date)) : '' ?>" required>
@@ -81,6 +93,10 @@ if (isset($_GET['id'])) {
 		})
 		$('.select2').select2({
 			placeholder: "Vyberte kategóriu",
+			width: "100%"
+		});
+		$('.select3').select2({
+			placeholder: "Vyberte prioritu",
 			width: "100%"
 		});
 	})
