@@ -3,7 +3,7 @@
 } ?>
 
 <div class="col-lg-12">
-	<div class="card card-outline card-primary">
+	<div class="card card-outline card-primary shadow-sm">
 		<div class="card-body">
 			<form action="" id="manage-project">
 
@@ -88,8 +88,8 @@
 		</div>
 		<div class="card-footer border-top border-info">
 			<div class="d-flex w-100 justify-content-center align-items-center">
-				<button class="btn btn-flat  bg-gradient-primary mx-2" form="manage-project">Uložiť</button>
-				<button class="btn btn-flat bg-gradient-secondary mx-2" type="button" onclick="location.href='index.php?page=team_list'">Zrušiť</button>
+				<button class="btn btn-primary mr-2" form="manage-project">Uložiť</button>
+				<button class="btn btn-secondary" type="button" onclick="location.href='index.php?page=team_list'">Zrušiť</button>
 			</div>
 		</div>
 	</div>

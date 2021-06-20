@@ -1,6 +1,6 @@
 <?php include 'db_connect.php' ?>
 <div class="col-md-12">
-  <div class="card card-outline card-success">
+  <div class="card card-outline card-success shadow-sm">
     <div class="card-header">
       <b>Progres tímu</b>
       <div class="card-tools">
@@ -106,7 +106,7 @@
 
 <div class="row">
   <div class="col-md-12">
-    <div class="card card-outline card-success">
+    <div class="card card-outline card-success shadow-sm">
       <div class="card-header">
         <b>Úlohy členov</b>
         <div class="card-tools">

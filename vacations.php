@@ -5,7 +5,7 @@ $project_id_query = "SELECT * ,(select count( DATEDIFF(t.end,t.start)*8 ) FROM l
 
 ?>
 <div class="col-md-12">
-    <div class="card card-outline card-success">
+    <div class="card card-outline card-success shadow-sm">
         <div class="card-header">
             <b>Dovolenky zamestnancov</b>
             <div class="card-tools">
