@@ -26,7 +26,7 @@ $project_id_query = "SELECT concat(firstname,' ',lastname) AS name, users.type, 
                     <tbody>
                         <?php
                         $i = 1;
-                        $type = array('', "Admin", "Manažér tímu", "Zamestnanec");
+                        $type = array('', "Manažér", "Zamestnanec", "Stážista");
                         $qry = $conn->query($project_id_query);
                         while ($row = $qry->fetch_assoc()) :
 

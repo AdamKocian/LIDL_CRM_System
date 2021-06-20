@@ -1,7 +1,7 @@
 <?php include 'db_connect.php' ?>
 <?php
 if (isset($_GET['id'])) {
-	$type_arr = array('', "Admin", "Manažér tímu", "Zamestnanec");
+	$type_arr = array('', "Manažér tímu", "Zamestnanec", "Stážista");
 	$qry = $conn->query("SELECT *,concat(firstname,' ',lastname) as name FROM users where id = " . $_GET['id'])->fetch_array();
 	foreach ($qry as $k => $v) {
 		$$k = $v;
