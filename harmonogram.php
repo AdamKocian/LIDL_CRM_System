@@ -4,8 +4,6 @@ $sql = "SELECT id, title, description, start, end, project_id, color FROM task_l
 
 $project_id_query = "SELECT id FROM team_list WHERE user_ids LIKE '%" . $_SESSION['login_id'] . "%'  OR manager_id LIKE '%" . $_SESSION['login_id'] . "%'";
 
-//$project_id_query = "SELECT * FROM category_project";
-
 $statement = $conn->prepare($project_id_query);
 
 $result = mysqli_query($conn, $project_id_query);
@@ -15,6 +13,24 @@ $project_id = mysqli_fetch_assoc($result);
 $_SESSION['project_id'] = $project_id['id'];
 
 
+$qry = "SELECT category_project.color, task_list.id FROM category_project JOIN task_list ON category_project.category_id = task_list.task_id";
+/*
+$statement = $conn->prepare($qry);
+
+$rslt = mysqli_query($conn, $qry);
+$colors = array();
+if(mysqli_num_rows($rslt)>0){
+    while($row = mysqli_fetch_assoc($rslt)){
+        $colors[] = $row;
+    }
+}
+echo "<pre>" . var_export($colors, true) . "</pre>";
+*/
+
+//$rslt = $mysqli->query($qry);
+//$colors = mysqli_fetch_assoc($rslt);
+
+
 //echo "user_id: " . $_SESSION['login_id']. "<br>";
 //echo "project_id (tím): " . $_SESSION['project_id'] . "<br>";
 //echo "<pre>" . var_export($_SESSION, true) . "</pre>";
@@ -22,7 +38,6 @@ $_SESSION['project_id'] = $project_id['id'];
 
 
 //echo "<pre>".var_export($project_id['project_id'], true)."</pre>";
-
 
 ?>
 <?php
@@ -48,7 +63,7 @@ if ($_SESSION['login_type'] != 1)
     })
     */
     $('#new_productivity_task').click(function() {
-        uni_modal("<i class='fa fa-plus'></i> Nová úloha", "manage_task.php?pid=<?php echo 3 ?>", 'large', )
+        uni_modal("<i class='fa fa-plus'></i> Nová úloha", "manage_task.php?pid=<?php echo isset($_GET['id']) ? $_GET['id'] : ''  ?>", 'large', ) //fix predtým statického teamu (ind)$project_id
     })
     /*
     $('.manage_progress').click(function() {
@@ -82,7 +97,6 @@ if ($_SESSION['login_type'] != 1)
 <?php
 
 //var_dump($_SESSION);
-//
 
 $where = "";
 if ($_SESSION['login_type'] == 2) {
@@ -125,44 +139,42 @@ if ($_SESSION['login_type'] == 2) {
         $(document).ready(function() {
             var calendar = $('#calendar').fullCalendar({
                 eventRender: function(event, element) {
-                    if ($task_id = '0') {
-                        element.css('background-color', '#000');
-                    } else if ($task_id = '1') {
-                        element.css('background-color', '#FFF333');
-                    } else if ($task_id = '2') {
-                        element.css('background-color', '#F73B44');
-                    } else if ($task_id = '3') {
-                        element.css('background-color', '#3393FF');
-                    } else if ($task_id = '4') {
-                        element.css('background-color', '#FFF333');
-                    } else if ($task_id = '5') {
-                        element.css('background-color', '#000');
-                    }{
-                        element.css('background-color', '#F73B44');
-                    } 
-                    /* if ($project_id = '1') {
-                         element.css('background-color', ['color']);
-                     } else if ($project_id = '2') {
-                         element.css('background-color', ['color']);
-                     } else if ($project_id = '3') {
-                         element.css('background-color', ['color']);
-                     } else if ($project_id = '4') { 
-                         element.css('background-color', ['color']);
-                     } else {
-                         element.css('background-color', ['color']);
-                     }*/
+
+                     //console.log(element);
+                     //console.log(event);
+                     console.log(event.id);
+                     
+                  //  if(event.id = $colors["id"]){
+                  //      element.css('background-color', <?php //echo $colors["color"]; ?>);
+                  //  }
+/*
+                    <?php
+                    /*
+                     $qry = "SELECT category_project.color FROM category_project JOIN task_list ON category_project.category_id = task_list.task_id  WHERE task_list.id = . $event_id";
+
+                     $statement = $conn->prepare($qry);
+                     
+                     $rslt = mysqli_query($conn, $qry);
+                     
+                     $color = mysqli_fetch_assoc($rslt);
+                     */
+                     ?>
+                
+                     element.css('background-color', <?php echo $color; ?>);
 
 
-                    /*if ($task_id = '5') {
-                        element.css('background-color', '#FFB347');
-                    }*/
-                    console.log(element);
-                    //element.css('background-color','color');
+                     //var color = colors[event.id];
+
+
+
+                     element.css('background-color', color);
+                    */
+
+                    element.css('background-color','blue');
 
 
                 },
                 eventTextColor: '#FFFFFF',
-                // eventBackgroundColor: color;
                 allDay: false,
                 editable: true,
                 locale: 'sk',
