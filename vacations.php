@@ -49,7 +49,7 @@ $project_id_query = "SELECT * ,(select count( DATEDIFF(t.end,t.start)*8 ) FROM l
         start_load()
         var _h = $('head').clone()
         var _p = $('#printable').clone()
-        var _d = "<p class='text-center'><b>Report dovoleniek zamestnancov (<?php echo date("F d, Y") ?>)</b></p>"
+        var _d = "<p<b>Report dovoleniek zamestnancov</b></p>"
         _p.prepend(_d)
         _p.prepend(_h)
         var nw = window.open("", "", "width=900,height=600")

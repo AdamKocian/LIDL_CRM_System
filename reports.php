@@ -110,10 +110,11 @@
       <div class="card-header">
         <b>Úlohy členov</b>
         <div class="card-tools">
-          <button class="btn btn-flat btn-sm bg-gradient-success btn-success" id="print"><i class="fa fa-print"></i> Vytlačiť alebo uložiť</button>
+          <button class="btn btn-flat btn-sm bg-gradient-success btn-success" id="print2"><i class="fa fa-print"></i> Vytlačiť alebo uložiť</button>
         </div>
       </div>
       <div class="card-body">
+      <div class="table-responsive" id="printable2">
         <?php
         $progress = $conn->query("SELECT p.*,concat(u.firstname,' ',u.lastname) as uname,u.avatar,t.task FROM task_list p inner join users u on u.id = p.user_id inner join category_list t on t.id = p.task_id");
         while ($row = $progress->fetch_assoc()) :
@@ -141,15 +142,34 @@
           <div class="post clearfix"></div>
         <?php endwhile; ?>
       </div>
+      </div>
     </div>
   </div>
 </div>
+
 <script>
   $('#print').click(function() {
     start_load()
     var _h = $('head').clone()
     var _p = $('#printable').clone()
-    var _d = "<p class='text-center'><b>Report progresu tímu ako (<?php echo date("F d, Y") ?>)</b></p>"
+    var _d = "<p<b>Report pracovných tímov</b></p>"
+    _p.prepend(_d)
+    _p.prepend(_h)
+    var nw = window.open("", "", "width=900,height=600")
+    nw.document.write(_p.html())
+    nw.document.close()
+    nw.print()
+    setTimeout(function() {
+      nw.close()
+      end_load()
+    }, 750)
+  })
+
+  $('#print2').click(function() {
+    start_load()
+    var _h = $('head').clone()
+    var _p = $('#printable2').clone()
+    var _d = "<p<b>Report zadaných úloch</b></p>"
     _p.prepend(_d)
     _p.prepend(_h)
     var nw = window.open("", "", "width=900,height=600")
