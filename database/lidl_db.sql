@@ -254,7 +254,7 @@ CREATE TABLE `team_list` (
 INSERT INTO `team_list` (`id`, `name`, `description`, `status`, `manager_id`, `user_ids`, `date_created`) VALUES
 (3, 'COPRA', '																																				&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: small; background-color: rgb(255, 255, 255);&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;Controlling Projekte &amp;amp; Reporting &amp;amp; Analysen&lt;/font&gt;&lt;/span&gt;																																																				', 0, 8, '6,8,7', '2021-03-27 20:07:01'),
 (5, 'Resortcontrolling ', '																																												', 0, 6, '8,7', '2021-05-10 23:05:50'),
-(6, 'Vedľajší Tím', '																						', 3, 8, '8', '2021-05-10 23:06:32'),
+(6, 'Vedľajší Tím', '																						', 3, 1, '8', '2021-05-10 23:06:32'),
 (7, 'Tím Testov', '																																	', 0, 8, '8', '2021-05-10 23:08:25');
 
 -- --------------------------------------------------------
