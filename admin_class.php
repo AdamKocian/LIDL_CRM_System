@@ -26,7 +26,6 @@ class Action
 			foreach ($qry->fetch_array() as $key => $value) {
 				if ($key != 'password' && !is_numeric($key))
 					$_SESSION['login_' . $key] = $value;
-
 			}
 			return 1;
 		} else {
@@ -264,8 +263,17 @@ class Action
 		}
 		if (empty($id)) {
 			$save = $this->db->query("INSERT INTO team_list set $data");
+			$newTeamId = $this->db->insert_id;
+
+			foreach ($user_ids  as &$value) {
+				$save = $this->db->query("INSERT INTO team_user (user_id, team_list_id) VALUES (" . $value . ", " . $newTeamId . ");");
+			}
 		} else {
 			$save = $this->db->query("UPDATE team_list set $data where id = $id");
+			$save = $this->db->query("DELETE FROM team_user WHERE team_list_id = $id");
+			foreach ($user_ids  as &$value) {
+				$save = $this->db->query("INSERT INTO team_user (user_id, team_list_id) VALUES (" . $value . ", " . $newTeamId . ");");
+			}
 		}
 		if ($save) {
 			return 1;

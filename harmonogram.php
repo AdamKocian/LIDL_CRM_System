@@ -9,7 +9,13 @@ $result = mysqli_query($conn, $project_id_query);
 
 $project_id = mysqli_fetch_assoc($result);
 
-$_SESSION['project_id'] = $project_id['id'];
+//echo "<pre>" . var_export($_SESSION, true) . "</pre>";
+
+if ($project_id != null) {
+    $_SESSION['project_id'] = $project_id['id'];
+} else {
+    echo "Nie je priradený žiaden tím.";
+}
 
 ?>
 <?php

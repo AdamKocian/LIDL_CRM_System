@@ -211,11 +211,9 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 								</span>
 								<span class="description">
 									<span class="fa fa-calendar-day"></span>
-									<span><b><?php echo date('M d, Y', strtotime($row['date_created'])) ?></b></span>
-									<span class="fa fa-user-clock"></span>
-									<span>Začiatok: <b><?php echo date('h:i A', strtotime($row['date_created'] . ' ' . $row['start'])) ?></b></span>
+									<span>Začiatok: <b><?php echo date('d.m.Y H:i', strtotime($row['start'])) ?></b></span>
 									<span> | </span>
-									<span>Koniec: <b><?php echo date('h:i A', strtotime($row['date_created'] . ' ' . $row['end'])) ?></b></span>
+									<span>Koniec: <b><?php echo date('d.m.Y H:i', strtotime($row['end'])) ?></b></span>
 								</span>
 							</div>
 							<div>
