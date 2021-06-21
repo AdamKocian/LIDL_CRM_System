@@ -264,7 +264,7 @@ CREATE TABLE `team_list` (
 --
 
 INSERT INTO `team_list` (`id`, `name`, `description`, `status`, `start_date`, `end_date`, `manager_id`, `user_ids`, `date_created`) VALUES
-(3, 'COPRA', '																																				&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: small; background-color: rgb(255, 255, 255);&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;Controlling Projekte &amp;amp; Reporting &amp;amp; Analysen&lt;/font&gt;&lt;/span&gt;																																																				', 0, '2021-03-27', '2021-03-28', 1, '6,1,8,7', '2021-03-27 20:07:01'),
+(3, 'COPRA', '																																				&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: small; background-color: rgb(255, 255, 255);&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;Controlling Projekte &amp; Reporting &amp; Analysen&lt;/font&gt;&lt;/span&gt;																																																				', 0, '2021-03-27', '2021-03-28', 1, '6,1,8,7', '2021-03-27 20:07:01'),
 (5, 'Resortcontrolling ', '																																												', 0, '0000-00-00', '0000-00-00', 6, '8,7', '2021-05-10 23:05:50'),
 (6, 'Vedľajší Tím', '											', 3, '0000-00-00', '0000-00-00', 7, '8', '2021-05-10 23:06:32'),
 (7, 'Tím Testov', '																																	', 0, '0000-00-00', '0000-00-00', 7, '8', '2021-05-10 23:08:25');
@@ -322,7 +322,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`, `type`, `avatar`, `date_created`) VALUES
 (1, 'Meno manažéra', 'Priezvisko manažéra', 'manazer@manazer.com	', 'dba61a5802ed5b60b029a290309be04a', 1, 'user.svg', '2020-11-26 10:57:04'),
-(6, 'Dávid', 'Krátky', 'david.kratky.sk@gmail.com', '0192023a7bbd73250516f069df18b500', 1, '1620063240_IMG_20210216_002208.jpg', '2021-03-27 20:03:34'),
+(6, 'Dávid', 'Krátky', 'david.kratky.sk@gmail.com', 'dba61a5802ed5b60b029a290309be04a', 1, '1620063240_IMG_20210216_002208.jpg', '2021-03-27 20:03:34'),
 (7, 'Meno zamestnanca', ' Priezvisko zamestnanca', 'zamestnanec@zamestnanec.com', '549027cd88d54004a23d2fb5aeaef55d', 2, 'user.svg', '2021-05-10 22:43:01'),
 (8, 'Meno stážistu', ' Priezvisko stážistu', 'stazista@stazista.com', 'e82e7f3aa41a39ff682d0371aeffbd68', 3, 'user.svg', '2021-05-10 22:43:34');
 

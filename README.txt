@@ -27,5 +27,3 @@ Priečinok obsahuje okrem kódu export databázy (database/lidl_db.sql), ktorá 
         Stážista - vidí len ovládací panel a tímy (nevidí používateľov a reporty)
             email: stazista@stazista.com
             heslo: stazista123
-
-UPDATE category_lis` SET category_colo` = '#0078FF' WHERE category_list.id = 5;
